@@ -1,11 +1,23 @@
 <?php
 class Evento extends CI_Controller {
+    
     public function __construct(){
         parent::__construct();
         $this->load->model('evento_model');
     }
     
+   public function index(){
+        $this->load->helper('url');
+        $data['eventos'] = $this->evento_model->show_evento();
+        $data['titulo'] = 'Eventos Disponibles';
+        
+        $this->load->view('includes/header', $data);
+        $this->load->view('evento/uno', $data);
+        $this->load->view('includes/footer', $data);
+    }
+    
     public function show_evento(){
+        $this->load->helper('url');
         $data['eventos'] = $this->evento_model->show_evento();
         $data['titulo'] = 'Eventos Disponibles';
         
@@ -15,6 +27,7 @@ class Evento extends CI_Controller {
     }
     
     public function add_evento(){
+        $this->load->helper('url');
         $data['titulo'] = 'Nuevo Evento';
         
         $this->load->helper('form');
