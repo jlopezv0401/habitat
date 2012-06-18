@@ -29,6 +29,7 @@
                                             </div>
                                         </td>
 
+<<<<<<< HEAD
                                 </tr>
                                 <? endforeach;?>
                         </tbody>
@@ -36,3 +37,15 @@
         </div>
 </div>
 </form>
+=======
+<?php foreach ($eventos as $evento): ?>
+    <h3><?php echo $evento['nombre'] ?></h3>
+    <div id="evento">
+        <?php echo $evento['fecha_inicio'] ?> </br>
+        <?php echo $evento['fecha_fin'] ?>
+    </div>
+<?php endforeach ?>
+
+
+    
+>>>>>>> devel

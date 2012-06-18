@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24b05de0-c733-4430-b16a-e84d350a7d77" name="Default" comment="" />
+    <list default="true" id="24b05de0-c733-4430-b16a-e84d350a7d77" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/habitat.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="habitat.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +31,10 @@
       <file leaf-file-name="evento_model.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/evento_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="5" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="88" column="5" selection-start="2484" selection-end="2484" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1339998812000" expanded="true" signature="43:2528" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -34,7 +42,7 @@
       <file leaf-file-name="evento.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/evento.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="6" selection-start="12" selection-end="12" vertical-scroll-proportion="0.026269702">
+            <state line="10" column="6" selection-start="213" selection-end="213" vertical-scroll-proportion="0.026269702">
               <folding />
             </state>
           </provider>
@@ -43,7 +51,7 @@
       <file leaf-file-name="show.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/evento/show.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="32" selection-end="32" vertical-scroll-proportion="-0.625">
+            <state line="30" column="0" selection-start="1911" selection-end="1911" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
@@ -52,7 +60,7 @@
       <file leaf-file-name="add.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/evento/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="10" selection-start="83" selection-end="83" vertical-scroll-proportion="-0.625">
+            <state line="49" column="7" selection-start="2173" selection-end="2173" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
@@ -304,22 +312,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/evento/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="10" selection-start="83" selection-end="83" vertical-scroll-proportion="-0.625">
+        <state line="49" column="7" selection-start="2173" selection-end="2173" vertical-scroll-proportion="-0.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/evento/show.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="32" selection-end="32" vertical-scroll-proportion="-0.625">
+        <state line="30" column="0" selection-start="1911" selection-end="1911" vertical-scroll-proportion="-0.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/evento_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="5" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="88" column="5" selection-start="2484" selection-end="2484" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1339998812000" expanded="true" signature="43:2528" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -332,7 +342,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/evento.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="6" selection-start="12" selection-end="12" vertical-scroll-proportion="0.026269702">
+        <state line="10" column="6" selection-start="213" selection-end="213" vertical-scroll-proportion="0.026269702">
           <folding />
         </state>
       </provider>
