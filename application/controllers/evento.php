@@ -9,38 +9,50 @@ class Evento extends CI_Controller {
 
     public function index(){
         $data['eventos'] = $this->evento_model->read_evento();
-
         $data['titulo'] = 'Eventos Disponibles';
         
         $this->load->view('includes/header', $data);
-        $this->load->view('evento/show', $data);
+        $this->load->view('evento/index', $data);
         $this->load->view('includes/footer', $data);
     }
     
 
     public function show(){
-        $this->load->helper('form');
-        $boton = $this->input->post('submit');
+        $boton = $this->input->post('enviar');
         $data['titulo'] = 'Eventos Disponibles';
 
         if ($boton == 'ver'){
-            $this->load->view('includes/header', $data);
-            $this->load->view('evento/uno', $data);
-            $this->load->view('includes/footer', $data);
-        }
-        elseif ($boton == 'editar'){
-            $this->load->view('includes/header', $data);
-            $this->load->view('evento/show', $data);
-            $this->load->view('includes/footer', $data);
-        }
-        elseif ($boton == 'borrar'){
-            $this->evento_model->del_evento();
-
             $data['eventos'] = $this->evento_model->read_evento();
 
             $this->load->view('includes/header', $data);
             $this->load->view('evento/show', $data);
             $this->load->view('includes/footer', $data);
+        }
+        elseif ($boton == 'editar'){
+            $data['eventos'] = $this->evento_model->read_evento();
+
+            $this->load->view('includes/header', $data);
+            $this->load->view('evento/uno', $data);
+            $this->load->view('includes/footer', $data);
+        }
+        elseif ($boton == 'borrar'){
+            $data['titulo'] = 'Eventos';
+
+            if ($this->input->post('identifica')){
+
+                $this->evento_model->del_evento();
+                $data['eventos'] = $this->evento_model->read_evento();
+
+                $this->load->view('includes/header', $data);
+                $this->load->view('evento/show', $data);
+                $this->load->view('includes/footer', $data);
+            }
+//            $this->evento_model->del_evento();
+//            $data['eventos'] = $this->evento_model->read_evento();
+//
+//            $this->load->view('includes/header', $data);
+//            $this->load->view('evento/uno', $data);
+//            $this->load->view('includes/footer', $data);
         }
         else{
             $data['eventos'] = $this->evento_model->read_evento();
@@ -53,9 +65,8 @@ class Evento extends CI_Controller {
     
 
     public function add(){
-
         $data['titulo'] = 'Nuevo Evento';
-        
+
         $this->load->helper('form');
         $this->load->library('form_validation');
 
@@ -70,27 +81,45 @@ class Evento extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         else {
+
             $this->evento_model->create_evento();
             $data['eventos'] = $this->evento_model->read_evento();
             $data['titulo'] = 'Eventos Disponibles';
-            
+
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/show', $data);
+            $this->load->view('evento/index', $data);
             $this->load->view('includes/footer', $data);
+        }
     }
 
     public function edit(){
-
+        
     }
 
     public function remove(){
-        $this->evento_model->add_evento();
-        $data['eventos'] = $this->evento_model->read_evento();
-        $data['titulo'] = 'Eventos Disponibles';
-        
-        $this->load->view('includes/header', $data);
-        $this->load->view('evento/show', $data);
-        $this->load->view('includes/footer', $data);
+        $data['titulo'] = 'Eventos';
+        $boton = $this->input->post('enviar');
+
+
+        if ($this->input->post('identifica')){
+
+            $this->evento_model->del_evento();
+            $data['eventos'] = $this->evento_model->read_evento();
+
+            $this->load->view('includes/header', $data);
+
+            if ($boton){
+                echo $boton;
+                echo 'caray';
+
+            }
+            $this->load->view('evento/show', $data);
+            $this->load->view('includes/footer', $data);
+        }
+        else
+        {
+            echo "wey";
+        }
         
     }
 

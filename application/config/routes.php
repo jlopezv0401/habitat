@@ -41,8 +41,8 @@
 
 $route['evento/add'] = 'evento/add';
 $route['evento'] = 'evento/index';
-$route['evento/(:any)'] = 'evento/show';
-$route['default_controller'] = 'welcome';
+//$route['evento/(:any)'] = 'evento/index';
+$route['default_controller'] = 'evento/index';
 $route['404_override'] = '';
 
 
