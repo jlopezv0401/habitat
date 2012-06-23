@@ -26,17 +26,9 @@
                                 <td><?=$evento['fecha_inicio']?></td>
                                 <td>
                                     <div class="btn-group">
-<!--                                        <a href="<?/*=site_url('evento/show')*/?>" class="btn btn-primary"><i class="icon-list icon-white"></i> Ver Carpa</a>
-                                        <a href="<?/*=site_url('evento/edit')*/?>" class="btn btn-primary"><i class="icon-pencil icon-white"></i> Editar</a>
-                                        <i class="icon-minus icon-white"><?/*=anchor('evento/remove', 'Borrar')*/?></i>
---><!--                                    <p id="ver" class="btn btn-primary"><i class="icon-list icon-white"></i> Ver Carpa</p>
-                                        <p id="editar" class="btn btn-primary"><i class="icon-pencil icon-white"></i> Editar</p>
-                                        <p id="borrar" class="btn btn-primary"><i class="icon-minus icon-white"></i> Borrar</p>-->
-                                       <button class="btn" name="enviar" type="submit" value="ver"> Ver Carpa</button>
-                                       <button class="btn" name="enviar" type="submit" value="editar"> Editar</button>
-                                       <button class="btn" name="enviar" type="submit" value="borrar"> Borrar</button>
-
-
+                                       <button class="btn btn-primary" name="enviar" type="submit" value="ver"> Ver Carpa</button>
+                                       <button class="btn btn-primary" name="enviar" type="submit" value="editar"> Editar</button>
+                                       <button class="btn btn-primary" name="enviar" type="submit" value="borrar"> Borrar</button>
                                     </div>
                                 </td>
                             </tr>

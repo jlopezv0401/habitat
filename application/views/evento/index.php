@@ -1,7 +1,7 @@
 <?php echo validation_errors(); ?>
-<?php echo form_open('evento/remove') ?>
+<?php echo form_open('evento/index') ?>
 <h2><?php echo $titulo; ?></h2>
-<form id="formShow" method="post">
+<form id="formIndex" method="post">
     <fieldset>
         <div class="row">
             <div class="span9">
@@ -26,11 +26,18 @@
                         <td><?=$evento['fecha_inicio']?></td>
                         <td>
                             <div class="btn-group">
-                                <button class="btn" name="enviar" type="submit" value="ver"> Ver Carpa</button>
-                                <button class="btn" name="enviar" type="submit" value="editar"> Editar</button>
-                                <button class="btn" name="enviar" type="submit" value="borrar"> Borrar</button>
-
-
+                                <button class="btn btn-primary" name="enviar" type="submit" value="ver">
+                                    <i class="icon-list icon-white"></i>
+                                    Ver Carpas
+                                </button>
+                                <button class="btn btn-primary" name="enviar" type="submit" value="editar">
+                                    <i class="icon-edit icon-white"></i>
+                                    Editar
+                                </button>
+                                <button class="btn btn-primary" name="enviar" type="submit" value="borrar">
+                                    <i class="icon-remove icon-white"></i>
+                                    Borrar
+                                </button>
                             </div>
                         </td>
                     </tr>
@@ -40,6 +47,10 @@
             </div>
         </div>
         <input name="identifica" type="hidden" id="identifica"/>
+        <input name="nombre" type="hidden" id="nombre"/>
+        <input name="ubicacion" type="hidden" id="ubicacion"/>
+        <input name="fecha_inicio" type="hidden" id="fecha_inicio"/>
+        <input name="fecha_fin" type="hidden" id="fecha_fin"/>
     </fieldset>
 </form>
 
@@ -51,6 +62,9 @@
         $('td').click(function (){
             var valor = $(this).parent().children().html();
             $('#identifica').val(valor);
+            $('#nombre').val(valor);
+
+            alert($(this).parent().children().html());
             //$('#ver').click(function() {
             //    alert('que te parece ' + valor);
             //});

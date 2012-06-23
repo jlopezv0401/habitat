@@ -8,16 +8,6 @@ class Evento extends CI_Controller {
 
 
     public function index(){
-        $data['eventos'] = $this->evento_model->read_evento();
-        $data['titulo'] = 'Eventos Disponibles';
-        
-        $this->load->view('includes/header', $data);
-        $this->load->view('evento/index', $data);
-        $this->load->view('includes/footer', $data);
-    }
-    
-
-    public function show(){
         $boton = $this->input->post('enviar');
         $data['titulo'] = 'Eventos Disponibles';
 
@@ -25,14 +15,14 @@ class Evento extends CI_Controller {
             $data['eventos'] = $this->evento_model->read_evento();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/show', $data);
+            $this->load->view('carpa/index', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
             $data['eventos'] = $this->evento_model->read_evento();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/uno', $data);
+            $this->load->view('evento/edit', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'borrar'){
@@ -44,7 +34,7 @@ class Evento extends CI_Controller {
                 $data['eventos'] = $this->evento_model->read_evento();
 
                 $this->load->view('includes/header', $data);
-                $this->load->view('evento/show', $data);
+                $this->load->view('evento/index', $data);
                 $this->load->view('includes/footer', $data);
             }
 //            $this->evento_model->del_evento();
@@ -58,11 +48,10 @@ class Evento extends CI_Controller {
             $data['eventos'] = $this->evento_model->read_evento();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/show', $data);
+            $this->load->view('evento/index', $data);
             $this->load->view('includes/footer', $data);
         }
     }
-    
 
     public function add(){
         $data['titulo'] = 'Nuevo Evento';
@@ -93,32 +82,28 @@ class Evento extends CI_Controller {
     }
 
     public function edit(){
-        
-    }
+        $data['titulo'] = 'Editar Evento';
+        $this->load->library('form_validation');
 
-    public function remove(){
-        $data['titulo'] = 'Eventos';
-        $boton = $this->input->post('enviar');
+        $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
+        $this->form_validation->set_rules('ubicacion','Ubicacion','required');
+        $this->form_validation->set_rules('fecha_inicio','Fecha de Inicio','required');
+        $this->form_validation->set_rules('fecha_fin','Fecha de fin','required');
 
-
-        if ($this->input->post('identifica')){
-
-            $this->evento_model->del_evento();
-            $data['eventos'] = $this->evento_model->read_evento();
-
+        if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
-
-            if ($boton){
-                echo $boton;
-                echo 'caray';
-
-            }
-            $this->load->view('evento/show', $data);
+            $this->load->view('evento/edit', $data);
             $this->load->view('includes/footer', $data);
         }
-        else
-        {
-            echo "wey";
+        else {
+
+            $this->evento_model->update_evento();
+            $data['eventos'] = $this->evento_model->read_evento();
+            $data['titulo'] = 'Editar Evento';
+
+            $this->load->view('includes/header', $data);
+            $this->load->view('evento/index', $data);
+            $this->load->view('includes/footer', $data);
         }
         
     }
