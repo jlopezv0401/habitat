@@ -1,23 +1,22 @@
 <?php
-class Evento extends CI_Controller {
-    
+class Carpa extends CI_Controller {
+
     public function __construct(){
         parent::__construct();
-        $this->load->model('evento_model');
+        $this->load->model('carpa_model');
     }
 
 
     public function index(){
         $boton = $this->input->post('enviar');
-        $data['titulo'] = 'Eventos Disponibles';
+        $data['titulo'] = 'Carpas Disponibles';
 
         if ($boton == 'agregar'){
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/add', $data);
+            $this->load->view('carpa/add', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'ver'){
-            $this->load->model('carpa_model');
             $data['carpas'] = $this->carpa_model->read_carpa();
             $data['titulo'] = 'Carpas Disponibles';
 
@@ -26,36 +25,37 @@ class Evento extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
-            $data['eventos'] = $this->evento_model->read_evento_esp();
+            $data['carpas'] = $this->carpa_model->read_carpa_esp();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/edit', $data);
+            $this->load->view('carpa/edit', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'borrar'){
-            $data['titulo'] = 'Eventos';
+            $data['titulo'] = 'Carpas';
 
             if ($this->input->post('identifica')){
 
-                $this->evento_model->del_evento();
-                $data['eventos'] = $this->evento_model->read_evento();
+                $this->carpa_model->del_carpa();
+                $data['carpas'] = $this->carpa_model->read_carpa();
 
                 $this->load->view('includes/header', $data);
-                $this->load->view('evento/index', $data);
+                $this->load->view('carpa/index', $data);
                 $this->load->view('includes/footer', $data);
             }
         }
         else{
-            $data['eventos'] = $this->evento_model->read_evento();
+            $data['carpas'] = $this->carpa_model->read_carpa();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/index', $data);
+            $this->load->view('carpa/index', $data);
             $this->load->view('includes/footer', $data);
+
         }
     }
 
     public function add(){
-        $data['titulo'] = 'Nuevo Evento';
+        $data['titulo'] = 'Nuevo Carpa';
 
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -64,26 +64,26 @@ class Evento extends CI_Controller {
         $this->form_validation->set_rules('ubicacion','Ubicacion','required');
         $this->form_validation->set_rules('fecha_inicio','Fecha de Inicio','required');
         $this->form_validation->set_rules('fecha_fin','Fecha de fin','required');
-        
+
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/add', $data);
+            $this->load->view('carpa/add', $data);
             $this->load->view('includes/footer', $data);
         }
         else {
 
-            $this->evento_model->create_evento();
-            $data['eventos'] = $this->evento_model->read_evento();
-            $data['titulo'] = 'Eventos Disponibles';
+            $this->carpa_model->create_carpa();
+            $data['carpas'] = $this->carpa_model->read_carpa();
+            $data['titulo'] = 'Carpas Disponibles';
 
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/index', $data);
+            $this->load->view('carpa/index', $data);
             $this->load->view('includes/footer', $data);
         }
     }
 
     public function edit(){
-        $data['titulo'] = 'Editar Evento';
+        $data['titulo'] = 'Editar Carpa';
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
@@ -93,19 +93,19 @@ class Evento extends CI_Controller {
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/edit', $data);
+            $this->load->view('carpa/edit', $data);
             $this->load->view('includes/footer', $data);
         }
         else {
 
-            $this->evento_model->update_evento();
-            $data['eventos'] = $this->evento_model->read_evento();
-            $data['titulo'] = 'Editar Evento';
+            $this->carpa_model->update_carpa();
+            $data['carpas'] = $this->carpa_model->read_carpa();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/index', $data);
+            $this->load->view('carpa/index', $data);
             $this->load->view('includes/footer', $data);
         }
-        
+
     }
+
 }

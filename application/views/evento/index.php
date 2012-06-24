@@ -5,6 +5,13 @@
     <fieldset>
         <div class="row">
             <div class="span9">
+
+                <button class="btn btn-primary" name="enviar" type="submit" value="agregar">
+                    <i class="icon-plus-sign icon-white"></i>
+                    Agregar Evento
+                </button>
+                </br>
+                </br>
                 <table class="table table-striped table-bordered tablesorter" id="tableEventos">
                     <thead>
                     <tr>
@@ -13,7 +20,9 @@
                         <th><i class="icon-flag"></i> Ubicacion</th>
                         <th><i class="icon-chevron-right"></i> Inicio</th>
                         <th><i class="icon-chevron-left"></i> Fin</th>
-                        <th><i class="icon-road"></i> Acciones</th>
+                        <th><i class="icon-road"></i> Acciones
+
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -44,13 +53,10 @@
                     <? endforeach;?>
                     </tbody>
                 </table>
+
             </div>
         </div>
         <input name="identifica" type="hidden" id="identifica"/>
-        <input name="nombre" type="hidden" id="nombre"/>
-        <input name="ubicacion" type="hidden" id="ubicacion"/>
-        <input name="fecha_inicio" type="hidden" id="fecha_inicio"/>
-        <input name="fecha_fin" type="hidden" id="fecha_fin"/>
     </fieldset>
 </form>
 
@@ -61,10 +67,12 @@
     $(document).ready(function() {
         $('td').click(function (){
             var valor = $(this).parent().children().html();
-            $('#identifica').val(valor);
-            $('#nombre').val(valor);
+            var col = $(this).parent().children().index($(this));
+            var row = $(this).parent().parent().children().index($(this).parent());
 
-            alert($(this).parent().children().html());
+            $('#identifica').val(valor);
+            //alert($(this).parent().index());
+            //alert($(this).parent(row).html());
             //$('#ver').click(function() {
             //    alert('que te parece ' + valor);
             //});
