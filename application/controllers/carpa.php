@@ -6,7 +6,6 @@ class Carpa extends CI_Controller {
         $this->load->model('carpa_model');
     }
 
-
     public function index(){
         $boton = $this->input->post('enviar');
         $data['titulo'] = 'Carpas Disponibles';
@@ -61,9 +60,6 @@ class Carpa extends CI_Controller {
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('ubicacion','Ubicacion','required');
-        $this->form_validation->set_rules('fecha_inicio','Fecha de Inicio','required');
-        $this->form_validation->set_rules('fecha_fin','Fecha de fin','required');
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
@@ -87,9 +83,6 @@ class Carpa extends CI_Controller {
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('ubicacion','Ubicacion','required');
-        $this->form_validation->set_rules('fecha_inicio','Fecha de Inicio','required');
-        $this->form_validation->set_rules('fecha_fin','Fecha de fin','required');
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);

@@ -26,9 +26,9 @@
                     <tbody>
                     <? foreach($carpas as $carpa): ?>
                     <tr>
-                        <td><?=$evento['id']?></td>
-                        <td><?=$evento['nombre']?></td>
-                        <td><?=$evento['id_evento']?></td>
+                        <td><?=$carpa['id']?></td>
+                        <td><?=$carpa['nombre']?></td>
+                        <td><?=$carpa['id_evento']?></td>
                         <td>
                             <div class="btn-group">
                                 <button class="btn btn-primary" name="enviar" type="submit" value="ver">
@@ -52,7 +52,7 @@
 
             </div>
         </div>
-        <input name="identifica" type="hidden" id="identifica"/>
+        <input name="identifica" type="hidden" value="<?=$this->input->post('identifica')?>" id="identifica"/>
     </fieldset>
 </form>
 

@@ -9,25 +9,20 @@ class Carpa_model extends CI_Model {
         $this->load->helper('url');
         $data= array(
             'nombre' =>  $this->input->post('nombre'),
-            'ubicacion' =>  $this->input->post('ubicacion'),
-            'fecha_inicio' =>  $this->input->post('fecha_inicio'),
-            'fecha_fin' =>  $this->input->post('fecha_fin')
+            'id_evento' => $this->input->post('id_evento')
         );
-
         return $this->db->insert('Carpa', $data);
     }
 
     public function read_carpa(){
-        $carpas = $this->db->get('Carpa');
+        $id=$this->input->post('identifica');
+        $carpas = $this->db->get_where('Carpa', array('id' => $id), 1, 0);
         return $carpas->result_array();
     }
 
     public function update_carpa(){
         $data= array(
-            'nombre' =>  $this->input->post('nombre'),
-            'ubicacion' =>  $this->input->post('ubicacion'),
-            'fecha_inicio' =>  $this->input->post('fecha_inicio'),
-            'fecha_fin' =>  $this->input->post('fecha_fin')
+            'nombre' =>  $this->input->post('nombre')
         );
         $this->db->where('id', $this->input->post('identifica'));
         return $this->db->update('Carpa', $data);

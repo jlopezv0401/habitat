@@ -31,7 +31,7 @@
     <button type="submit" class="btn btn-primary">
             <i class="icon-pencil icon-white"></i> Guardar</button>
     </fieldset>
-    <input name="identifica" type="text" id="identifica" value="<?php echo($this->input->post('identifica'))?>"/>
+    <input name="identifica" type="hidden" id="identifica" value="<?php echo($this->input->post('identifica'))?>"/>
 </form>
 
 <script src="<?=base_url('assets/js/jquery.js')?>"></script>
