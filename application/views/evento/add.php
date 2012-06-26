@@ -13,10 +13,10 @@
         <?php $hoy=date("Y-m-d");?>
         
         <h5>Fecha de inicio</h5>
-        <input type="text" class="span2" value="<?php echo $hoy;?>" data-date-format="yyyy-mm-dd" id="dp1" name="fecha_inicio">
+        <input type="text" class="span2" value="<?php echo $hoy?>" data-date-format="yyyy-mm-dd" id="dp1" name="fecha_inicio">
         
         <h5>Fecha de termino</h5>
-        <input type="text" class="span2" value="<?php echo $hoy;?>" data-date-format="yyyy-mm-dd" id="dp2" name="fecha_fin" required maxlength="20"><br />
+        <input type="text" class="span2" value="<?php echo $hoy?>" data-date-format="yyyy-mm-dd" id="dp2" name="fecha_fin"><br />
             <div id="success" class="row">
                 <div class="span4">
                     <div class="alert alert-error" id="alert">
@@ -39,9 +39,10 @@
     $(document).ready(function() {
 
         //$('#formAdd').submit();
+        $('#alert').hide();
         $('#dp1').datepicker();
         $('#dp2').datepicker();
-        $('#alert').hide();
+
 /*        var startDate = new Date($('#dp1').val());
         var endDate = new Date($('#dp2').val());
         $('#dp1').datepicker()

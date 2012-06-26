@@ -22,7 +22,8 @@ class Carpa_model extends CI_Model {
 
     public function update_carpa(){
         $data= array(
-            'nombre' =>  $this->input->post('nombre')
+            'nombre' =>  $this->input->post('nombre'),
+            'id_evento' =>  $this->input->post('id_evento')
         );
         $this->db->where('id', $this->input->post('id_carpa'));
         return $this->db->update('Carpa', $data);
