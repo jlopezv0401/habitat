@@ -52,7 +52,8 @@
 
             </div>
         </div>
-        <input name="identifica" type="hidden" value="<?=$this->input->post('identifica')?>" id="identifica"/>
+        <input name="id_carpa" type="hidden" id="id_carpa"/>
+        <input name="id_evento" type="hidden" value="<?=$this->input->post('id_evento')?>" id="id_evento"/>
     </fieldset>
 </form>
 
@@ -66,7 +67,7 @@
             var col = $(this).parent().children().index($(this));
             var row = $(this).parent().parent().children().index($(this).parent());
 
-            $('#identifica').val(valor);
+            $('#id_carpa').val(valor);
             //alert($(this).parent().index());
             //alert($(this).parent(row).html());
             //$('#ver').click(function() {

@@ -37,7 +37,7 @@
                 </table>
             </div>
         </div>        
-            <input name="identifica" type="hidden" id="identifica"/>
+            <input name="id_evento" type="hidden" id="id_evento"/>
 
         </fieldset>
     </form>
@@ -49,7 +49,7 @@
         $(document).ready(function() {
             $('td').click(function (){
                 var valor = $(this).parent().children().html();
-                $('#identifica').val(valor);                
+                $('#id_evento').val(valor);
                 //$('#ver').click(function() {
                 //    alert('que te parece ' + valor);
                 //});

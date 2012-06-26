@@ -15,7 +15,7 @@ class Carpa_model extends CI_Model {
     }
 
     public function read_carpa(){
-        $id=$this->input->post('identifica');
+        $id=$this->input->post('id_evento');
         $carpas = $this->db->get_where('Carpa', array('id_evento' => $id));
         return $carpas->result_array();
     }
@@ -24,17 +24,17 @@ class Carpa_model extends CI_Model {
         $data= array(
             'nombre' =>  $this->input->post('nombre')
         );
-        $this->db->where('id', $this->input->post('identifica'));
+        $this->db->where('id', $this->input->post('id_carpa'));
         return $this->db->update('Carpa', $data);
     }
 
     public function del_carpa(){
-        $this->db->where('id', $this->input->post('identifica'));
+        $this->db->where('id', $this->input->post('id_carpa'));
         $this->db->delete('Carpa');
     }
 
     public function read_Carpa_esp(){
-        $id=$this->input->post('identifica');
+        $id=$this->input->post('id_carpa');
         $carpas = $this->db->get_where('Carpa', array('id' => $id), 1, 0);
         return $carpas->result_array();
     }

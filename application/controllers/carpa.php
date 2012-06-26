@@ -33,7 +33,7 @@ class Carpa extends CI_Controller {
         elseif ($boton == 'borrar'){
             $data['titulo'] = 'Carpas';
 
-            if ($this->input->post('identifica')){
+            if ($this->input->post('id_carpa')){
 
                 $this->carpa_model->del_carpa();
                 $data['carpas'] = $this->carpa_model->read_carpa();

@@ -35,7 +35,7 @@ class Evento extends CI_Controller {
         elseif ($boton == 'borrar'){
             $data['titulo'] = 'Eventos';
 
-            if ($this->input->post('identifica')){
+            if ($this->input->post('id_evento')){
 
                 $this->evento_model->del_evento();
                 $data['eventos'] = $this->evento_model->read_evento();
@@ -97,7 +97,6 @@ class Evento extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         else {
-
             $this->evento_model->update_evento();
             $data['eventos'] = $this->evento_model->read_evento();
             $data['titulo'] = 'Editar Evento';

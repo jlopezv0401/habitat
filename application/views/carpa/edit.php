@@ -28,7 +28,7 @@
         </br>
         <? endforeach;?>
 
-    <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary">
             <i class="icon-pencil icon-white"></i> Guardar</button>
     </fieldset>
     <input name="id_evento" type="hidden" id="id_evento" value="<?php echo($this->input->post('id_evento'))?>"/>

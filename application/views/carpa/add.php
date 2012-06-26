@@ -11,8 +11,8 @@
         <button type="submit" class="btn btn-primary">
             <i class="icon-file icon-white"></i> Guardar</button>
 
-        <input type="hidden" name="id_evento" id="id_evento" value="<?=$this->input->post('identifica')?>"></input>
-        <input type="hidden" name="identifica" id="identifica" value="<?=$this->input->post('identifica')?>"></input>
+        <input type="hidden" name="id_carpa" id="id_carpa" value="<?=$this->input->post('id_carpa')?>"></input>
+        <input type="hidden" name="id_evento" id="id_evento" value="<?=$this->input->post('id_evento')?>"></input>
     </fieldset>
 
 </form>

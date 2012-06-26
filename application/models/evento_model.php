@@ -29,17 +29,17 @@ class Evento_model extends CI_Model {
 		    'fecha_inicio' =>  $this->input->post('fecha_inicio'),
 		    'fecha_fin' =>  $this->input->post('fecha_fin')
 		);
-		$this->db->where('id', $this->input->post('identifica'));
+		$this->db->where('id', $this->input->post('id_evento'));
 		return $this->db->update('Evento', $data);
 	}
 
 	public function del_evento(){
-			$this->db->where('id', $this->input->post('identifica'));
+			$this->db->where('id', $this->input->post('id_evento'));
 			$this->db->delete('Evento');
 	}
 
     public function read_evento_esp(){
-        $id=$this->input->post('identifica');
+        $id=$this->input->post('id_evento');
         $eventos = $this->db->get_where('Evento', array('id' => $id), 1, 0);
         return $eventos->result_array();
     }
