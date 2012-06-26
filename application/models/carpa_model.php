@@ -16,7 +16,7 @@ class Carpa_model extends CI_Model {
 
     public function read_carpa(){
         $id=$this->input->post('identifica');
-        $carpas = $this->db->get_where('Carpa', array('id' => $id), 1, 0);
+        $carpas = $this->db->get_where('Carpa', array('id_evento' => $id));
         return $carpas->result_array();
     }
 
