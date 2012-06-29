@@ -9,7 +9,7 @@ class Area extends CI_Controller {
 
     public function index(){
         $boton = $this->input->post('enviar');
-        $data['titulo'] = 'Areas Disponibles';
+        $data['titulo'] = 'Áreas Disponibles';
 
         if ($boton == 'agregar'){
 
@@ -18,12 +18,12 @@ class Area extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'ver'){
-            $this->load->model('area_model');
-            $data['carpas'] = $this->area_model->read_area();
-            $data['titulo'] = 'Dinamicas Disponibles';
+            $this->load->model('dinamica_model');
+            $data['dinamicas'] = $this->dinamica_model->read_dinamica();
+            $data['titulo'] = 'Dinámicas Disponibles';
 
             $this->load->view('includes/header', $data);
-            $this->load->view('area/index', $data);
+            $this->load->view('dinamica/index', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
@@ -56,7 +56,7 @@ class Area extends CI_Controller {
     }
 
     public function add(){
-        $data['titulo'] = 'Nueva Area';
+        $data['titulo'] = 'Nueva Área';
 
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -73,7 +73,7 @@ class Area extends CI_Controller {
 
             $this->area_model->create_area();
             $data['areas'] = $this->area_model->read_area();
-            $data['titulo'] = 'Areas Disponibles';
+            $data['titulo'] = 'Áreas Disponibles';
 
             $this->load->view('includes/header', $data);
             $this->load->view('area/index', $data);
@@ -82,7 +82,7 @@ class Area extends CI_Controller {
     }
 
     public function edit(){
-        $data['titulo'] = 'Editar Area';
+        $data['titulo'] = 'Editar Área';
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
@@ -96,7 +96,7 @@ class Area extends CI_Controller {
         else {
             $this->area_model->update_area();
             $data['areas'] = $this->area_model->read_area();
-            $data['titulo'] = 'Editar Area';
+            $data['titulo'] = 'Editar Área';
 
             $this->load->view('includes/header', $data);
             $this->load->view('area/index', $data);

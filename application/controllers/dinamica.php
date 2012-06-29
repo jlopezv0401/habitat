@@ -1,62 +1,62 @@
 <?php
-class Programa extends CI_Controller {
+class Dinamica extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        $this->load->model('programa_model');
+        $this->load->model('dinamica_model');
     }
 
 
     public function index(){
         $boton = $this->input->post('enviar');
-        $data['titulo'] = 'Programas Disponibles';
+        $data['titulo'] = 'Dinámicas Disponibles';
 
         if ($boton == 'agregar'){
 
             $this->load->view('includes/header', $data);
-            $this->load->view('programa/add', $data);
+            $this->load->view('dinamica/add', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'ver'){
-            $this->load->model('area_model');
-            $data['areas'] = $this->area_model->read_area();
-            $data['titulo'] = 'Areas Disponibles';
+            $this->load->model('dinamica_model');
+            $data['dinamicas'] = $this->dinamica_model->read_dinamica();
+            $data['titulo'] = 'Dinámicas Disponibles';
 
             $this->load->view('includes/header', $data);
-            $this->load->view('area/index', $data);
+            $this->load->view('dinamica/index', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
-            $data['programas'] = $this->programa_model->read_programa_esp();
+            $data['dinamicas'] = $this->dinamica_model->read_dinamica_esp();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('programa/edit', $data);
+            $this->load->view('dinamica/edit', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'borrar'){
-            $data['titulo'] = 'programas';
+            $data['titulo'] = 'dinamicas';
 
-            if ($this->input->post('id_programa')){
+            if ($this->input->post('id_dinamica')){
 
-                $this->programa_model->del_programa();
-                $data['programas'] = $this->programa_model->read_programa();
+                $this->dinamica_model->del_dinamica();
+                $data['dinamicas'] = $this->dinamica_model->read_dinamica();
 
                 $this->load->view('includes/header', $data);
-                $this->load->view('programa/index', $data);
+                $this->load->view('dinamica/index', $data);
                 $this->load->view('includes/footer', $data);
             }
         }
         else{
-            $data['programas'] = $this->programa_model->read_programa();
+            $data['dinamicas'] = $this->dinamica_model->read_dinamica();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('programa/index', $data);
+            $this->load->view('dinamica/index', $data);
             $this->load->view('includes/footer', $data);
         }
     }
 
     public function add(){
-        $data['titulo'] = 'Nuevo Programa';
+        $data['titulo'] = 'Nueva Área';
 
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -66,23 +66,23 @@ class Programa extends CI_Controller {
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
-            $this->load->view('programa/add', $data);
+            $this->load->view('dinamica/add', $data);
             $this->load->view('includes/footer', $data);
         }
         else {
 
-            $this->programa_model->create_programa();
-            $data['programas'] = $this->programa_model->read_programa();
-            $data['titulo'] = 'Programas Disponibles';
+            $this->dinamica_model->create_dinamica();
+            $data['dinamicas'] = $this->dinamica_model->read_dinamica();
+            $data['titulo'] = 'Dinámicas Disponibles';
 
             $this->load->view('includes/header', $data);
-            $this->load->view('programa/index', $data);
+            $this->load->view('dinamica/index', $data);
             $this->load->view('includes/footer', $data);
         }
     }
 
     public function edit(){
-        $data['titulo'] = 'Editar Programa';
+        $data['titulo'] = 'Editar Dinámica';
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
@@ -90,16 +90,16 @@ class Programa extends CI_Controller {
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
-            $this->load->view('programa/edit', $data);
+            $this->load->view('dinamica/edit', $data);
             $this->load->view('includes/footer', $data);
         }
         else {
-            $this->programa_model->update_programa();
-            $data['programas'] = $this->programa_model->read_programa();
-            $data['titulo'] = 'Editar Programa';
+            $this->dinamica_model->update_dinamica();
+            $data['dinamicas'] = $this->dinamica_model->read_dinamica();
+            $data['titulo'] = 'Editar Dinámica';
 
             $this->load->view('includes/header', $data);
-            $this->load->view('programa/index', $data);
+            $this->load->view('dinamica/index', $data);
             $this->load->view('includes/footer', $data);
         }
 

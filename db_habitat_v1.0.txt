@@ -1,6 +1,6 @@
 /*
 Autor: Martín Martínez
-Versión: 1.0
+Versión: 1.1
 Fecha: 07-06-2012
 */
 
@@ -85,7 +85,8 @@ id INT NOT NULL AUTO_INCREMENT,
 id_area INT NOT NULL,
 id_metrica INT NOT NULL,
 nombre VARCHAR(50) NOT NULL,
-tiempo INT NOT NULL,
+hora_inicio TIME NOT NULL,
+hora_fin TIME NOT NULL,
 descripcion TEXT,
 PRIMARY KEY(id),
 FOREIGN KEY(id_area) REFERENCES Area(id),

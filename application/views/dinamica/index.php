@@ -1,5 +1,5 @@
 <?php echo validation_errors(); ?>
-<?php echo form_open('area/index') ?>
+<?php echo form_open('dinamica/index') ?>
 <h2><?php echo $titulo; ?></h2>
 <form id="formIndex" method="post">
     <fieldset>
@@ -8,7 +8,7 @@
 
                 <button class="btn btn-primary" name="enviar" type="submit" value="agregar">
                     <i class="icon-plus-sign icon-white"></i>
-                    Agregar Área
+                    Agregar Dinámica
                 </button>
                 </br>
                 </br>
@@ -17,21 +17,25 @@
                     <tr>
                         <th><i class="icon-tags"></i> ID</th>
                         <th><i class="icon-user"></i> Nombre</th>
-                        <th><i class="icon-flag"></i> Descripcion</th>
-                        <th><i class="icon-road"></i> ID Programa</th>
+                        <th><i class="icon-flag"></i> Inicio</th>
+                        <th><i class="icon-flag"></i> Fin</th>
+                        <th><i class="icon-road"></i> Descripción</th>
+
                     </tr>
                     </thead>
                     <tbody>
-                    <? foreach($areas as $area): ?>
+                    <? foreach($dinamicas as $dinamica): ?>
                     <tr>
-                        <td><?=$area['id']?></td>
-                        <td><?=$area['nombre']?></td>
-                        <td><?=$area['descripcion']?></td>
+                        <td><?=$dinamica['id']?></td>
+                        <td><?=$dinamica['nombre']?></td>
+                        <td><?=$dinamica['inicio']?></td>
+                        <td><?=$dinamica['fin']?></td>
+                        <td><?=$dinaramica['descripcion']?></td>
                         <td>
                             <div class="btn-group">
                                 <button class="btn btn-primary" name="enviar" type="submit" value="ver">
                                     <i class="icon-list icon-white"></i>
-                                    Ver Dinámicas
+                                    Ver Áreas
                                 </button>
                                 <button class="btn btn-primary" name="enviar" type="submit" value="editar">
                                     <i class="icon-edit icon-white"></i>
@@ -50,8 +54,8 @@
 
             </div>
         </div>
-        <input name="id_area" type="hidden" id="id_area"/>
-        <input name="id_programa" type="hidden" value="<?=$this->input->post('id_programa')?>" id="id_programa"/>
+        <input name="id_dinamica" type="hidden" id="id_dinamica"/>
+        <input name="id_area" type="hidden" value="<?=$this->input->post('id_area')?>" id="id_area"/>
     </fieldset>
 </form>
 
@@ -65,7 +69,7 @@
             var col = $(this).parent().children().index($(this));
             var row = $(this).parent().parent().children().index($(this).parent());
 
-            $('#id_area').val(valor);
+            $('#id_dinamica').val(valor);
             //alert($(this).parent().index());
             //alert($(this).parent(row).html());
             //$('#ver').click(function() {

@@ -1,11 +1,11 @@
 <?php echo validation_errors(); ?>
-<?php echo form_open('programa/add') ?>
+<?php echo form_open('area/add') ?>
 <h2><?php echo $titulo;?></h2>
 <form id="formAdd" class="form-horizontal">
 
     <fieldset>
         <h5>Nombre</h5>
-        <input type="input" name="nombre" class="input-large" placeholder="Nombre Programa" required maxlength="50" autofocus/>
+        <input type="input" name="nombre" class="input-large" placeholder="Nombre Área" required maxlength="50" autofocus/>
         <h5>Descripción</h5>
         <input type="input" name="descripcion" class="input-large" placeholder="Descripción" required maxlength="50"/>
         </br>
@@ -13,8 +13,8 @@
         <button type="submit" class="btn btn-primary">
             <i class="icon-file icon-white"></i> Guardar</button>
 
+        <input type="hidden" name="id_area" id="id_area" value="<?=$this->input->post('id_area')?>"></input>
         <input type="hidden" name="id_programa" id="id_programa" value="<?=$this->input->post('id_programa')?>"></input>
-        <input type="hidden" name="id_carpa" id="id_carpa" value="<?=$this->input->post('id_carpa')?>"></input>
     </fieldset>
 
 </form>

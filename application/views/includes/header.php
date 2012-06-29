@@ -17,8 +17,11 @@
 	}
       </style>
     
-      <link href="<?= base_url('assets/css/bootstrap.css')?>" rel="stylesheet" type="text/css" />
-      <link href="<?= base_url('assets/css/bootstrap-responsive.css')?>" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/bootstrap.css')?>" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/bootstrap-responsive.css')?>" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/bootstrap-combobox.css')?>" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/timepicker.css')?>" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/prettify.css')?>" rel="stylesheet" type="text/css" />
 
 </head>
 <body>

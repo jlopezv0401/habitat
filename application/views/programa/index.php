@@ -17,7 +17,7 @@
                     <tr>
                         <th><i class="icon-tags"></i> ID</th>
                         <th><i class="icon-user"></i> Nombre</th>
-                        <th><i class="icon-flag"></i> Descripcion</th>
+                        <th><i class="icon-flag"></i> Descripción</th>
                         <th><i class="icon-road"></i> ID Carpa</th>
                     </tr>
                     </thead>
@@ -31,7 +31,7 @@
                             <div class="btn-group">
                                 <button class="btn btn-primary" name="enviar" type="submit" value="ver">
                                     <i class="icon-list icon-white"></i>
-                                    Ver Areas
+                                    Ver Áreas
                                 </button>
                                 <button class="btn btn-primary" name="enviar" type="submit" value="editar">
                                     <i class="icon-edit icon-white"></i>

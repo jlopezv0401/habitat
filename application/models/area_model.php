@@ -10,14 +10,14 @@ class Area_model extends CI_Model {
         $data= array(
             'nombre' =>  $this->input->post('nombre'),
             'descripcion' => $this->input->post('descripcion'),
-            'id_carpa' => $this->input->post('id_carpa')
+            'id_programa' => $this->input->post('id_programa')
         );
         return $this->db->insert('Area', $data);
     }
 
     public function read_area(){
-        $id=$this->input->post('id_carpa');
-        $areas = $this->db->get_where('Area', array('id_carpa' => $id));
+        $id=$this->input->post('id_programa');
+        $areas = $this->db->get_where('Area', array('id_programa' => $id));
         return $areas->result_array();
     }
 
@@ -25,7 +25,7 @@ class Area_model extends CI_Model {
         $data= array(
             'nombre' =>  $this->input->post('nombre'),
             'descripcion' => $this->input->post('descripcion'),
-            'id_carpa' => $this->input->post('id_carpa')
+            'id_programa' => $this->input->post('id_programa')
         );
         $this->db->where('id', $this->input->post('id_area'));
         return $this->db->update('Area', $data);
