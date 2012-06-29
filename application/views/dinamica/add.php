@@ -11,10 +11,10 @@
         <input type="input" name="ubicacion" class="input-large" placeholder="Ubicacion" required maxlength="50"/>
 
         <h5>Hora de inicio</h5>
-        <input class="timepicker" type="text" />
+        <input class="modal-timepicker" type="text" />
 
         <h5>Hora de termino</h5>
-        <input class="dropdown-timepicker" type="text" name="hora_termino" id="hora_termino"/>
+        <input class="modal-timepicker" type="text" name="hora_termino" id="hora_termino"/>
 
         <h5>Métrica</h5>
         <select class="combobox">
@@ -37,6 +37,10 @@
 
 </form>
 
+	<link href="<?= base_url('assets/css/pygments.css')?>" type="text/css" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/prettify.css')?>" type="text/css" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/timepicker.css')?>" type="text/css" rel="stylesheet" />
+
 <script src="<?=base_url('assets/js/jquery.js')?>"></script>
 <script src="<?=base_url('assets/js/bootstrap-button.js')?>"></script>
 <script src="<?=base_url('assets/js/bootstrap-typeahead.js')?>"></script>
@@ -50,13 +54,15 @@
 
         //$('#formAdd').submit();
         $('#alert').hide();
-        $('.combobox').combobox();
-        $('.dropdown-timepicker').timepicker({
+        
+        $('.modal-timepicker').timepicker({
             defaultTime: 'current',
             minuteStep: 15,
             disableFocus: true,
             template: 'dropdown'
         });
+        
+        $('.combobox').combobox();
 
         /*        var startDate = new Date($('#dp1').val());
     var endDate = new Date($('#dp2').val());

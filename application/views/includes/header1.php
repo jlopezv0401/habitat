@@ -16,11 +16,17 @@
         padding-bottom: 40px;
       }
     </style>
-<link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<!--<link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url();?>assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+-->
+	<link href="<?= base_url('assets/css/bootstrap.css')?>" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/bootstrap-responsive.css')?>" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/bootstrap-combobox.css')?>" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/timepicker.css')?>" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/prettify.css')?>" rel="stylesheet" type="text/css" />
+  <!--  
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="<?php site_url();?>assets/js/bootstrap.js" type="text/javascript"> </script>
-
+<script src="<?php site_url('assets/js/bootstrap.js')?>" type="text/javascript"> </script>-->
 </head>
 <body>
       

@@ -40,6 +40,7 @@ class Evento extends CI_Controller {
                 $this->evento_model->del_evento();
                 $data['eventos'] = $this->evento_model->read_evento();
 
+				
                 $this->load->view('includes/header', $data);
                 $this->load->view('evento/index', $data);
                 $this->load->view('includes/footer', $data);
@@ -51,6 +52,9 @@ class Evento extends CI_Controller {
             $this->load->view('includes/header', $data);
             $this->load->view('evento/index', $data);
             $this->load->view('includes/footer', $data);
+			
+			//$data['main_content']='evento/index';
+			//$this->load->view('layout/template2',$data);
         }
     }
 
