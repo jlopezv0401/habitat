@@ -1,6 +1,10 @@
 <?php echo validation_errors(); ?>
-<?php echo form_open('evento/add') ?>
+<?php 
+
+//$attributes = array('class' => 'well');
+echo form_open('evento/add') ?>
     <h2><?php echo $titulo;?></h2>
+    <br>
     <form id="formAdd" class="form-horizontal">
 
         <fieldset>
@@ -10,13 +14,14 @@
         <h5>Ubicacion</h5>
         <input type="input" name="ubicacion" class="input-large" placeholder="Ubicacion" required maxlength="50"/>
         
+        
         <?php $hoy=date("Y-m-d");?>
         
         <h5>Fecha de inicio</h5>
-        <input type="text" class="span2" value="<?php echo $hoy?>" data-date-format="yyyy-mm-dd" id="dp1" name="fecha_inicio">
+        <input type="input" value="<?php echo $hoy?>"  class="input-large" data-date-format="yyyy-mm-dd" id="dp1" name="fecha_inicio">
         
         <h5>Fecha de termino</h5>
-        <input type="text" class="span2" value="<?php echo $hoy?>" data-date-format="yyyy-mm-dd" id="dp2" name="fecha_fin"><br />
+        <input type="input"  value="<?php echo $hoy?>" class="input-large" data-date-format="yyyy-mm-dd" id="dp2" name="fecha_fin"><br />
             <div id="success" class="row">
                 <div class="span4">
                     <div class="alert alert-error" id="alert">

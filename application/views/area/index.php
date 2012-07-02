@@ -1,17 +1,42 @@
 <?php echo validation_errors(); ?>
 <?php echo form_open('area/index') ?>
-<h2><?php echo $titulo; ?></h2>
+
 <form id="formIndex" method="post">
     <fieldset>
-        <div class="row">
-            <div class="span9">
-
-                <button class="btn btn-primary" name="enviar" type="submit" value="agregar">
-                    <i class="icon-plus-sign icon-white"></i>
-                    Agregar Área
-                </button>
-                </br>
-                </br>
+         <div style="z-index: 873; position:relative; top:-30px;">     
+		<ul class="breadcrumb">
+ 			  <li>
+   				 <?php echo  "<a href='".base_url("index.php/evento/index")."'>Eventos</a> ";?> <span class="divider">/</span>
+  			</li>
+  			<li>
+   				 <?php echo  "<a href='".base_url("index.php/carpa/index")."'>Carpas</a> ";?> <span class="divider">/</span>
+  			</li>
+  			<li>
+   				<?php echo  "<a href='".base_url("index.php/programa/index")."'>Programas</a> ";?> <span class="divider">/</span>
+  			</li>
+  			<li class="active">Áreas</li>
+		</ul>
+	</div>
+	
+				<div class="container-fluid">
+  					<div class="row-fluid">
+    					<div class="span9">
+					      <!--Sidebar content-->
+					      <h2><?php echo $titulo; ?></h2>
+					      
+					    </div>
+					    <div class="span3">
+					      <!--Body content-->
+					      <button class="btn btn-primary" name="enviar" type="submit" value="agregar">
+					                    <i class="icon-plus-sign icon-white"></i>
+					                    Agregar Área
+					                </button>
+					      
+					    </div>
+					  </div>
+					</div>
+                
+                <hr/>
                 <table class="table table-striped table-bordered tablesorter" id="tableCarpa">
                     <thead>
                     <tr>
@@ -29,17 +54,18 @@
                         <td><?=$area['descripcion']?></td>
                         <td>
                             <div class="btn-group">
-                                <button class="btn btn-primary" name="enviar" type="submit" value="ver">
-                                    <i class="icon-list icon-white"></i>
+                                <button class="btn" name="enviar" type="submit" value="ver">
+                                    <i class="icon-list icon-black"></i>
                                     Ver Dinámicas
                                 </button>
-                                <button class="btn btn-primary" name="enviar" type="submit" value="editar">
-                                    <i class="icon-edit icon-white"></i>
-                                    Editar
+                                &nbsp
+                                <button class="btn" name="enviar" type="submit" value="editar">
+                                    <i class="icon-edit icon-black"></i>
+                                    
                                 </button>
-                                <button class="btn btn-primary" name="enviar" type="submit" value="borrar">
+                                <button class="btn btn-danger" name="enviar" type="submit" value="borrar">
                                     <i class="icon-remove icon-white"></i>
-                                    Borrar
+                                    
                                 </button>
                             </div>
                         </td>
@@ -48,8 +74,7 @@
                     </tbody>
                 </table>
 
-            </div>
-        </div>
+           
         <input name="id_area" type="hidden" id="id_area"/>
         <input name="id_programa" type="hidden" value="<?=$this->input->post('id_programa')?>" id="id_programa"/>
     </fieldset>

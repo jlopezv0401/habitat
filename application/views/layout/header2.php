@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Artículo en GenbetaDev sobre Bootstrap 2.0">
     <meta name="author" content="Martín">
+    
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -15,19 +17,11 @@
 	<link href="<?= base_url('assets/css/bootstrap.css')?>" rel="stylesheet" type="text/css" />
     <link href="<?= base_url('assets/css/bootstrap-responsive.css')?>" rel="stylesheet" type="text/css" />
     <link href="<?= base_url('assets/css/bootstrap-combobox.css')?>" rel="stylesheet" type="text/css" />
-   <!-- <link href="<?= base_url('assets/css/pygments.css')?>" type="text/css" rel="stylesheet" />
-    <link href="<?= base_url('assets/css/prettify.css')?>" rel="stylesheet" type="text/css" />-->
     <link href="<?= base_url('assets/css/timepicker.css')?>" rel="stylesheet" type="text/css" />
-     <link href="<?= base_url('assets/css/mi-estilo.css')?>" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/prettify.css')?>" rel="stylesheet" type="text/css" />
     
-	<script src="<?=base_url('assets/js/jquery.js')?>"></script>
-    <script src="<?= base_url('assets/js/bootstrap.js')?>"></script>
-   
-	<script src="<?=base_url('assets/js/bootstrap-button.js')?>"></script>
-	<script src="<?=base_url('assets/js/bootstrap-typeahead.js')?>"></script>
-	<script src="<?=base_url('assets/js/bootstrap-combobox.js')?>"></script>
-	<!--<script src="<?=base_url('assets/js/prettify/prettify.js')?>"></script>-->
-	<script src="<?=base_url('assets/js/bootstrap-timepicker.js')?>"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src='<?php base_url();?>js/bootstrap.js' > </script>-->
   
     
   </head>
@@ -43,12 +37,11 @@
         <span class="icon-bar"></span>
       	</a>
       	
-    <a class="brand" href="#"><img style="width: 60px;" src="<?= base_url('assets/css/img/Logo_transparente.png')?>"></a>
+    <a class="brand" href="#"><img style="width: 60px;" src='<?php base_url();?>images/Logo_transparente.png'></a>
       <div class="nav-collapse">
       <ul class="nav">
       	<li><a ></a></li>
-       <li> <?php echo  "<a href='".base_url("index.php/evento/index")."'>Eventos</a>";?></li>
-        <!--<li><a <?php echo anchor('index.php/evento/index')?>>Eventos</a></li>-->
+        <li> <?php echo  "<a href='".base_url("evento/index")."'>Eventos</a>";?></li>
         
        <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Metricas <b class="caret"></b></a>
@@ -78,13 +71,3 @@
 
 
 </header>
-
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span1">
-      <!--Sidebar content-->
-    </div>
-    <div class="span10 hero-unit sombra-form">
-      <!--Body content-->
-    
- 

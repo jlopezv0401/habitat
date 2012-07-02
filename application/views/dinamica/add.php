@@ -1,6 +1,7 @@
 <?php echo validation_errors(); ?>
 <?php echo form_open('evento/add') ?>
 <h2><?php echo $titulo;?></h2>
+<hr/>
 <form id="formAdd" class="form-horizontal">
 
     <fieldset>
@@ -11,13 +12,13 @@
         <input type="input" name="ubicacion" class="input-large" placeholder="Ubicacion" required maxlength="50"/>
 
         <h5>Hora de inicio</h5>
-        <input class="timepicker" type="text" />
+        <input class="dropdown-timepicker input-large" type="text" name="hora_termino" id="hora_termino"/>
 
         <h5>Hora de termino</h5>
-        <input class="dropdown-timepicker" type="text" name="hora_termino" id="hora_termino"/>
+        <input class="dropdown-timepicker input-large" type="text" name="hora_termino" id="hora_termino"/>
 
         <h5>Métrica</h5>
-        <select class="combobox">
+        <select class="combobox input-large">
             <option></option>
             <option value="PA">Pennsylvania</option>
             <option value="CT">Connecticut</option>
@@ -37,26 +38,24 @@
 
 </form>
 
-<script src="<?=base_url('assets/js/jquery.js')?>"></script>
-<script src="<?=base_url('assets/js/bootstrap-button.js')?>"></script>
-<script src="<?=base_url('assets/js/bootstrap-typeahead.js')?>"></script>
-<script src="<?=base_url('assets/js/bootstrap-combobox.js')?>"></script>
+<!--	<link href="<?= base_url('assets/css/pygments.css')?>" type="text/css" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/prettify.css')?>" type="text/css" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/timepicker.css')?>" type="text/css" rel="stylesheet" /> -->
 
-<script src="<?=base_url('assets/js/prettify/prettify.js')?>"></script>
-<script src="<?=base_url('assets/js/bootstrap-timepicker.js')?>"></script>
-
-<script>
+<script type="text/javascript">
     $(document).ready(function() {
 
         //$('#formAdd').submit();
-        $('#alert').hide();
-        $('.combobox').combobox();
+        //$('#alert').hide();
+        
         $('.dropdown-timepicker').timepicker({
             defaultTime: 'current',
             minuteStep: 15,
             disableFocus: true,
             template: 'dropdown'
         });
+        
+        $('.combobox').combobox();
 
         /*        var startDate = new Date($('#dp1').val());
     var endDate = new Date($('#dp2').val());
