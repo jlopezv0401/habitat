@@ -75,6 +75,7 @@ class Programa extends CI_Controller {
             $data['programas'] = $this->programa_model->read_programa();
             $data['titulo'] = 'Programas Disponibles';
 
+            redirect('programa/index');
             $this->load->view('includes/header', $data);
             $this->load->view('programa/index', $data);
             $this->load->view('includes/footer', $data);
@@ -98,6 +99,7 @@ class Programa extends CI_Controller {
             $data['programas'] = $this->programa_model->read_programa();
             $data['titulo'] = 'Editar Programa';
 
+            redirect('programa/index');
             $this->load->view('includes/header', $data);
             $this->load->view('programa/index', $data);
             $this->load->view('includes/footer', $data);

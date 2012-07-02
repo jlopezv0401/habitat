@@ -1,19 +1,19 @@
 <?php
-class Evento extends CI_Controller {
-    
+class Metrica extends CI_Controller {
+
     public function __construct(){
         parent::__construct();
-        $this->load->model('evento_model');
+        $this->load->model('metrica_model');
     }
 
 
     public function index(){
         $boton = $this->input->post('enviar');
-        $data['titulo'] = 'Eventos Disponibles';
+        $data['titulo'] = 'Métricas Disponibles';
 
         if ($boton == 'agregar'){
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/add', $data);
+            $this->load->view('metrica/add', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'ver'){
@@ -26,87 +26,90 @@ class Evento extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
-            $data['eventos'] = $this->evento_model->read_evento_esp();
+            $data['metricas'] = $this->metrica_model->read_metrica_esp();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/edit', $data);
+            $this->load->view('metrica/edit', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'borrar'){
-            $data['titulo'] = 'Eventos';
+            $data['titulo'] = 'Metricas';
 
-            if ($this->input->post('id_evento')){
+            if ($this->input->post('id_metrica')){
 
-                $this->evento_model->del_evento();
-                $data['eventos'] = $this->evento_model->read_evento();
+                $this->metrica_model->del_metrica();
+                $data['metricas'] = $this->metrica_model->read_metrica();
 
                 $this->load->view('includes/header', $data);
-                $this->load->view('evento/index', $data);
+                $this->load->view('metrica/index', $data);
                 $this->load->view('includes/footer', $data);
             }
         }
         else{
-            $data['eventos'] = $this->evento_model->read_evento();
+            $data['metricas'] = $this->metrica_model->read_metrica();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/index', $data);
+            $this->load->view('metrica/index', $data);
             $this->load->view('includes/footer', $data);
         }
     }
 
     public function add(){
-        $data['titulo'] = 'Nuevo Evento';
+        $data['titulo'] = 'Nuevo Métrica';
 
         $this->load->helper('form');
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('ubicacion','Ubicacion','required');
-        $this->form_validation->set_rules('fecha_inicio','Fecha de Inicio','required');
-        $this->form_validation->set_rules('fecha_fin','Fecha de fin','required');
-        
+        $this->form_validation->set_rules('valor_medir','Valor a medir','required');
+        $this->form_validation->set_rules('rango_inicio','Rango Inicial','required|numeric');
+        $this->form_validation->set_rules('rango_fin','Rango Final','required|numeric');
+        $this->form_validation->set_rules('no_intervalo','Intervalo','required|numeric');
+
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/add', $data);
+            $this->load->view('metrica/add', $data);
             $this->load->view('includes/footer', $data);
         }
         else {
 
-            $this->evento_model->create_evento();
-            $data['eventos'] = $this->evento_model->read_evento();
-            $data['titulo'] = 'Eventos Disponibles';
+            $this->metrica_model->create_metrica();
+            $data['metricas'] = $this->metrica_model->read_metrica();
+            $data['titulo'] = 'Métricas Disponibles';
 
-            redirect('evento/index');
+            redirect('metrica/index');
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/index', $data);
+            $this->load->view('metrica/index', $data);
             $this->load->view('includes/footer', $data);
+
         }
     }
 
     public function edit(){
-        $data['titulo'] = 'Editar Evento';
+        $data['titulo'] = 'Editar Métrica';
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('ubicacion','Ubicacion','required');
-        $this->form_validation->set_rules('fecha_inicio','Fecha de Inicio','required');
-        $this->form_validation->set_rules('fecha_fin','Fecha de fin','required');
+        $this->form_validation->set_rules('valor_medir','Valor a medir','required');
+        $this->form_validation->set_rules('rango_inicio','Rango Inicial','required|numeric');
+        $this->form_validation->set_rules('rango_fin','Rango Final','required|numeric');
+        $this->form_validation->set_rules('no_intervalo','Intervalo','required|numeric');
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/edit', $data);
+            $this->load->view('metrica/edit', $data);
             $this->load->view('includes/footer', $data);
         }
         else {
-            $this->evento_model->update_evento();
-            $data['eventos'] = $this->evento_model->read_evento();
-            $data['titulo'] = 'Editar Evento';
+            $this->metrica_model->update_metrica();
+            $data['metricas'] = $this->metrica_model->read_metrica();
+            $data['titulo'] = 'Editar Métrica';
 
-            redirect('evento/index');
+            redirect('metrica/index');
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/index', $data);
+            $this->load->view('metrica/index', $data);
             $this->load->view('includes/footer', $data);
         }
-        
+
     }
 }

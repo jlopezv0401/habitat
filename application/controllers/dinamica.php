@@ -75,6 +75,7 @@ class Dinamica extends CI_Controller {
             $data['dinamicas'] = $this->dinamica_model->read_dinamica();
             $data['titulo'] = 'Dinámicas Disponibles';
 
+            redirect('dinamica/index');
             $this->load->view('includes/header', $data);
             $this->load->view('dinamica/index', $data);
             $this->load->view('includes/footer', $data);
@@ -98,6 +99,7 @@ class Dinamica extends CI_Controller {
             $data['dinamicas'] = $this->dinamica_model->read_dinamica();
             $data['titulo'] = 'Editar Dinámica';
 
+            redirect('dinamica/index');
             $this->load->view('includes/header', $data);
             $this->load->view('dinamica/index', $data);
             $this->load->view('includes/footer', $data);
