@@ -1,5 +1,8 @@
 <?php echo validation_errors(); ?>
-<?php echo form_open('evento/edit') ?>
+
+
+<?php 
+echo form_open('evento/edit') ?>
 <h2><?php echo $titulo;?></h2>
 <form id="formAdd" class="form-horizontal">
     <fieldset>
@@ -14,10 +17,10 @@
         <?php $hoy=date("Y-m-d");?>
 
         <h5>Fecha de inicio</h5>
-        <input type="text" class="span2" data-date-format="yyyy-mm-dd" id="dp1" name="fecha_inicio" value="<?=$evento['fecha_inicio']?>">
+        <input type="text" class="input-large" data-date-format="yyyy-mm-dd" id="dp1" name="fecha_inicio" value="<?=$evento['fecha_inicio']?>">
 
         <h5>Fecha de termino</h5>
-        <input type="text" class="span2" data-date-format="yyyy-mm-dd" id="dp2" name="fecha_fin" value="<?=$evento['fecha_fin']?>"><br />
+        <input type="text" class="input-large" data-date-format="yyyy-mm-dd" id="dp2" name="fecha_fin" value="<?=$evento['fecha_fin']?>"><br />
         <div id="success" class="row">
             <div class="span4">
                 <div class="alert alert-error" id="alert">
