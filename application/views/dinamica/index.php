@@ -56,23 +56,17 @@
                     <tr>
                         <td><?=$dinamica['id']?></td>
                         <td><?=$dinamica['nombre']?></td>
-                        <td><?=$dinamica['inicio']?></td>
-                        <td><?=$dinamica['fin']?></td>
-                        <td><?=$dinaramica['descripcion']?></td>
+                        <td><?=$dinamica['hora_inicio']?></td>
+                        <td><?=$dinamica['hora_fin']?></td>
+                        <td><?=$dinamica['descripcion']?></td>
                         <td>
                             <div class="btn-group">
-                                <button class="btn" name="enviar" type="submit" value="ver">
-                                    <i class="icon-list icon-black"></i>
-                                    Ver Áreas
-                                </button>
                                 &nbsp
                                 <button class="btn" name="enviar" type="submit" value="editar">
                                     <i class="icon-edit icon-black"></i>
-                                  
                                 </button>
                                 <button class="btn btn-danger" name="enviar" type="submit" value="borrar">
                                     <i class="icon-remove icon-white"></i>
-                                  
                                 </button>
                             </div>
                         </td>

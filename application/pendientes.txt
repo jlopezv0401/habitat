@@ -1,0 +1,9 @@
+
+Controlador Evento
+    Validar Fechas
+
+Controlador Metricas
+    Validar Rangos
+    Validar Editar intervalos y rangos
+
+

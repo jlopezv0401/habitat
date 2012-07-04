@@ -6,13 +6,12 @@ class Dinamica extends CI_Controller {
         $this->load->model('dinamica_model');
     }
 
-
     public function index(){
         $boton = $this->input->post('enviar');
         $data['titulo'] = 'Dinámicas Disponibles';
 
         if ($boton == 'agregar'){
-
+            $data['metricas'] = $this->dinamica_model->read_metrica();
             $this->load->view('includes/header', $data);
             $this->load->view('dinamica/add', $data);
             $this->load->view('includes/footer', $data);
@@ -56,13 +55,28 @@ class Dinamica extends CI_Controller {
     }
 
     public function add(){
-        $data['titulo'] = 'Nueva Área';
+        $data['titulo'] = 'Nueva Dinámica';
 
         $this->load->helper('form');
         $this->load->library('form_validation');
 
+        // id_area INT NOT NULL,
+        // id_metrica INT NOT NULL,
+        // nombre VARCHAR(50) NOT NULL,
+        // hora_inicio TIME NOT NULL,
+        // hora_fin TIME NOT NULL,
+        // descripcion TEXT,        // id_area INT NOT NULL,
+        // id_metrica INT NOT NULL,
+        // nombre VARCHAR(50) NOT NULL,
+        // hora_inicio TIME NOT NULL,
+        // hora_fin TIME NOT NULL,
+        // descripcion TEXT,
+
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('descripcion','Descripcion','required');
+        $this->form_validation->set_rules('hora_inicio','Hora Inicio','required');
+        $this->form_validation->set_rules('hora_fin','Hora Fin','required');
+        $this->form_validation->set_rules('descripcion','Descripción','required');
+        $this->form_validation->set_rules('id_metrica','Métrica','required');
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
@@ -70,12 +84,11 @@ class Dinamica extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         else {
-
             $this->dinamica_model->create_dinamica();
             $data['dinamicas'] = $this->dinamica_model->read_dinamica();
             $data['titulo'] = 'Dinámicas Disponibles';
 
-            redirect('dinamica/index');
+            //redirect('dinamica/index');
             $this->load->view('includes/header', $data);
             $this->load->view('dinamica/index', $data);
             $this->load->view('includes/footer', $data);
@@ -87,7 +100,10 @@ class Dinamica extends CI_Controller {
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('descripcion','Descripcion','required');
+        $this->form_validation->set_rules('hora_inicio','Hora Inicio','required');
+        $this->form_validation->set_rules('hora_fin','Hora Fin','required');
+        $this->form_validation->set_rules('descripcion','Descripción','required');
+        $this->form_validation->set_rules('id_metrica','Métrica','required');
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
@@ -99,7 +115,7 @@ class Dinamica extends CI_Controller {
             $data['dinamicas'] = $this->dinamica_model->read_dinamica();
             $data['titulo'] = 'Editar Dinámica';
 
-            redirect('dinamica/index');
+            //  redirect('dinamica/index');
             $this->load->view('includes/header', $data);
             $this->load->view('dinamica/index', $data);
             $this->load->view('includes/footer', $data);

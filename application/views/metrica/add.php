@@ -11,7 +11,7 @@
         <input type="input" name="valor_medir" class="input-large" placeholder="Valor a Medir" required maxlength="50"/>
 
         <h5>Rango Inicio</h5>
-        <input type="input" name="rango_inicio" class="input-large" placeholder="Rango Inicial" required maxlength="50" autofocus/>
+        <input type="input" name="rango_inicio" class="input-large" placeholder="Rango Inicial" required maxlength="50"/>
 
         <h5>Rango Final</h5>
         <input type="input" name="rango_fin" class="input-large" placeholder="Rango Final" required maxlength="50"/>

@@ -5,7 +5,7 @@
     <fieldset>
          <div style="z-index: 873; position:relative; top:-30px;">     
 		<ul class="breadcrumb">
- 			  <li>
+ 			<li>
    				 <?php echo  "<a href='".base_url("index.php/evento/index")."'>Eventos</a> ";?> <span class="divider">/</span>
   			</li>
   			<li>

@@ -34,7 +34,7 @@ class Carpa_model extends CI_Model {
         $this->db->delete('Carpa');
     }
 
-    public function read_Carpa_esp(){
+    public function read_carpa_esp(){
         $id=$this->input->post('id_carpa');
         $carpas = $this->db->get_where('Carpa', array('id' => $id), 1, 0);
         return $carpas->result_array();

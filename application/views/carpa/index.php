@@ -23,9 +23,9 @@
 					    <div class="span3">
 					      <!--Body content-->
 					      <button class="btn btn-primary" name="enviar" type="submit" value="agregar">
-					                    <i class="icon-plus-sign icon-white"></i>
-					                    Agregar Carpa
-					                </button>
+                              <i class="icon-plus-sign icon-white"></i>
+					          Agregar Carpa
+					      </button>
 					      
 					    </div>
 					  </div>
@@ -37,9 +37,7 @@
                         <th><i class="icon-tags"></i> ID</th>
                         <th><i class="icon-user"></i> Nombre</th>
                         <th><i class="icon-flag"></i> Evento</th>
-                        <th><i class="icon-road"></i> Acciones
-
-                        </th>
+                        <th><i class="icon-road"></i> Acciones</th>
                     </tr>
                     </thead>
                     <tbody>

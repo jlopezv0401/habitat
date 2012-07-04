@@ -6,7 +6,6 @@ class Metrica extends CI_Controller {
         $this->load->model('metrica_model');
     }
 
-
     public function index(){
         $boton = $this->input->post('enviar');
         $data['titulo'] = 'Métricas Disponibles';
@@ -17,12 +16,12 @@ class Metrica extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'ver'){
-            $this->load->model('carpa_model');
-            $data['carpas'] = $this->carpa_model->read_carpa();
-            $data['titulo'] = 'Carpas Disponibles';
+            $this->load->model('intervalo_model');
+            $data['intervalos'] = $this->intervalo_model->read_intervalo();
+            $data['titulo'] = 'Intervalo Disponibles';
 
             $this->load->view('includes/header', $data);
-            $this->load->view('carpa/index', $data);
+            $this->load->view('intervalo/index', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
@@ -36,7 +35,6 @@ class Metrica extends CI_Controller {
             $data['titulo'] = 'Metricas';
 
             if ($this->input->post('id_metrica')){
-
                 $this->metrica_model->del_metrica();
                 $data['metricas'] = $this->metrica_model->read_metrica();
 
@@ -100,6 +98,7 @@ class Metrica extends CI_Controller {
             $this->load->view('metrica/edit', $data);
             $this->load->view('includes/footer', $data);
         }
+
         else {
             $this->metrica_model->update_metrica();
             $data['metricas'] = $this->metrica_model->read_metrica();

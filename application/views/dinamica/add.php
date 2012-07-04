@@ -1,5 +1,5 @@
 <?php echo validation_errors(); ?>
-<?php echo form_open('evento/add') ?>
+<?php echo form_open('dinamica/add') ?>
 <h2><?php echo $titulo;?></h2>
 <hr/>
 <form id="formAdd" class="form-horizontal">
@@ -8,27 +8,26 @@
         <h5>Nombre</h5>
         <input type="input" name="nombre" class="input-large" placeholder="Nombre" required maxlength="50" autofocus/>
 
-        <h5>Ubicacion</h5>
-        <input type="input" name="ubicacion" class="input-large" placeholder="Ubicacion" required maxlength="50"/>
+        <h5>Descripción</h5>
+        <input type="input" name="descripcion" class="input-large" placeholder="Descripción" required maxlength="50"/>
 
         <h5>Hora de inicio</h5>
-        <input class="dropdown-timepicker input-large" type="text" name="hora_termino" id="hora_termino"/>
+        <input class="dropdown-timepicker input-large" type="text" name="hora_inicio" id="hora_inicio"/>
 
         <h5>Hora de termino</h5>
-        <input class="dropdown-timepicker input-large" type="text" name="hora_termino" id="hora_termino"/>
+        <input class="dropdown-timepicker input-large" type="text" name="hora_fin" id="hora_fin"/>
 
         <h5>Métrica</h5>
-        <select class="combobox input-large">
+        <select name="id_metrica" id="id_metrica" class="combobox input-large">
             <option></option>
-            <option value="PA">Pennsylvania</option>
-            <option value="CT">Connecticut</option>
-            <option value="NY">New York</option>
-            <option value="MD">Maryland</option>
-            <option value="VA">Virginia</option>
+            <?php foreach ($metricas as $metrica):?>
+                <option value="<?php echo $metrica['id'] ?>"> <?php echo $metrica['nombre'] ?></option>
+
+            <? endforeach;?>
         </select>
 
         <input type="hidden" name="id_dinamica" id="id_dinamica" value="<?=$this->input->post('id_dinamica')?>"></input>
-        <input type="hidden" name="id_area" id="id_programa" value="<?=$this->input->post('id_area')?>"></input>
+        <input type="hidden" name="id_area" id="id_area" value="<?=$this->input->post('id_area')?>"></input>
 
         </br>
 

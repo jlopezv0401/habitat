@@ -117,7 +117,7 @@ CREATE TABLE Intervalo(
 id INT NOT NULL AUTO_INCREMENT,
 id_metrica INT NOT NULL,
 intervalo VARCHAR(50) NOT NULL,
-decripcion TEXT,
+descripcion TEXT,
 PRIMARY KEY(id),
 FOREIGN KEY(id_metrica) REFERENCES Metrica(id)
 )ENGINE=InnoDB;
@@ -149,3 +149,16 @@ PRIMARY KEY(id),
 FOREIGN KEY(id_intervalo) REFERENCES Intervalo(id),
 FOREIGN KEY(id_participante) REFERENCES Participante(id)
 )ENGINE=InnoDB;
+
+DELIMITER $$
+CREATE TRIGGER Insertar
+    AFTER INSERT ON Metrica FOR EACH ROW
+    BEGIN
+        DECLARE x INT;
+        SET x = 0;
+        WHILE x < NEW.no_intervalo DO
+            INSERT INTO Intervalo VALUES ("", NEW.id, x, "Cambiar Intervalo");
+            SET x = x+1;
+        END WHILE;
+    END $$
+DELIMITER
