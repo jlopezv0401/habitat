@@ -11,6 +11,7 @@ class Metrica extends CI_Controller {
         $data['titulo'] = 'Métricas Disponibles';
 
         if ($boton == 'agregar'){
+            $data['titulo'] = 'Nueva Métrica';
             $this->load->view('includes/header', $data);
             $this->load->view('metrica/add', $data);
             $this->load->view('includes/footer', $data);
@@ -25,6 +26,7 @@ class Metrica extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
+            $data['titulo'] = 'Editar Métrica';
             $data['metricas'] = $this->metrica_model->read_metrica_esp();
 
             $this->load->view('includes/header', $data);
@@ -53,7 +55,7 @@ class Metrica extends CI_Controller {
     }
 
     public function add(){
-        $data['titulo'] = 'Nuevo Métrica';
+        $data['titulo'] = 'Nueva Métrica';
 
         $this->load->helper('form');
         $this->load->library('form_validation');

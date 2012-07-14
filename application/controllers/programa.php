@@ -12,7 +12,7 @@ class Programa extends CI_Controller {
         $data['titulo'] = 'Programas Disponibles';
 
         if ($boton == 'agregar'){
-
+            $data['titulo'] = 'Nuevo Programa';
             $this->load->view('includes/header', $data);
             $this->load->view('programa/add', $data);
             $this->load->view('includes/footer', $data);
@@ -27,6 +27,7 @@ class Programa extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
+            $data['titulo'] = 'Editar Programa';
             $data['programas'] = $this->programa_model->read_programa_esp();
 
             $this->load->view('includes/header', $data);

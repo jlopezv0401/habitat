@@ -11,7 +11,9 @@ class Dinamica extends CI_Controller {
         $data['titulo'] = 'Dinámicas Disponibles';
 
         if ($boton == 'agregar'){
+            $data['titulo'] = 'Nueva Dinámica';
             $data['metricas'] = $this->dinamica_model->read_metrica();
+
             $this->load->view('includes/header', $data);
             $this->load->view('dinamica/add', $data);
             $this->load->view('includes/footer', $data);
@@ -26,6 +28,7 @@ class Dinamica extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
+            $data['titulo'] = 'Editar Dinámica';
             $data['dinamicas'] = $this->dinamica_model->read_dinamica_esp();
 
             $this->load->view('includes/header', $data);

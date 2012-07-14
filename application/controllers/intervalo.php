@@ -11,6 +11,7 @@ class Intervalo extends CI_Controller {
         $data['titulo'] = 'Intervalos Disponibles';
 
         if ($boton == 'agregar'){
+            $data['titulo'] = 'Nuevo Intervalo';
             $this->load->view('includes/header', $data);
             $this->load->view('intervalo/add', $data);
             $this->load->view('includes/footer', $data);
@@ -25,6 +26,7 @@ class Intervalo extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
+            $data['titulo'] = 'Editar Intervalo';
             $data['intervalos'] = $this->intervalo_model->read_intervalo_esp();
 
             $this->load->view('includes/header', $data);

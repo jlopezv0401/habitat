@@ -73,7 +73,7 @@ class Area extends CI_Controller {
 
             $this->area_model->create_area();
             $data['areas'] = $this->area_model->read_area();
-            $data['titulo'] = 'Áreas Disponibles';
+            $data['titulo'] = 'Agregar Área';
 
             //redirect('area/index');
             $this->load->view('includes/header', $data);

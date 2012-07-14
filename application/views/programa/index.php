@@ -10,13 +10,13 @@
    				 <?php echo  "<a href='".base_url("index.php/evento/index")."'>Eventos</a> ";?> <span class="divider">/</span>
   			</li>
   			<li>
-   				 <?php echo  "<a href='".base_url("index.php/carpa/index")."'>Carpas</a> ";?> <span class="divider">/</span>
+                  <?php $_POST['id_evento']= ?>
+                  <?php echo  "<a href='".base_url("index.php/carpa/index")."'>Carpas</a> ";?> <span class="divider">/</span>
   			</li>
   			<li class="active">Programas</li>
 		</ul>
 	</div>
-	
-	
+
                 
                  <div class="container-fluid">
   					<div class="row-fluid">
@@ -78,6 +78,7 @@
            
         <input name="id_programa" type="hidden" id="id_programa"/>
         <input name="id_carpa" type="hidden" value="<?=$this->input->post('id_carpa')?>" id="id_carpa"/>
+        <input name="id_evento" type="hidden" value="<?=$this->input->post('id_evento')?>" id="id_evento"/>
     </fieldset>
 </form>
 

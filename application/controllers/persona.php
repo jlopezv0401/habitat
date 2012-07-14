@@ -1,19 +1,20 @@
 <?php
 class Evento extends CI_Controller {
-    
+
     public function __construct(){
         parent::__construct();
-        $this->load->model('evento_model');
+        $this->load->model('persona_model');
     }
 
 
     public function index(){
         $boton = $this->input->post('enviar');
+        $data['titulo'] = 'Personas Disponibles';
 
         if ($boton == 'agregar'){
-            $data['titulo'] = 'Nuevo Evento';
+            $data['titulo'] = 'Nueva Persona';
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/add', $data);
+            $this->load->view('persona/add', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'ver'){
@@ -26,41 +27,41 @@ class Evento extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
-            $data['titulo'] = 'Editar Evento';
-            $data['eventos'] = $this->evento_model->read_evento_esp();
+            $data['titulo'] = 'Editar Persona';
+            $data['personas'] = $this->persona_model->read_persona_esp();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/edit', $data);
+            $this->load->view('persona/edit', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'borrar'){
-            $data['titulo'] = 'Eventos';
+            $data['titulo'] = 'Personas';
 
-            if ($this->input->post('id_evento')){
+            if ($this->input->post('id_persona')){
 
-                $this->evento_model->del_evento();
-                $data['eventos'] = $this->evento_model->read_evento();
+                $this->persona_model->del_persona();
+                $data['personas'] = $this->persona_model->read_persona();
 
-				
+
                 $this->load->view('includes/header', $data);
-                $this->load->view('evento/index', $data);
+                $this->load->view('persona/index', $data);
                 $this->load->view('includes/footer', $data);
             }
         }
         else{
-            $data['eventos'] = $this->evento_model->read_evento();
+            $data['personas'] = $this->persona_model->read_persona();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/index', $data);
+            $this->load->view('persona/index', $data);
             $this->load->view('includes/footer', $data);
-			
-			//$data['main_content']='evento/index';
-			//$this->load->view('layout/template2',$data);
+
+            //$data['main_content']='persona/index';
+            //$this->load->view('layout/template2',$data);
         }
     }
 
     public function add(){
-        $data['titulo'] = 'Nuevo Evento';
+        $data['titulo'] = 'Nueva Persona';
 
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -69,27 +70,27 @@ class Evento extends CI_Controller {
         $this->form_validation->set_rules('ubicacion','Ubicacion','required');
         $this->form_validation->set_rules('fecha_inicio','Fecha de Inicio','required');
         $this->form_validation->set_rules('fecha_fin','Fecha de fin','required');
-        
+
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/add', $data);
+            $this->load->view('persona/add', $data);
             $this->load->view('includes/footer', $data);
         }
         else {
 
-            $this->evento_model->create_evento();
-            $data['eventos'] = $this->evento_model->read_evento();
-            $data['titulo'] = 'Eventos Disponibles';
+            $this->persona_model->create_persona();
+            $data['personas'] = $this->persona_model->read_persona();
+            $data['titulo'] = 'Agregar Personas';
 
-            //redirect('evento/index');
+            //redirect('persona/index');
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/index', $data);
+            $this->load->view('persona/index', $data);
             $this->load->view('includes/footer', $data);
         }
     }
 
     public function edit(){
-        $data['titulo'] = 'Editar Evento';
+        $data['titulo'] = 'Editar Persona';
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
@@ -99,19 +100,19 @@ class Evento extends CI_Controller {
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/edit', $data);
+            $this->load->view('persona/edit', $data);
             $this->load->view('includes/footer', $data);
         }
         else {
-            $this->evento_model->update_evento();
-            $data['eventos'] = $this->evento_model->read_evento();
-            $data['titulo'] = 'Editar Evento';
+            $this->persona_model->update_persona();
+            $data['personas'] = $this->persona_model->read_persona();
+            $data['titulo'] = 'Editar Persona';
 
-            redirect('evento/index');
+            redirect('persona/index');
             $this->load->view('includes/header', $data);
-            $this->load->view('evento/index', $data);
+            $this->load->view('persona/index', $data);
             $this->load->view('includes/footer', $data);
         }
-        
+
     }
 }
