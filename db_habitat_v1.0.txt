@@ -1,25 +1,13 @@
 /*
 Autor: Martín Martínez
-Versión: 1.1
-Fecha: 07-06-2012
+Modificado: Jesus Lopez
+Versión: 1.2
+Fecha: 15-07-2012
 */
 
 CREATE DATABASE db_habitat;
 
 use db_habitat;
-
-CREATE TABLE Persona(
-id INT NOT NULL AUTO_INCREMENT,
-nombre VARCHAR(20) NOT NULL,
-apaterno VARCHAR(15) NOT NULL,
-amaterno VARCHAR (15) NOT NULL,
-sexo ENUM('M','F') NOT NULL,
-estatus BIT NOT NULL,
-edad CHAR(2),
-direccion TEXT,
-telefono VARCHAR(12),
-correo VARCHAR(50),
-PRIMARY KEY(id))ENGINE=InnoDB;
 
 CREATE TABLE  Material(
 id INT NOT NULL AUTO_INCREMENT,						
@@ -103,16 +91,6 @@ FOREIGN KEY(id_dinamica) REFERENCES Dinamica(id),
 FOREIGN KEY(id_material) REFERENCES Material(id)
 )ENGINE=InnoDB;
 
-CREATE TABLE Colaborador(
-id INT NOT NULL AUTO_INCREMENT,
-id_dinamica INT NOT NULL,
-id_persona INT NOT NULL,
-responsable BIT NOT NULL,
-PRIMARY KEY(id),
-FOREIGN KEY(id_dinamica) REFERENCES Dinamica(id),
-FOREIGN KEY(id_persona) REFERENCES Persona(id)
-)ENGINE=InnoDB; 
-
 CREATE TABLE Intervalo(
 id INT NOT NULL AUTO_INCREMENT,
 id_metrica INT NOT NULL,
@@ -122,11 +100,34 @@ PRIMARY KEY(id),
 FOREIGN KEY(id_metrica) REFERENCES Metrica(id)
 )ENGINE=InnoDB;
 
+CREATE TABLE Colaborador(
+id INT NOT NULL AUTO_INCREMENT,
+id_dinamica INT NOT NULL,
+nombre VARCHAR(20) NOT NULL,
+apaterno VARCHAR(15) NOT NULL,
+amaterno VARCHAR (15) NOT NULL,
+sexo ENUM('H','M') NOT NULL,
+estatus BIT NOT NULL,
+edad CHAR(2),
+direccion TEXT,
+telefono VARCHAR(12),
+correo VARCHAR(50),
+PRIMARY KEY(id),
+FOREIGN KEY(id_dinamica) REFERENCES Dinamica(id)
+)ENGINE=InnoDB;
+
+CREATE TABLE Responsable(
+id INT NOT NULL AUTO_INCREMENT,
+id_colaborador INT NOT NULL,
+PRIMARY KEY(id),
+FOREIGN KEY(id_colaborador) REFERENCES Colaborador(id)
+)ENGINE=InnoDB;
+
 CREATE TABLE Participante(
 id INT NOT NULL AUTO_INCREMENT,
 nombre varchar(50),
 edad CHAR(2),
-SEXO ENUM('M','F') NOT NULL,
+sexo ENUM('H','M') NOT NULL,
 PRIMARY KEY(id)
 )ENGINE=InnoDB;
 

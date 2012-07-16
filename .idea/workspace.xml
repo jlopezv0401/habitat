@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87657537-046b-4bd5-b6b0-0724de127e19" name="Default" comment="Titulos de forms corregidos">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/persona.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/persona/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/persona_model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/persona/add.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/area.php" afterPath="$PROJECT_DIR$/application/controllers/area.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/carpa.php" afterPath="$PROJECT_DIR$/application/controllers/carpa.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/dinamica.php" afterPath="$PROJECT_DIR$/application/controllers/dinamica.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/evento.php" afterPath="$PROJECT_DIR$/application/controllers/evento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/intervalo.php" afterPath="$PROJECT_DIR$/application/controllers/intervalo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/metrica.php" afterPath="$PROJECT_DIR$/application/controllers/metrica.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/programa.php" afterPath="$PROJECT_DIR$/application/controllers/programa.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/persona.php" afterPath="$PROJECT_DIR$/application/controllers/persona.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/evento/add.php" afterPath="$PROJECT_DIR$/application/views/evento/add.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/persona/index.php" afterPath="$PROJECT_DIR$/application/views/persona/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/programa/index.php" afterPath="$PROJECT_DIR$/application/views/programa/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_habitat_v1.0.txt" afterPath="$PROJECT_DIR$/db_habitat_v1.0.txt" />
     </list>
     <ignored path="habitat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,28 +33,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="db_habitat_v1.0.txt" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="db_habitat_v1.0.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db_habitat_v1.0.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="49" selection-start="2214" selection-end="2214" vertical-scroll-proportion="0.0">
+            <state line="127" column="19" selection-start="0" selection-end="3806" vertical-scroll-proportion="-0.1558669">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="persona.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="persona.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/persona.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="37" selection-start="997" selection-end="997" vertical-scroll-proportion="0.7618214">
+            <state line="1" column="13" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/evento/index.php">
+      <file leaf-file-name="add.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/persona/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="3816" vertical-scroll-proportion="0.0">
+            <state line="64" column="8" selection-start="2254" selection-end="2254" vertical-scroll-proportion="-8.36">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="persona_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/persona_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -64,7 +72,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/persona/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="26" selection-start="61" selection-end="67" vertical-scroll-proportion="-0.625">
+            <state line="13" column="37" selection-start="356" selection-end="356" vertical-scroll-proportion="-8.125">
               <folding />
             </state>
           </provider>
@@ -83,22 +91,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/models/intervalo_model.php" />
-        <option value="$PROJECT_DIR$/application/views/metrica/index.php" />
-        <option value="$PROJECT_DIR$/application/views/dinamica/add.php" />
-        <option value="$PROJECT_DIR$/application/models/dinamica_model.php" />
         <option value="$PROJECT_DIR$/application/views/dinamica/index.php" />
         <option value="$PROJECT_DIR$/application/pendientes.txt" />
-        <option value="$PROJECT_DIR$/application/views/programa/index.php" />
-        <option value="$PROJECT_DIR$/application/views/persona/index.php" />
         <option value="$PROJECT_DIR$/application/controllers/area.php" />
-        <option value="$PROJECT_DIR$/application/controllers/evento.php" />
-        <option value="$PROJECT_DIR$/application/controllers/carpa.php" />
         <option value="$PROJECT_DIR$/application/controllers/dinamica.php" />
         <option value="$PROJECT_DIR$/application/controllers/intervalo.php" />
         <option value="$PROJECT_DIR$/application/controllers/metrica.php" />
-        <option value="$PROJECT_DIR$/application/controllers/persona.php" />
         <option value="$PROJECT_DIR$/application/controllers/programa.php" />
+        <option value="$PROJECT_DIR$/application/models/persona_model.php" />
+        <option value="$PROJECT_DIR$/application/views/persona/index.php" />
+        <option value="$PROJECT_DIR$/application/controllers/evento.php" />
+        <option value="$PROJECT_DIR$/application/controllers/carpa.php" />
+        <option value="$PROJECT_DIR$/application/views/programa/index.php" />
+        <option value="$PROJECT_DIR$/application/controllers/persona.php" />
+        <option value="$PROJECT_DIR$/application/views/persona/add.php" />
+        <option value="$PROJECT_DIR$/application/views/evento/add.php" />
+        <option value="$PROJECT_DIR$/db_habitat_v1.0.txt" />
       </list>
     </option>
   </component>
@@ -135,6 +143,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -263,16 +281,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -326,13 +334,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1282" height="753" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2828201" sideWeight="0.431853" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22077923" sideWeight="0.5574273" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22889611" sideWeight="0.5574273" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -403,100 +411,94 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/dinamica_model.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/metrica.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="68" selection-start="985" selection-end="985" vertical-scroll-proportion="0.026269702" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dinamica/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="30" selection-start="105" selection-end="105" vertical-scroll-proportion="0.028089888" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dinamica/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="214" selection-end="224" vertical-scroll-proportion="-1.6011236" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/carpa/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="107" selection-start="2837" selection-end="2936" vertical-scroll-proportion="0.21348314" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/programa/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="44" selection-start="422" selection-end="422" vertical-scroll-proportion="-1.6966292" />
+        <state line="28" column="37" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.262697" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/evento/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="3816" vertical-scroll-proportion="-0.0" />
+        <state line="2" column="0" selection-start="75" selection-end="75" vertical-scroll-proportion="0.054844607" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/persona/index.php">
+    <entry file="file://$PROJECT_DIR$/application/models/metrica_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="61" selection-end="67" vertical-scroll-proportion="-0.625">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/area.php">
+    <entry file="file://$PROJECT_DIR$/application/models/evento_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="43" selection-start="2591" selection-end="2591" vertical-scroll-proportion="0.709282">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/carpa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="45" selection-start="1014" selection-end="1014" vertical-scroll-proportion="0.36777583">
-          <folding />
-        </state>
+        <state line="3" column="34" selection-start="0" selection-end="1343" vertical-scroll-proportion="0.078809105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/evento.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="46" selection-start="957" selection-end="957" vertical-scroll-proportion="0.34150612">
-          <folding />
-        </state>
+        <state line="11" column="42" selection-start="284" selection-end="284" vertical-scroll-proportion="0.28896672" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/intervalo.php">
+    <entry file="file://$PROJECT_DIR$/application/views/area/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="36" selection-start="969" selection-end="969" vertical-scroll-proportion="0.709282">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/dinamica.php">
+    <entry file="file://$PROJECT_DIR$/application/views/carpa/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="48" selection-start="1103" selection-end="1103" vertical-scroll-proportion="0.55166376">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/metrica.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="37" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.262697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_habitat_v1.0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="49" selection-start="2214" selection-end="2214" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/programa.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="997" selection-end="997" vertical-scroll-proportion="0.7618214">
+        <state line="29" column="37" selection-start="997" selection-end="997" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/carpa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="0" selection-start="2842" selection-end="2842" vertical-scroll-proportion="2.1541157" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/programa/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="18" selection-start="396" selection-end="396" vertical-scroll-proportion="0.32906765" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/persona/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="37" selection-start="356" selection-end="356" vertical-scroll-proportion="-8.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/persona_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/evento/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="18" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.252809">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/persona/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="8" selection-start="2254" selection-end="2254" vertical-scroll-proportion="-8.36">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/persona.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="997" selection-end="997" vertical-scroll-proportion="0.7618214">
+        <state line="1" column="13" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_habitat_v1.0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="19" selection-start="0" selection-end="3806" vertical-scroll-proportion="-0.1558669">
           <folding />
         </state>
       </provider>

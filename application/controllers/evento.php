@@ -9,7 +9,7 @@ class Evento extends CI_Controller {
 
     public function index(){
         $boton = $this->input->post('enviar');
-
+        $data['titulo'] = 'Eventos Disponibles';
         if ($boton == 'agregar'){
             $data['titulo'] = 'Nuevo Evento';
             $this->load->view('includes/header', $data);

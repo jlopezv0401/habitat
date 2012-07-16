@@ -1,5 +1,5 @@
 <?php echo validation_errors(); ?>
-    <?php echo form_open('evento/index') ?>
+    <?php echo form_open('persona/index') ?>
 
 <form id="formIndex" method="post">
     <fieldset>
@@ -7,7 +7,7 @@
         <div style="z-index: 873; position:relative; top:-30px;">
             <ul class="breadcrumb">
 
-                <li class="active">Eventos</li>
+                <li class="active">Personas</li>
             </ul>
         </div>
 
@@ -22,7 +22,7 @@
                     <!--Body content-->
                     <button class="btn btn-primary" name="enviar" type="submit" value="agregar">
                         <i class="icon-plus-sign icon-white"></i>
-                        Agregar Evento
+                        Agregar Persona
                     </button>
 
                 </div>
@@ -33,32 +33,30 @@
 
 
 
-        <table class="table table-striped table-bordered tablesorter" id="tableEventos">
+        <table class="table table-striped table-bordered tablesorter" id="tablePersonas">
             <thead>
             <tr>
                 <th><i class="icon-tags"></i> ID</th>
                 <th><i class="icon-user"></i> Nombre</th>
-                <th><i class="icon-flag"></i> Ubicacion</th>
-                <th><i class="icon-chevron-right"></i> Inicio</th>
-                <th><i class="icon-chevron-left"></i> Fin</th>
-                <th><i class="icon-road"></i> Acciones
-
-                </th>
+                <th><i class="icon-flag"></i> Edad</th>
+                <th><i class="icon-chevron-right"></i> Teléfono</th>
+                <th><i class="icon-chevron-left"></i> Correo</th>
+                <th><i class="icon-road"></i> Acciones</th>
             </tr>
             </thead>
             <tbody>
-            <? foreach($eventos as $evento): ?>
+            <? foreach($personas as $persona): ?>
             <tr>
-                <td><?=$evento['id']?></td>
-                <td><?=$evento['nombre']?></td>
-                <td><?=$evento['ubicacion']?></td>
-                <td><?=$evento['fecha_inicio']?></td>
-                <td><?=$evento['fecha_inicio']?></td>
+                <td><?=$persona['id']?></td>
+                <td><?=$persona['nombre']?></td>
+                <td><?=$persona['edad']?></td>
+                <td><?=$persona['telefono']?></td>
+                <td><?=$persona['correo']?></td>
                 <td>
                     <div class="btn-group">
                         <button class="btn" name="enviar" type="submit" value="ver">
                             <i class="icon-list icon-black"></i>
-                            Ver Carpas
+                            Ver Person
                         </button>
                         &nbsp
                         <button class="btn" name="enviar" type="submit" value="editar">
@@ -77,7 +75,7 @@
         </table>
 
 
-        <input name="id_evento" type="hidden" id="id_evento"/>
+        <input name="id_persona" type="hidden" id="id_persona"/>
     </fieldset>
 </form>
 
@@ -92,7 +90,7 @@
             var col = $(this).parent().children().index($(this));
             var row = $(this).parent().parent().children().index($(this).parent());
 
-            $('#id_evento').val(valor);
+            $('#id_persona').val(valor);
             //alert($(this).parent().index());
             //alert($(this).parent(row).html());
             //$('#ver').click(function() {

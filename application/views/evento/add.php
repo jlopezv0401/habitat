@@ -29,7 +29,6 @@ echo form_open('evento/add') ?>
                     </div>
                 </div>
             </div>
-        </br>
 
         <button type="submit" class="btn btn-primary">
                 <i class="icon-file icon-white"></i> Guardar</button>

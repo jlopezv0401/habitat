@@ -11,7 +11,7 @@ class Carpa extends CI_Controller {
         $data['titulo'] = 'Carpas Disponibles';
 
         if ($boton == 'agregar'){
-            $data['titulo'] = 'Nuevo Carpa';
+            $data['titulo'] = 'Nueva Carpa';
 
             $this->load->view('includes/header', $data);
             $this->load->view('carpa/add', $data);
@@ -81,7 +81,6 @@ class Carpa extends CI_Controller {
             $this->load->view('carpa/index', $data);
             $this->load->view('includes/footer', $data);
 
-
         }
     }
 
@@ -101,7 +100,7 @@ class Carpa extends CI_Controller {
             $this->carpa_model->update_carpa();
             $data['carpas'] = $this->carpa_model->read_carpa();
 
-            redirect('carpa/index');
+            //redirect('carpa/index');
             $this->load->view('includes/header', $data);
             $this->load->view('carpa/index', $data);
             $this->load->view('includes/footer', $data);

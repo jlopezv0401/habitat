@@ -10,7 +10,7 @@
    				 <?php echo  "<a href='".base_url("index.php/evento/index")."'>Eventos</a> ";?> <span class="divider">/</span>
   			</li>
   			<li>
-                  <?php $_POST['id_evento']= ?>
+
                   <?php echo  "<a href='".base_url("index.php/carpa/index")."'>Carpas</a> ";?> <span class="divider">/</span>
   			</li>
   			<li class="active">Programas</li>
