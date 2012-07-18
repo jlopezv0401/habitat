@@ -1,5 +1,5 @@
 <?php echo validation_errors(); ?>
-    <?php echo form_open('persona/index') ?>
+    <?php echo form_open('colaborador/index') ?>
 
 <form id="formIndex" method="post">
     <fieldset>
@@ -7,7 +7,7 @@
         <div style="z-index: 873; position:relative; top:-30px;">
             <ul class="breadcrumb">
 
-                <li class="active">Personas</li>
+                <li class="active">Colaboradores</li>
             </ul>
         </div>
 
@@ -22,7 +22,7 @@
                     <!--Body content-->
                     <button class="btn btn-primary" name="enviar" type="submit" value="agregar">
                         <i class="icon-plus-sign icon-white"></i>
-                        Agregar Persona
+                        Agregar Colaborador
                     </button>
 
                 </div>
@@ -30,10 +30,10 @@
         </div>
 
         <hr/>
+h
 
 
-
-        <table class="table table-striped table-bordered tablesorter" id="tablePersonas">
+        <table class="table table-striped table-bordered tablesorter" id="tableColaboradores">
             <thead>
             <tr>
                 <th><i class="icon-tags"></i> ID</th>
@@ -45,13 +45,13 @@
             </tr>
             </thead>
             <tbody>
-            <? foreach($personas as $persona): ?>
+            <? foreach($colaboradores as $colaborador): ?>
             <tr>
-                <td><?=$persona['id']?></td>
-                <td><?=$persona['nombre']?></td>
-                <td><?=$persona['edad']?></td>
-                <td><?=$persona['telefono']?></td>
-                <td><?=$persona['correo']?></td>
+                <td><?=$colaborador['id']?></td>
+                <td><?=$colaborador['nombre']?></td>
+                <td><?=$colaborador['edad']?></td>
+                <td><?=$colaborador['telefono']?></td>
+                <td><?=$colaborador['correo']?></td>
                 <td>
                     <div class="btn-group">
                         <button class="btn" name="enviar" type="submit" value="ver">
@@ -75,7 +75,7 @@
         </table>
 
 
-        <input name="id_persona" type="hidden" id="id_persona"/>
+        <input name="id_colaborador" type="hidden" id="id_colaborador"/>
     </fieldset>
 </form>
 
@@ -90,7 +90,7 @@
             var col = $(this).parent().children().index($(this));
             var row = $(this).parent().parent().children().index($(this).parent());
 
-            $('#id_persona').val(valor);
+            $('#id_colaborador').val(valor);
             //alert($(this).parent().index());
             //alert($(this).parent(row).html());
             //$('#ver').click(function() {

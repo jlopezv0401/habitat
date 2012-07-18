@@ -2,7 +2,7 @@
 <?php
 
 //$attributes = array('class' => 'well');
-echo form_open('persona/add') ?>
+echo form_open('colaborador/add') ?>
 <h2><?php echo $titulo;?></h2>
 <br>
 <form id="formAdd" class="form-horizontal">
@@ -24,7 +24,7 @@ echo form_open('persona/add') ?>
         </br>
 
         <h5>Estado</h5>
-        <input type="radio" name="sexo" class="inline" value="H" required/>Hombre
+        <input type="checkbox" name="estatus" class="inline" value="H" required/>Hombre
         </br>
         </br>
 
@@ -34,11 +34,20 @@ echo form_open('persona/add') ?>
         <h5>Dirección</h5>
         <input type="input" name="direccion" class="input-large" placeholder="Dirección" required maxlength="15"/>
 
-        <h5>Tele</h5>
-        <input type="input" name="direccion" class="input-large" placeholder="Dirección" required maxlength="15"/>
+        <h5>Teléfono</h5>
+        <input type="input" name="telefono" class="input-large" placeholder="Teléfono" required maxlength="15"/>
 
         <h5>Correo Electrónico</h5>
         <input type="input" name="correo" class="input-large" placeholder="Correo" required maxlength="15"/>
+
+        <h5>Dinámica</h5>
+        <select name="id_dinamica" id="id_dinamica" class="combobox input-large">
+            <option></option>
+            <?php foreach ($dinamicas as $dinamica):?>
+            <option value="<?php echo $dinamica['id'] ?>"> <?php echo $dinamica ['nombre'] ?></option>
+
+            <? endforeach;?>
+        </select>
 
 
         <div id="success" class="row">
@@ -61,7 +70,7 @@ echo form_open('persona/add') ?>
 <script>
     $(document).ready(function() {
 
-        //$('#formAdd').submit();
+        //$('#formAdd').submit();persona
         $('#alert').hide();
         $('#dp1').datepicker();
         $('#dp2').datepicker();

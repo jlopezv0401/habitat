@@ -1,6 +1,18 @@
 <?php
 class Dinamica extends CI_Controller {
 
+    // id_area INT NOT NULL,
+    // id_metrica INT NOT NULL,
+    // nombre VARCHAR(50) NOT NULL,
+    // hora_inicio TIME NOT NULL,
+    // hora_fin TIME NOT NULL,
+    // descripcion TEXT,        // id_area INT NOT NULL,
+    // id_metrica INT NOT NULL,
+    // nombre VARCHAR(50) NOT NULL,
+    // hora_inicio TIME NOT NULL,
+    // hora_fin TIME NOT NULL,
+    // descripcion TEXT,
+
     public function __construct(){
         parent::__construct();
         $this->load->model('dinamica_model');
@@ -62,18 +74,6 @@ class Dinamica extends CI_Controller {
 
         $this->load->helper('form');
         $this->load->library('form_validation');
-
-        // id_area INT NOT NULL,
-        // id_metrica INT NOT NULL,
-        // nombre VARCHAR(50) NOT NULL,
-        // hora_inicio TIME NOT NULL,
-        // hora_fin TIME NOT NULL,
-        // descripcion TEXT,        // id_area INT NOT NULL,
-        // id_metrica INT NOT NULL,
-        // nombre VARCHAR(50) NOT NULL,
-        // hora_inicio TIME NOT NULL,
-        // hora_fin TIME NOT NULL,
-        // descripcion TEXT,
 
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
         $this->form_validation->set_rules('hora_inicio','Hora Inicio','required');
