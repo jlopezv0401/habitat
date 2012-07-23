@@ -51,12 +51,21 @@
         <!--<li><a <?php echo anchor('index.php/evento/index')?>>Eventos</a></li>-->
         
        <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Metricas <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Métricas <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Consultar</a></li>
-                <li><a href="#">Crear</a></li>  
+                <li><?php echo  "<a href='".base_url("index.php/metrica/index")."'>Consultar</a>";?></li>
+                <li><?php echo  "<a href='".base_url("index.php/metrica/add")."'>Crear</a>";?></li>
               </ul>
             </li>
+
+       <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Colaboradores <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><?php echo  "<a href='".base_url("index.php/colaborador/index")."'>Consultar</a>";?></li>
+                  <li><?php echo  "<a href='".base_url("index.php/colaborador/add")."'>Crear</a>";?></li>
+              </ul>
+          </li>
+
         <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuestionario <b class="caret"></b></a>
               <ul class="dropdown-menu">

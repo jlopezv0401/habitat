@@ -1,9 +1,13 @@
 
-Controlador Evento
-    Validar Fechas
+Eventos section, check the Breadcum navigation
 
-Controlador Metricas
-    Validar Rangos
-    Validar Editar intervalos y rangos
+Evento controller
+    Validate Dates
+
+Metricas controller
+    Validate ranges
+    Validate Edit intervals and ranges
+
+
 
 

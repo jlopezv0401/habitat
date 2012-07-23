@@ -9,13 +9,13 @@ echo form_open('colaborador/add') ?>
 
     <fieldset>
         <h5>Nombre</h5>
-        <input type="input" name="nombre" class="input-large" placeholder="Nombre" required maxlength="20" autofocus/>
+        <input type="input" name="nombre" class="input-large" placeholder="Nombre" required maxlength="30" autofocus/>
 
         <h5>Apellido Paterno</h5>
-        <input type="input" name="apaterno" class="input-large" placeholder="A. Paterno" required maxlength="15"/>
+        <input type="input" name="apaterno" class="input-large" placeholder="A. Paterno" required maxlength="25"/>
 
         <h5>Apellido Materno</h5>
-        <input type="input" name="amaterno" class="input-large" placeholder="A. Materno" required maxlength="15"/>
+        <input type="input" name="amaterno" class="input-large" placeholder="A. Materno" required maxlength="25"/>
 
         <h5>Sexo</h5>
         <input type="radio" name="sexo" class="inline" value="H" required/>Hombre &nbsp;
@@ -23,32 +23,28 @@ echo form_open('colaborador/add') ?>
         </br>
         </br>
 
-        <h5>Estado</h5>
-        <input type="checkbox" name="estatus" class="inline" value="H" required/>Hombre
-        </br>
-        </br>
+        <input type="hidden" name="estatus" class="inline" value="true" required/>
 
         <h5>Edad</h5>
-        <input type="input" name="edad" class="input-large" placeholder="Edad" required maxlength="10" autofocus/>
+        <input type="input" name="edad" class="input-large" placeholder="Edad" required maxlength="10"/>
 
         <h5>Dirección</h5>
-        <input type="input" name="direccion" class="input-large" placeholder="Dirección" required maxlength="15"/>
+        <input type="input" name="direccion" class="input-large" placeholder="Dirección" required maxlength="50"/>
 
         <h5>Teléfono</h5>
         <input type="input" name="telefono" class="input-large" placeholder="Teléfono" required maxlength="15"/>
 
         <h5>Correo Electrónico</h5>
-        <input type="input" name="correo" class="input-large" placeholder="Correo" required maxlength="15"/>
+        <input type="input" name="correo" class="input-large" placeholder="Correo" required maxlength="40"/>
 
-        <h5>Dinámica</h5>
+        <!--<h5>Dinámica</h5>
         <select name="id_dinamica" id="id_dinamica" class="combobox input-large">
             <option></option>
             <?php foreach ($dinamicas as $dinamica):?>
             <option value="<?php echo $dinamica['id'] ?>"> <?php echo $dinamica ['nombre'] ?></option>
 
             <? endforeach;?>
-        </select>
-
+        </select> -->
 
         <div id="success" class="row">
             <div class="span4">

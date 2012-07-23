@@ -9,7 +9,6 @@
         <h5>Descripción</h5>
         <input type="input" name="descripcion" class="input-large" placeholder="Descripción" required maxlength="50"/>
         </br>
-        </br>
         <button type="submit" class="btn btn-primary">
             <i class="icon-file icon-white"></i> Guardar</button>
 

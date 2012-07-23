@@ -7,7 +7,6 @@
         <h5>Nombre</h5>
         <input type="input" name="nombre" class="input-large" placeholder="Nombre Carpa" required maxlength="50" autofocus/>
         </br>
-        </br>
         <button type="submit" class="btn btn-primary">
             <i class="icon-file icon-white"></i> Guardar</button>
 

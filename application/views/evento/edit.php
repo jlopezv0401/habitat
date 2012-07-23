@@ -1,7 +1,5 @@
 <?php echo validation_errors(); ?>
-
-
-<?php 
+<?php
 echo form_open('evento/edit') ?>
 <h2><?php echo $titulo;?></h2>
 <form id="formAdd" class="form-horizontal">

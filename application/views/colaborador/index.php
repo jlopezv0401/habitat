@@ -28,10 +28,7 @@
                 </div>
             </div>
         </div>
-
         <hr/>
-h
-
 
         <table class="table table-striped table-bordered tablesorter" id="tableColaboradores">
             <thead>
@@ -56,7 +53,7 @@ h
                     <div class="btn-group">
                         <button class="btn" name="enviar" type="submit" value="ver">
                             <i class="icon-list icon-black"></i>
-                            Ver Person
+                            Asignar a Dinámica
                         </button>
                         &nbsp
                         <button class="btn" name="enviar" type="submit" value="editar">

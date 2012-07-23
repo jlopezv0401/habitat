@@ -81,7 +81,7 @@ class Evento extends CI_Controller {
             $data['eventos'] = $this->evento_model->read_evento();
             $data['titulo'] = 'Eventos Disponibles';
 
-            //redirect('evento/index');
+            redirect('evento/index');
             $this->load->view('includes/header', $data);
             $this->load->view('evento/index', $data);
             $this->load->view('includes/footer', $data);

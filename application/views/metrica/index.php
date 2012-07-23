@@ -7,9 +7,8 @@
         <div style="z-index: 873; position:relative; top:-30px;">
             <ul class="breadcrumb">
                 <li>
-                    <?php echo  "<a href='".base_url("index.php/metrica/index")."'>Metricas</a> ";?> <span class="divider">/</span>
+                    <?php echo  "<a href='".base_url("index.php/metrica/index")."'>Metricas</a> ";?> <span class="divider"></span>
                 </li>
-                <li class="active">Intervalos</li>
             </ul>
         </div>
 

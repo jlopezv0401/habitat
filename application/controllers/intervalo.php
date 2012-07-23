@@ -62,11 +62,9 @@ class Intervalo extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('ubicacion','Ubicacion','required');
-        $this->form_validation->set_rules('fecha_inicio','Fecha de Inicio','required');
-        $this->form_validation->set_rules('fecha_fin','Fecha de fin','required');
-
+        $this->form_validation->set_rules('intervalo','Intervalo','required|max_length[50]|alpha_name');
+        $this->form_validation->set_rules('descripcion','Descripcion','required');
+        
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
             $this->load->view('intervalo/add', $data);

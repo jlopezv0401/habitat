@@ -12,18 +12,18 @@ class Colaborador extends CI_Controller {
 
         if ($boton == 'agregar'){
             $data['titulo'] = 'Nuevo Colaborador';
-            $data['dinamicas'] = $this->colaborador_model->read_dinamica();
+
             $this->load->view('includes/header', $data);
             $this->load->view('colaborador/add', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'ver'){
-            $this->load->model('carpa_model');
-            $data['carpas'] = $this->carpa_model->read_carpa();
-            $data['titulo'] = 'Carpas Disponibles';
+            $data['titulo'] = 'Asignar Colaborador a Dinámica';
+            $data['colaboradores'] = $this->colaborador_model->read_colaborador_esp();
+            $data['dinamicas'] = $this->colaborador_model->read_dinamica();
 
             $this->load->view('includes/header', $data);
-            $this->load->view('carpa/index', $data);
+            $this->load->view('colaborador/assign', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
@@ -66,26 +66,29 @@ class Colaborador extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-//id INT NOT NULL AUTO_INCREMENT,
-//nombre VARCHAR(20) NOT NULL,
-//apaterno VARCHAR(15) NOT NULL,
-//amaterno VARCHAR (15) NOT NULL,
-//sexo ENUM('M','F') NOT NULL,
-//estatus BIT NOT NULL,
-//edad CHAR(2),
-//direccion TEXT,
-//telefono VARCHAR(12),
-//correo VARCHAR(50),
 
-        $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('apaterno','Apellido Paterno','required');
-        $this->form_validation->set_rules('amaterno','Apellido Materno','required');
+//    id_dinamica INT,
+//    nombre VARCHAR(30) NOT NULL,
+//    apaterno VARCHAR(25) NOT NULL,
+//    amaterno VARCHAR (25) NOT NULL,
+//    sexo ENUM('H','M') NOT NULL,
+//    estatus BIT NOT NULL,
+//    edad CHAR(2),
+//    direccion TEXT,
+//    telefono VARCHAR(12) NOT NULL,
+//    correo VARCHAR(50) NOT NULL,
+//    PRIMARY KEY(id),
+//    FOREIGN KEY(id_dinamica) REFERENCES Dinamica(id)
+
+        $this->form_validation->set_rules('nombre','Nombre','required|max_length[30]|alpha_name');
+        $this->form_validation->set_rules('apaterno','Apellido Paterno','required|max_length[25]|alpha_name');
+        $this->form_validation->set_rules('amaterno','Apellido Materno','required|max_length[25]|alpha_name');
         $this->form_validation->set_rules('sexo','Sexo','required');
         $this->form_validation->set_rules('estatus','Estado','required');
-        $this->form_validation->set_rules('edad','Edad','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('direccion','Dirección','required');
-        $this->form_validation->set_rules('telefono','Teléfono','required');
-        $this->form_validation->set_rules('correo','Correo','required');
+        $this->form_validation->set_rules('edad','Edad','required|max_length[2]|numeric');
+        $this->form_validation->set_rules('direccion','Dirección','required|max_length[50]|alpha_name');
+        $this->form_validation->set_rules('telefono','Teléfono','required|max_length[12]|numeric');
+        $this->form_validation->set_rules('correo','Correo','required|valid_email');
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
@@ -96,9 +99,9 @@ class Colaborador extends CI_Controller {
 
             $this->colaborador_model->create_colaborador();
             $data['colaboradores'] = $this->colaborador_model->read_colaborador();
-            $data['titulo'] = 'Agregar Colaboradores';
+            $data['titulo'] = 'Colaboradores Disponibles';
 
-            //redirect('colaborador/index');
+            redirect('colaborador/index');
             $this->load->view('includes/header', $data);
             $this->load->view('colaborador/index', $data);
             $this->load->view('includes/footer', $data);
@@ -109,10 +112,15 @@ class Colaborador extends CI_Controller {
         $data['titulo'] = 'Editar Colaborador';
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('ubicacion','Ubicacion','required');
-        $this->form_validation->set_rules('fecha_inicio','Fecha de Inicio','required');
-        $this->form_validation->set_rules('fecha_fin','Fecha de fin','required');
+        $this->form_validation->set_rules('nombre','Nombre','required|max_length[30]|alpha_name');
+        $this->form_validation->set_rules('apaterno','Apellido Paterno','required|max_length[25]|alpha_name');
+        $this->form_validation->set_rules('amaterno','Apellido Materno','required|max_length[25]|alpha_name');
+        $this->form_validation->set_rules('sexo','Sexo','required');
+        $this->form_validation->set_rules('estatus','Estado','required');
+        $this->form_validation->set_rules('edad','Edad','required|max_length[2]|numeric');
+        $this->form_validation->set_rules('direccion','Dirección','required|max_length[50]|alpha_name');
+        $this->form_validation->set_rules('telefono','Teléfono','required|max_length[12]|numeric');
+        $this->form_validation->set_rules('correo','Correo','required|valid_email');
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
@@ -122,13 +130,36 @@ class Colaborador extends CI_Controller {
         else {
             $this->colaborador_model->update_colaborador();
             $data['colaboradores'] = $this->colaborador_model->read_colaborador();
-            $data['titulo'] = 'Editar Colaborador';
+            $data['titulo'] = 'Colaboradores Disponibles';
 
             redirect('colaborador/index');
             $this->load->view('includes/header', $data);
             $this->load->view('colaborador/index', $data);
             $this->load->view('includes/footer', $data);
         }
+    }
 
+    public function assign(){
+        $data['titulo'] = 'Asignar Colaborador a Dinámica';
+        $this->load->library('form_validation');
+
+        //$this->form_validation->set_rules('nombre','Nombre','required|max_length[30]|alpha_name');
+        $this->form_validation->set_rules('id_dinamica','Dinamica','required');
+
+        if ($this->form_validation->run()==FALSE){
+            $this->load->view('includes/header', $data);
+            $this->load->view('colaborador/assign', $data);
+            $this->load->view('includes/footer', $data);
+        }
+        else {
+            $this->colaborador_model->update_colaborador();
+            $data['colaboradores'] = $this->colaborador_model->read_colaborador();
+            $data['titulo'] = 'Colaboradores Disponibles';
+
+            redirect('colaborador/index');
+            $this->load->view('includes/header', $data);
+            $this->load->view('colaborador/index', $data);
+            $this->load->view('includes/footer', $data);
+        }
     }
 }

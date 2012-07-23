@@ -6,11 +6,6 @@ class Dinamica extends CI_Controller {
     // nombre VARCHAR(50) NOT NULL,
     // hora_inicio TIME NOT NULL,
     // hora_fin TIME NOT NULL,
-    // descripcion TEXT,        // id_area INT NOT NULL,
-    // id_metrica INT NOT NULL,
-    // nombre VARCHAR(50) NOT NULL,
-    // hora_inicio TIME NOT NULL,
-    // hora_fin TIME NOT NULL,
     // descripcion TEXT,
 
     public function __construct(){
