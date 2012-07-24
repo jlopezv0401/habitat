@@ -1,6 +1,6 @@
 <?php echo validation_errors(); ?>
 <?php
-echo form_open('evento/edit') ?>
+echo form_open('colaborador/assign') ?>
 <h2><?php echo $titulo;?></h2>
 <form id="formAdd" class="form-horizontal">
     <fieldset>
