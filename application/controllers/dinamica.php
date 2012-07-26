@@ -25,13 +25,22 @@ class Dinamica extends CI_Controller {
             $this->load->view('dinamica/add', $data);
             $this->load->view('includes/footer', $data);
         }
-        elseif ($boton == 'ver'){
-            $this->load->model('dinamica_model');
-            $data['dinamicas'] = $this->dinamica_model->read_dinamica();
-            $data['titulo'] = 'Dinámicas Disponibles';
+        elseif ($boton == 'colaborador'){
+            $this->load->model('colaborador_model');
+            $data['colaboradores'] = $this->colaborador_model->read_colaborador();
+            $data['titulo'] = 'Colaboradores Disponibles';
 
             $this->load->view('includes/header', $data);
-            $this->load->view('dinamica/index', $data);
+            $this->load->view('colaborador/index', $data);
+            $this->load->view('includes/footer', $data);
+        }
+        elseif ($boton == 'paquete'){
+            $this->load->model('paquete_model');
+            $data['paquetes'] = $this->paquete_model->read_paquete();
+            $data['titulo'] = 'Paquetes Disponibles';
+
+            $this->load->view('includes/header', $data);
+            $this->load->view('paquete/index', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
@@ -98,10 +107,7 @@ class Dinamica extends CI_Controller {
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('nombre','Nombre','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('hora_inicio','Hora Inicio','required');
-        $this->form_validation->set_rules('hora_fin','Hora Fin','required');
         $this->form_validation->set_rules('descripcion','Descripción','required');
-        $this->form_validation->set_rules('id_metrica','Métrica','required');
 
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);

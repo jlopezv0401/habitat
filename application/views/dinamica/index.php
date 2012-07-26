@@ -48,6 +48,7 @@
                         <th><i class="icon-flag"></i> Inicio</th>
                         <th><i class="icon-flag"></i> Fin</th>
                         <th><i class="icon-road"></i> Descripción</th>
+                        <th><i class="icon-road"></i> Acciones</th>
 
                     </tr>
                     </thead>
@@ -62,6 +63,14 @@
                         <td>
                             <div class="btn-group">
                                 &nbsp
+                                <button class="btn" name="enviar" type="submit" value="colaborador">
+                                    <i class="icon-list icon-black"></i>
+                                    Colaboradores
+                                </button>
+                                <button class="btn" name="enviar" type="submit" value="paquete">
+                                    <i class="icon-list icon-black"></i>
+                                    Materiales
+                                </button>
                                 <button class="btn" name="enviar" type="submit" value="editar">
                                     <i class="icon-edit icon-black"></i>
                                 </button>

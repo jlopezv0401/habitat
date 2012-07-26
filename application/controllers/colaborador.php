@@ -152,7 +152,7 @@ class Colaborador extends CI_Controller {
             $this->load->view('includes/footer', $data);
         }
         else {
-            $this->colaborador_model->update_colaborador();
+            $this->colaborador_model->update_colaborador_dinamica();
             $data['colaboradores'] = $this->colaborador_model->read_colaborador();
             $data['titulo'] = 'Colaboradores Disponibles';
 

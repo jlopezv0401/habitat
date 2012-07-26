@@ -32,18 +32,14 @@ class Dinamica_model extends CI_Model {
     }
 
     public function read_metrica(){
-        $metricas = $this->db->get('Metrica');
+        $metricas = $this->db->query('SELECT id, nombre FROM Metrica');
         return $metricas->result_array();
     }
 
     public function update_dinamica(){
         $data= array(
             'nombre' =>  $this->input->post('nombre'),
-            'hora_inicio' =>  $this->input->post('hora_inicio'),
-            'hora_fin' => $this->input->post('hora_fin'),
-            'descripcion' => $this->input->post('descripcion'),
-            'id_area' => $this->input->post('id_area'),
-            'id_metrica' => $this->input->post('id_metrica')
+            'descripcion' => $this->input->post('descripcion')
         );
         $this->db->where('id', $this->input->post('id_dinamica'));
         return $this->db->update('Dinamica', $data);

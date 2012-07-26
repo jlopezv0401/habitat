@@ -99,7 +99,7 @@ class Area extends CI_Controller {
             $data['areas'] = $this->area_model->read_area();
             $data['titulo'] = 'Editar Área';
 
-            redirect('area/index');
+            //redirect('area/index');
             $this->load->view('includes/header', $data);
             $this->load->view('area/index', $data);
             $this->load->view('includes/footer', $data);
