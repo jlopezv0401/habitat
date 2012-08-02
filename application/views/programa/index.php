@@ -44,7 +44,7 @@
                         <th><i class="icon-tags"></i> ID</th>
                         <th><i class="icon-user"></i> Nombre</th>
                         <th><i class="icon-flag"></i> Descripción</th>
-                        <th><i class="icon-road"></i> ID Carpa</th>
+                        <th><i class="icon-road"></i> Acciones</th>
                     </tr>
                     </thead>
                     <tbody>

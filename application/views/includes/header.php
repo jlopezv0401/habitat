@@ -50,7 +50,7 @@
        <li> <?php echo  "<a href='".base_url("index.php/evento/index")."'>Eventos</a>";?></li>
         <!--<li><a <?php echo anchor('index.php/evento/index')?>>Eventos</a></li>-->
         
-       <li class="dropdown">
+       <li class="dropdown btn-navbar">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Métricas <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><?php echo  "<a href='".base_url("index.php/metrica/index")."'>Consultar</a>";?></li>
@@ -63,6 +63,17 @@
               <ul class="dropdown-menu">
                   <li><?php echo  "<a href='".base_url("index.php/colaborador/index")."'>Consultar</a>";?></li>
                   <li><?php echo  "<a href='".base_url("index.php/colaborador/add")."'>Crear</a>";?></li>
+              </ul>
+          </li>
+
+       <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Materiales <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><?php echo  "<a href='".base_url("index.php/material/index")."'>Consultar</a>";?></li>
+                  <li><?php echo  "<a href='".base_url("index.php/material/add")."'>Crear</a>";?></li>
+                  <li class="divider"></li>
+                  <li><?php echo  "<a href='".base_url("index.php/paquete/index")."'>Ver Paquetes</a>";?></li>
+                  <li><?php echo  "<a href='".base_url("index.php/paquete/add")."'>Crear Paquete</a>";?></li>
               </ul>
           </li>
 
