@@ -49,10 +49,7 @@
                 <td><?=$material['descripcion']?></td>
                 <td>
                     <div class="btn-group">
-                        <button align="center" class="btn" name="enviar" type="submit" value="ver">
-                            <i class="icon-list icon-black"></i>
-                            Ver Carpas
-                        </button>
+
                         <button align="center" class="btn" name="enviar" type="submit" value="editar">
                             <i class="icon-edit icon-black"></i>
                         </button>

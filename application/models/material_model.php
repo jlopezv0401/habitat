@@ -1,6 +1,11 @@
 <?php
 class Material_model extends CI_Model {
 
+//id INT NOT NULL AUTO_INCREMENT,
+//nombre VARCHAR(50) NOT NULL,
+//cantidad INT NOT NULL,
+//descripcion TEXT
+
     public function __construct(){
         $this->load->database();
     }
