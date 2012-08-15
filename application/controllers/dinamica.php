@@ -86,6 +86,7 @@ class Dinamica extends CI_Controller {
         $this->form_validation->set_rules('id_metrica','Métrica','required');
 
         if ($this->form_validation->run()==FALSE){
+            $data['metricas'] = $this->dinamica_model->read_metrica();
             $this->load->view('includes/header', $data);
             $this->load->view('dinamica/add', $data);
             $this->load->view('includes/footer', $data);

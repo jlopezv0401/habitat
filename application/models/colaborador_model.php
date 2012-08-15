@@ -6,7 +6,6 @@ class Colaborador_model extends CI_Model {
 //apaterno VARCHAR(15) NOT NULL,
 //amaterno VARCHAR (15) NOT NULL,
 //sexo ENUM('M','F') NOT NULL,
-//estatus BIT NOT NULL,
 //edad CHAR(2),
 //direccion TEXT,
 //telefono VARCHAR(12),
@@ -23,7 +22,6 @@ class Colaborador_model extends CI_Model {
             'apaterno' =>  $this->input->post('apaterno'),
             'amaterno' =>  $this->input->post('amaterno'),
             'sexo' =>  $this->input->post('sexo'),
-            'estatus' =>  $this->input->post('estatus'),
             'edad' =>  $this->input->post('edad'),
             'direccion' =>  $this->input->post('direccion'),
             'telefono' =>  $this->input->post('telefono'),
@@ -50,7 +48,6 @@ class Colaborador_model extends CI_Model {
             'apaterno' =>  $this->input->post('apaterno'),
             'amaterno' =>  $this->input->post('amaterno'),
             'sexo' =>  $this->input->post('sexo'),
-            'estatus' =>  $this->input->post('status'),
             'edad' =>  $this->input->post('edad'),
             'direccion' =>  $this->input->post('direccion'),
             'telefono' =>  $this->input->post('telefono'),
@@ -63,6 +60,14 @@ class Colaborador_model extends CI_Model {
     public function update_colaborador_dinamica(){
         $data= array(
             'id_dinamica' =>  $this->input->post('id_dinamica')
+        );
+        $this->db->where('id', $this->input->post('id_colaborador'));
+        return $this->db->update('Colaborador', $data);
+    }
+
+    public function update_colaborador_dinamica_vacio(){
+        $data= array(
+            'id_dinamica' =>  NULL
         );
         $this->db->where('id', $this->input->post('id_colaborador'));
         return $this->db->update('Colaborador', $data);

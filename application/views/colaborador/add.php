@@ -1,4 +1,4 @@
-<?php echo validation_errors(); ?>
+<?#php echo validation_errors(); ?>
 <?php
 
 //$attributes = array('class' => 'well');
@@ -9,40 +9,45 @@ echo form_open('colaborador/add') ?>
 
     <fieldset>
         <h5>Nombre</h5>
-        <input type="input" name="nombre" class="input-large" placeholder="Nombre" required maxlength="30" autofocus/>
+        <?php echo form_error('nombre');?>
+        <input type="input" name="nombre" class="input-large" placeholder="Nombre" value="<?php echo set_value('nombre'); ?>" required maxlength="30" autofocus/>
 
         <h5>Apellido Paterno</h5>
-        <input type="input" name="apaterno" class="input-large" placeholder="A. Paterno" required maxlength="25"/>
+        <?php echo form_error('apaterno');?>
+        <input type="input" name="apaterno" class="input-large" placeholder="A. Paterno" value="<?php echo set_value('apaterno'); ?>" required maxlength="25"/>
 
         <h5>Apellido Materno</h5>
-        <input type="input" name="amaterno" class="input-large" placeholder="A. Materno" required maxlength="25"/>
+        <?php echo form_error('amaterno'); ?>
+        <input type="input" name="amaterno" class="input-large" placeholder="A. Materno" value="<?php echo set_value('amaterno'); ?>" required maxlength="25"/>
 
         <h5>Sexo</h5>
+        <?php echo form_error('sexo'); ?>
         <input type="radio" name="sexo" class="inline" value="H" required/>Hombre &nbsp;
         <input type="radio" name="sexo" class="inline" value="M" required/>Mujer
         </br>
         </br>
 
-        <input type="hidden" name="estatus" class="inline" value="true" required/>
-
         <h5>Edad</h5>
-        <input type="input" name="edad" class="input-large" placeholder="Edad" required maxlength="10"/>
+        <?php echo form_error('edad'); ?>
+        <input type="input" name="edad" class="input-large" placeholder="Edad" value="<?php echo set_value('edad'); ?>" required maxlength="10"/>
 
         <h5>Dirección</h5>
-        <input type="input" name="direccion" class="input-large" placeholder="Dirección" required maxlength="50"/>
+        <?php echo form_error('direccion'); ?>
+        <input type="input" name="direccion" class="input-large" placeholder="Dirección" value="<?php echo set_value('direccion'); ?>" required maxlength="50"/>
 
         <h5>Teléfono</h5>
-        <input type="input" name="telefono" class="input-large" placeholder="Teléfono" required maxlength="15"/>
+        <?php echo form_error('telefono'); ?>
+        <input type="input" name="telefono" class="input-large" placeholder="Teléfono" value="<?php echo set_value('telefono'); ?>" required maxlength="15"/>
 
         <h5>Correo Electrónico</h5>
-        <input type="input" name="correo" class="input-large" placeholder="Correo" required maxlength="40"/>
+        <?php echo form_error('correo'); ?>
+        <input type="input" name="correo" class="input-large" placeholder="Correo" value="<?php echo set_value('correo'); ?>" required maxlength="40"/>
 
         <!--<h5>Dinámica</h5>
         <select name="id_dinamica" id="id_dinamica" class="combobox input-large">
             <option></option>
             <?php foreach ($dinamicas as $dinamica):?>
             <option value="<?php echo $dinamica['id'] ?>"> <?php echo $dinamica ['nombre'] ?></option>
-
             <? endforeach;?>
         </select> -->
 

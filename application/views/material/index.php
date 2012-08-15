@@ -51,7 +51,7 @@
                     <div class="btn-group">
                         <button align="center" class="btn" name="enviar" type="submit" value="ver">
                             <i class="icon-list icon-black"></i>
-                            Ver Carpas
+                            Agregar a Paquete
                         </button>
                         <button align="center" class="btn" name="enviar" type="submit" value="editar">
                             <i class="icon-edit icon-black"></i>
@@ -88,6 +88,26 @@
             //$('#ver').click(function() {
             //    alert('que te parece ' + valor);
             //});
+        });
+    });
+</script>
+
+<script>
+    $(document).ready( function () {
+
+        //$("#resultado").hide();
+        //                $("#botonBuscar").click( function (){
+        //                    $.post('buscar.php', $('#formBuscar').serialize(), function(data){
+        //                        $('#resultado').html(data);
+        //
+        //                    });
+        //                });
+
+        $("#formBuscar").submit( function (event){
+            event.preventDefault();
+            $.post('producto.php', $('#formBuscar').serialize(), function(data){
+                $('#resultado').html(data);
+            });
         });
     });
 </script>

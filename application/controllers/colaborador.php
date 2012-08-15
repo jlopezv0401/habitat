@@ -84,7 +84,6 @@ class Colaborador extends CI_Controller {
         $this->form_validation->set_rules('apaterno','Apellido Paterno','required|max_length[25]|alpha_name');
         $this->form_validation->set_rules('amaterno','Apellido Materno','required|max_length[25]|alpha_name');
         $this->form_validation->set_rules('sexo','Sexo','required');
-        $this->form_validation->set_rules('estatus','Estado','required');
         $this->form_validation->set_rules('edad','Edad','required|max_length[2]|numeric');
         $this->form_validation->set_rules('direccion','Dirección','required|max_length[50]|alpha_name');
         $this->form_validation->set_rules('telefono','Teléfono','required|max_length[12]|numeric');
@@ -116,7 +115,6 @@ class Colaborador extends CI_Controller {
         $this->form_validation->set_rules('apaterno','Apellido Paterno','required|max_length[25]|alpha_name');
         $this->form_validation->set_rules('amaterno','Apellido Materno','required|max_length[25]|alpha_name');
         $this->form_validation->set_rules('sexo','Sexo','required');
-        $this->form_validation->set_rules('estatus','Estado','required');
         $this->form_validation->set_rules('edad','Edad','required|max_length[2]|numeric');
         $this->form_validation->set_rules('direccion','Dirección','required|max_length[50]|alpha_name');
         $this->form_validation->set_rules('telefono','Teléfono','required|max_length[12]|numeric');
@@ -143,15 +141,16 @@ class Colaborador extends CI_Controller {
         $data['titulo'] = 'Asignar Colaborador a Dinámica';
         $this->load->library('form_validation');
 
-        //$this->form_validation->set_rules('nombre','Nombre','required|max_length[30]|alpha_name');
-        $this->form_validation->set_rules('id_dinamica','Dinamica','required');
-
+        //$this->form_validation->set_rules('nombre','Nombre','required|max_length[30]|alphoa_name');
+        //$this->form_validation->set_rules('id_dinamica','Dinamica','required');
+        /*
         if ($this->form_validation->run()==FALSE){
             $this->load->view('includes/header', $data);
             $this->load->view('colaborador/assign', $data);
             $this->load->view('includes/footer', $data);
         }
-        else {
+        else { */
+        if ($this->input->post('id_dinamica')!=NULL) {
             $this->colaborador_model->update_colaborador_dinamica();
             $data['colaboradores'] = $this->colaborador_model->read_colaborador();
             $data['titulo'] = 'Colaboradores Disponibles';
@@ -160,6 +159,18 @@ class Colaborador extends CI_Controller {
             $this->load->view('includes/header', $data);
             $this->load->view('colaborador/index', $data);
             $this->load->view('includes/footer', $data);
+        }
+        else
+        {
+            $this->colaborador_model->update_colaborador_dinamica_vacio();
+            $data['colaboradores'] = $this->colaborador_model->read_colaborador();
+            $data['titulo'] = 'Colaboradores Disponibles';
+
+            redirect('colaborador/index');
+            $this->load->view('includes/header', $data);
+            $this->load->view('colaborador/index', $data);
+            $this->load->view('includes/footer', $data);
+
         }
     }
 }

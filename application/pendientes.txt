@@ -1,12 +1,18 @@
 
-Eventos section, check the Breadcum navigation
+Eventos section, check the Breadcum navigation, use jquery post
 
 Evento controller
     Validate Dates
+    Show only Eventos between a established range of dates
 
 Metricas controller
     Validate ranges
     Validate Edit intervals and ranges
+
+Change Form Validator to every field in all views, except colaborador and material
+
+Add a search div to colaborador and material view, use "well" css class
+
 
 
 

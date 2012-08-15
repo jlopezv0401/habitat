@@ -46,11 +46,15 @@
     <a class="brand" href="#"><img style="width: 60px;" src="<?= base_url('assets/css/img/Logo_transparente.png')?>"></a>
       <div class="nav-collapse">
       <ul class="nav">
-      	<li><a ></a></li>
-       <li> <?php echo  "<a href='".base_url("index.php/evento/index")."'>Eventos</a>";?></li>
-        <!--<li><a <?php echo anchor('index.php/evento/index')?>>Eventos</a></li>-->
+      <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Eventos <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><?php echo  "<a href='".base_url("index.php/evento/index")."'>Consultar</a>";?></li>
+                  <li><?php echo  "<a href='".base_url("index.php/evento/add")."'>Crear</a>";?></li>
+              </ul>
+          </li>
         
-       <li class="dropdown btn-navbar">
+       <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Métricas <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><?php echo  "<a href='".base_url("index.php/metrica/index")."'>Consultar</a>";?></li>

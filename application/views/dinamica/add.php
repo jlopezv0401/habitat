@@ -6,19 +6,19 @@
 
     <fieldset>
         <h5>Nombre</h5>
-        <input type="input" name="nombre" class="input-large" placeholder="Nombre" required maxlength="50" autofocus/>
+        <input type="input" name="nombre" class="input-large" placeholder="Nombre" value="<?php echo set_value('nombre'); ?>" required maxlength="50" autofocus/>
 
         <h5>Descripción</h5>
-        <input type="input" name="descripcion" class="input-large" placeholder="Descripción" required maxlength="50"/>
+        <input type="input" name="descripcion" class="input-large" placeholder="Descripción" value="<?php echo set_value('descripcion'); ?>" required maxlength="50"/>
 
         <h5>Hora de inicio</h5>
-        <input class="dropdown-timepicker input-large" type="text" name="hora_inicio" id="hora_inicio"/>
+        <input class="dropdown-timepicker input-large" type="text" name="hora_inicio" id="hora_inicio" value="<?php echo set_value('hora_inicio'); ?>" />
 
         <h5>Hora de termino</h5>
-        <input class="dropdown-timepicker input-large" type="text" name="hora_fin" id="hora_fin"/>
+        <input class="dropdown-timepicker input-large" type="text" name="hora_fin" id="hora_fin" value="<?php echo set_value('hora_fin'); ?>" />
 
         <h5>Métrica</h5>
-        <select name="id_metrica" id="id_metrica" class="combobox input-large">
+        <select name="id_metrica" id="id_metrica" class="combobox input-large" value="<?php echo set_value('id_metrica'); ?>">
             <option></option>
             <?php foreach ($metricas as $metrica):?>
                 <option value="<?php echo $metrica['id'] ?>"> <?php echo $metrica['nombre'] ?></option>

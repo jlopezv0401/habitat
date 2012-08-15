@@ -33,8 +33,7 @@
 					      <button class="btn btn-primary" name="enviar" type="submit" value="agregar">
 					                    <i class="icon-plus-sign icon-white"></i>
 					                    Agregar Dinámica
-					                </button>
-					      
+					      </button>
 					    </div>
 					  </div>
 					</div>
@@ -80,6 +79,7 @@
                             </div>
                         </td>
                     </tr>
+
                         <? endforeach ?>
                     </tbody>
                 </table>
@@ -101,11 +101,19 @@
             var row = $(this).parent().parent().children().index($(this).parent());
 
             $('#id_dinamica').val(valor);
+
             //alert($(this).parent().index());
             //alert($(this).parent(row).html());
             //$('#ver').click(function() {
             //    alert('que te parece ' + valor);
             //});
+        });
+
+        $("#formBuscar").submit( function (event){
+            event.preventDefault();
+            $.post('producto.php', $('#formBuscar').serialize(), function(data){
+                $('#resultado').html(data);
+            });
         });
     });
 </script>
