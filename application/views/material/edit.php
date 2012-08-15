@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php echo validation_errors(); ?>
 <?php
 echo form_open('material/edit') ?>
@@ -43,3 +44,13 @@ echo form_open('material/edit') ?>
     });
 </script>
 
+=======
+<?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: jesuslinux
+ * Date: 8/2/12
+ * Time: 11:43 PM
+ * To change this template use File | Settings | File Templates.
+ */
+>>>>>>> 9dea9e748bf6fff9c6de75c1582cb67bbe572253
