@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87657537-046b-4bd5-b6b0-0724de127e19" name="Default" comment="Titulos de forms corregidos">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/material/add.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/material/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_habitat12.mwb.bak" afterPath="$PROJECT_DIR$/db_habitat12.mwb.bak" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_habitat12.mwb" afterPath="$PROJECT_DIR$/db_habitat12.mwb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/database.php" afterPath="$PROJECT_DIR$/application/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/colaborador.php" afterPath="$PROJECT_DIR$/application/controllers/colaborador.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/dinamica.php" afterPath="$PROJECT_DIR$/application/controllers/dinamica.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/colaborador_model.php" afterPath="$PROJECT_DIR$/application/models/colaborador_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/pendientes.txt" afterPath="$PROJECT_DIR$/application/pendientes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/colaborador/add.php" afterPath="$PROJECT_DIR$/application/views/colaborador/add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/colaborador/edit.php" afterPath="$PROJECT_DIR$/application/views/colaborador/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dinamica/add.php" afterPath="$PROJECT_DIR$/application/views/dinamica/add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dinamica/index.php" afterPath="$PROJECT_DIR$/application/views/dinamica/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/header.php" afterPath="$PROJECT_DIR$/application/views/includes/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/material/index.php" afterPath="$PROJECT_DIR$/application/views/material/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_habitat_v1.0.sql" afterPath="$PROJECT_DIR$/db_habitat_v1.0.sql" />
-    </list>
+    <list default="true" id="87657537-046b-4bd5-b6b0-0724de127e19" name="Default" comment="Titulos de forms corregidos" />
     <ignored path="habitat.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,7 +25,7 @@
       <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="40" selection-start="2338" selection-end="2338" vertical-scroll-proportion="-0.625">
+            <state line="50" column="40" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -70,7 +52,7 @@
       <file leaf-file-name="add.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/dinamica/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="104" selection-start="1051" selection-end="1051" vertical-scroll-proportion="-12.5">
+            <state line="20" column="104" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -88,7 +70,7 @@
       <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/dinamica/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="21" selection-start="4580" selection-end="4585" vertical-scroll-proportion="0.6766169">
+            <state line="118" column="9" selection-start="4821" selection-end="4821" vertical-scroll-proportion="0.92537314">
               <folding />
             </state>
           </provider>
@@ -97,7 +79,7 @@
       <file leaf-file-name="ini.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../recopilador/ini.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="696" selection-end="983" vertical-scroll-proportion="-8.875">
+            <state line="20" column="0" selection-start="696" selection-end="983" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -168,6 +150,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -300,16 +292,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -318,8 +300,8 @@
     <property name="options.lastSelected" value="reference.settings.ide.settings.notifications" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../recopilador" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -384,13 +366,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1284" height="801" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2828201" sideWeight="0.431853" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18912338" sideWeight="0.77641654" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19237013" sideWeight="0.77641654" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18912338" sideWeight="0.2128637" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -480,42 +462,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/evento.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/colaborador/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="24" selection-start="2404" selection-end="2429" vertical-scroll-proportion="0.94727594">
-          <folding />
-        </state>
+        <state line="52" column="24" selection-start="2404" selection-end="2429" vertical-scroll-proportion="0.94727594" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/colaborador/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="83" selection-start="368" selection-end="410" vertical-scroll-proportion="0.31634447">
-          <folding />
-        </state>
+        <state line="12" column="83" selection-start="368" selection-end="410" vertical-scroll-proportion="0.31634447" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/colaborador/assign.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="17" selection-start="768" selection-end="768" vertical-scroll-proportion="0.44815466">
-          <folding />
-        </state>
+        <state line="17" column="17" selection-start="768" selection-end="768" vertical-scroll-proportion="0.44815466" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/colaborador_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="55" selection-start="2543" selection-end="2543" vertical-scroll-proportion="0.5215311">
-          <folding />
-        </state>
+        <state line="72" column="55" selection-start="2543" selection-end="2543" vertical-scroll-proportion="0.5215311" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="40" selection-start="2338" selection-end="2338" vertical-scroll-proportion="-0.625">
+        <state line="50" column="40" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -525,37 +497,33 @@
         <state line="12" column="40" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/dinamica.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/colaborador.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="58" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="164" column="71" selection-start="7045" selection-end="7045" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dinamica/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="104" selection-start="1051" selection-end="1051" vertical-scroll-proportion="-12.5">
+        <state line="20" column="104" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/colaborador.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/dinamica.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="71" selection-start="7045" selection-end="7045" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="21" column="58" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../recopilador/ini.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="696" selection-end="983" vertical-scroll-proportion="-8.875">
+        <state line="20" column="0" selection-start="696" selection-end="983" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dinamica/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="21" selection-start="4580" selection-end="4585" vertical-scroll-proportion="0.6766169">
+        <state line="118" column="9" selection-start="4821" selection-end="4821" vertical-scroll-proportion="0.92537314">
           <folding />
         </state>
       </provider>
