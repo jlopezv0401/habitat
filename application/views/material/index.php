@@ -49,14 +49,10 @@
                 <td><?=$material['descripcion']?></td>
                 <td>
                     <div class="btn-group">
-<<<<<<< HEAD
                         <button align="center" class="btn" name="enviar" type="submit" value="ver">
                             <i class="icon-list icon-black"></i>
                             Agregar a Paquete
                         </button>
-=======
-
->>>>>>> 9dea9e748bf6fff9c6de75c1582cb67bbe572253
                         <button align="center" class="btn" name="enviar" type="submit" value="editar">
                             <i class="icon-edit icon-black"></i>
                         </button>

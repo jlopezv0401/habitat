@@ -9,7 +9,6 @@ echo form_open('material/add') ?>
 
     <fieldset>
         <h5>Nombre</h5>
-<<<<<<< HEAD
         <?php echo form_error('nombre');?>
         <input type="input" name="nombre" class="input-large" placeholder="Nombre" required maxlength="50" autofocus/>
 
@@ -19,14 +18,6 @@ echo form_open('material/add') ?>
 
         <h5>Descripcion</h5>
         <?php echo form_error('descripcion');?>
-=======
-        <input type="input" name="nombre" class="input-large" placeholder="Nombre" required maxlength="50" autofocus/>
-
-        <h5>Cantidad</h5>
-        <input type="input" name="cantidad" class="input-large" placeholder="Cantidad" required maxlength="7"/>
-
-        <h5>Descripcion</h5>
->>>>>>> 9dea9e748bf6fff9c6de75c1582cb67bbe572253
         <input type="input" name="descripcion" class="input-large" placeholder="Descripcion" required maxlength="50"/>
 
         <div id="success" class="row">
