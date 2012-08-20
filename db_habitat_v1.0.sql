@@ -92,6 +92,7 @@
     DROP TABLE IF EXISTS Paquete;
     CREATE TABLE Paquete(
     id INT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL,
     id_dinamica INT NOT NULL,
     id_material INT NOT NULL,
     cantidad INT NOT NULL,

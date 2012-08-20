@@ -61,7 +61,6 @@
                         <td><?=$dinamica['descripcion']?></td>
                         <td>
                             <div class="btn-group">
-                                &nbsp
                                 <button class="btn" name="enviar" type="submit" value="colaborador">
                                     <i class="icon-list icon-black"></i>
                                     Colaboradores
@@ -109,11 +108,11 @@
             //});
         });
 
-        $("#formBuscar").submit( function (event){
-            event.preventDefault();
-            $.post('producto.php', $('#formBuscar').serialize(), function(data){
-                $('#resultado').html(data);
-            });
-        });
+//        $("#formBuscar").submit( function (event){
+//            event.preventDefault();
+//            $.post('producto.php', $('#formBuscar').serialize(), function(data){
+//                $('#resultado').html(data);
+//            });
+//        });
     });
 </script>

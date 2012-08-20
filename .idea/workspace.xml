@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87657537-046b-4bd5-b6b0-0724de127e19" name="Default" comment="Titulos de forms corregidos">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/material/add.php" afterPath="$PROJECT_DIR$/application/views/material/add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/material/edit.php" afterPath="$PROJECT_DIR$/application/views/material/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/material/index.php" afterPath="$PROJECT_DIR$/application/views/material/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/paquete.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/paquete_model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/dinamica/colaboradores.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/dinamica/materiales.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/paquete/add.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/paquete/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dinamica/index.php" afterPath="$PROJECT_DIR$/application/views/dinamica/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_habitat_v1.0.sql" afterPath="$PROJECT_DIR$/db_habitat_v1.0.sql" />
     </list>
     <ignored path="habitat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,46 +32,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
+      <file leaf-file-name="paquete.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/paquete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="40" selection-start="2338" selection-end="2338" vertical-scroll-proportion="-0.625">
+            <state line="10" column="49" selection-start="288" selection-end="288" vertical-scroll-proportion="0.23923445">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/paquete/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="40" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="colaborador.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/colaborador.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="71" selection-start="7045" selection-end="7045" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/dinamica/add.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="104" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.025423728">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dinamica.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/dinamica.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="58" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
+            <state line="11" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="-6.875">
               <folding />
             </state>
           </provider>
@@ -74,16 +53,43 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/material/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="22" selection-start="545" selection-end="545" vertical-scroll-proportion="37.375">
+            <state line="67" column="0" selection-start="931" selection-end="2575" vertical-scroll-proportion="-23.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ini.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../recopilador/ini.php">
+      <file leaf-file-name="add.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/paquete/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="696" selection-end="983" vertical-scroll-proportion="-12.5">
+            <state line="46" column="0" selection-start="2002" selection-end="2002" vertical-scroll-proportion="-7.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="79" column="66" selection-start="4066" selection-end="4077" vertical-scroll-proportion="-15.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db_habitat_v1.0.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db_habitat_v1.0.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="184" column="0" selection-start="5077" selection-end="5077" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paquete_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/paquete_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="32" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -103,22 +109,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/colaborador/add.php" />
-        <option value="$PROJECT_DIR$/db_habitat_v1.0.sql" />
-        <option value="$PROJECT_DIR$/application/views/material/material.php" />
-        <option value="$PROJECT_DIR$/application/config/database.php" />
-        <option value="$PROJECT_DIR$/application/pendientes.txt" />
-        <option value="$PROJECT_DIR$/application/views/includes/header.php" />
-        <option value="$PROJECT_DIR$/application/views/colaborador/assign.php" />
         <option value="$PROJECT_DIR$/application/models/colaborador_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/colaborador.php" />
         <option value="$PROJECT_DIR$/application/views/colaborador/edit.php" />
         <option value="$PROJECT_DIR$/application/views/dinamica/add.php" />
         <option value="$PROJECT_DIR$/application/controllers/dinamica.php" />
-        <option value="$PROJECT_DIR$/application/views/dinamica/index.php" />
         <option value="$PROJECT_DIR$/application/views/material/add.php" />
         <option value="$PROJECT_DIR$/application/views/material/edit.php" />
         <option value="$PROJECT_DIR$/application/views/material/index.php" />
+        <option value="$PROJECT_DIR$/application/views/paquete/paquete.php" />
+        <option value="$PROJECT_DIR$/application/models/paquete_model.php" />
+        <option value="$PROJECT_DIR$/db_habitat_v1.0.sql" />
+        <option value="$PROJECT_DIR$/application/views/paquete/uno" />
+        <option value="$PROJECT_DIR$/application/views/dinamica/index.php" />
+        <option value="$PROJECT_DIR$/application/views/paquete/index.php" />
+        <option value="$PROJECT_DIR$/application/views/paquete/add.php" />
+        <option value="$PROJECT_DIR$/application/controllers/paquete.php" />
       </list>
     </option>
   </component>
@@ -222,6 +228,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="paquete" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="habitat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="habitat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="material" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -240,7 +268,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -282,8 +314,8 @@
     <property name="options.lastSelected" value="reference.settings.ide.settings.notifications" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../recopilador" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -347,14 +379,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="0" width="1284" height="801" extended-state="0" />
+    <frame x="-2" y="0" width="1284" height="801" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2603369" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2828201" sideWeight="0.431853" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19561689" sideWeight="0.77641654" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17938311" sideWeight="0.73966306" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18912338" sideWeight="0.2128637" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -363,7 +396,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -422,54 +454,52 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db_habitat_v1.0.sql">
+    <entry file="file://$PROJECT_DIR$/assets/less/combobox.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="35" selection-start="3731" selection-end="3731" vertical-scroll-proportion="-0.2200957" />
+        <state line="26" column="15" selection-start="383" selection-end="383" vertical-scroll-proportion="-0.023923445" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/evento.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/material.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="4265" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/colaborador/edit.php">
+    <entry file="file://$PROJECT_DIR$/application/views/colaborador/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="24" selection-start="2404" selection-end="2429" vertical-scroll-proportion="0.94727594" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/colaborador/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="83" selection-start="368" selection-end="410" vertical-scroll-proportion="0.31634447" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/colaborador/assign.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="17" selection-start="768" selection-end="768" vertical-scroll-proportion="0.44815466" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/colaborador_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="55" selection-start="2543" selection-end="2543" vertical-scroll-proportion="0.5215311" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="40" selection-start="2338" selection-end="2338" vertical-scroll-proportion="-0.625">
+        <state line="17" column="51" selection-start="532" selection-end="532" vertical-scroll-proportion="0.43814433">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+    <entry file="file://$PROJECT_DIR$/application/views/dinamica/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="40" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0" />
+        <state line="71" column="0" selection-start="3010" selection-end="3010" vertical-scroll-proportion="0.5154639">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/colaborador.php">
+    <entry file="file://$PROJECT_DIR$/application/views/dinamica/colaboradores.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="71" selection-start="7045" selection-end="7045" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/material/edit.php">
+    <entry file="file://$PROJECT_DIR$/application/views/dinamica/materiales.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/includes/header1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="7" selection-start="523" selection-end="523" vertical-scroll-proportion="-0.69284064">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/includes/navbar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -478,40 +508,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/material/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="23" selection-start="237" selection-end="237" vertical-scroll-proportion="0.25773194">
+        <state line="9" column="14" selection-start="213" selection-end="213" vertical-scroll-proportion="-0.74626863">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dinamica/index.php">
+    <entry file="file://$PROJECT_DIR$/db_habitat_v1.0.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="10" selection-start="834" selection-end="834" vertical-scroll-proportion="0.52238804">
+        <state line="184" column="0" selection-start="5077" selection-end="5077" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../recopilador/ini.php">
+    <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="696" selection-end="983" vertical-scroll-proportion="-12.5">
+        <state line="79" column="66" selection-start="4066" selection-end="4077" vertical-scroll-proportion="-15.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/paquete_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="32" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/paquete/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="-6.875">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/material/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="22" selection-start="545" selection-end="545" vertical-scroll-proportion="37.375">
+        <state line="67" column="0" selection-start="931" selection-end="2575" vertical-scroll-proportion="-23.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/dinamica.php">
+    <entry file="file://$PROJECT_DIR$/application/views/paquete/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="58" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0" />
+        <state line="46" column="0" selection-start="2002" selection-end="2002" vertical-scroll-proportion="-7.5">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dinamica/add.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/paquete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="104" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.025423728">
+        <state line="10" column="49" selection-start="288" selection-end="288" vertical-scroll-proportion="0.23923445">
           <folding />
         </state>
       </provider>
