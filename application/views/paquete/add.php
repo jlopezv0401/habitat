@@ -8,11 +8,12 @@
         <h5>Nombre</h5>
         <?php echo form_error('nombre');?>
         <input type="input" name="nombre" class="input-large" placeholder="Nombre" required maxlength="50" autofocus/>
-
+        </br>
+        <a href="#modalMateriales" role="button" class="btn" data-toggle="modal"><i class="icon-plus-sign"></i>Agregar Materiales</a>
+        </br>
         <table class="table table-striped table-bordered tablesorter" id="tableMateriales">
             <thead>
             <tr>
-                <th><i class="icon-tags"></i> ID</th>
                 <th><i class="icon-user"></i> Nombre</th>
                 <th><i class="icon-flag"></i> Cantidad</th>
                 <th><i class="icon-chevron-right"></i> Descripcion</th>
@@ -20,53 +21,94 @@
             </tr>
             </thead>
             <tbody>
-            <? foreach($materiales as $material): ?>
-            <tr>
-                <td align="center"><?=$material['id']?></td>
-                <td><?=$material['nombre']?></td>
-                <td><?=$material['cantidad']?></td>
-                <td><?=$material['descripcion']?></td>
-                <td>
-                    <div class="btn-group">
-                        <button align="center" class="btn" name="enviar" type="submit" value="ver">
-                            <i class="icon-list icon-black"></i>
-                            Agregar a Paquete
-                        </button>
-                        <button align="center" class="btn" name="enviar" type="submit" value="editar">
-                            <i class="icon-edit icon-black"></i>
-                        </button>
-                        <button align="center" class="btn btn-danger" name="enviar" type="submit" value="borrar">
-                            <i class="icon-remove icon-white"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-                <? endforeach;?>
+
             </tbody>
         </table>
-
-
         </br>
         <button type="submit" class="btn btn-primary">
             <i class="icon-file icon-white"></i> Guardar
         </button>
-
     </fieldset>
+
+    <div class="modal hide fade" id="modalMateriales">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>Materiales Disponibles</h3>
+        </div>
+        <div class="modal-body">
+            <table class="table table-striped table-bordered tablesorter" id="tableMaterialesDisp">
+                <thead>
+                <tr>
+                    <th><i class="icon-user"></i> Nombre</th>
+                    <th><i class="icon-info-sign"></i> Descripcion</th>
+                    <th><i class="icon-th-list"></i> Cantidad</th>
+                    <th><i class="icon-plus-sign"></i> Agregar</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <? foreach($materiales as $i => $material): ?>
+                        <tr>
+                            <td><?=$material['nombre']?></td>
+                            <td><?=$material['descripcion']?></td>
+                            <td>
+                                <input type="input" id="<?=$i?>" class="input-mini" placeholder="Cantidad" required maxlength="6" autofocus/>
+                            </td>
+                            <td>
+                                <button class="btn" type="button" id="<?=$i?>">
+                                    <i class="icon-plus-sign"></i> Agregar
+                                </button>
+                            </td>
+                        </tr>
+                    <? endforeach;?>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Cerrar</a>
+        </div>
+    </div>
 
 </form>
 
 <script src="<?=base_url('assets/js/jquery.js')?>"></script>
 <script src="<?=base_url('assets/js/bootstrap-button.js')?>"></script>
-<script src="<?=base_url('assets/js/bootstrap-datepicker.js')?>"></script>
+<script src="<?=base_url('assets/js/bootstrap-modal.js')?>"></script>
 <script>
     $(document).ready(function() {
 
-        //$('#formAdd').submit();
         $('#alert').hide();
-        $('#dp1').datepicker();
-        $('#dp2').datepicker();
+        $('#modalMateriales').modal('hide');
 
-        /*        var startDate = new Date($('#dp1').val());
+        $('#tableMaterialesDisp tr .btn').click(function(){
+            var cantidad = $('input[id="' + $(this).attr('id') + '"]').val();
+            var nombre = $(this).parent().siblings().eq(0).html();
+            var descripcion = $(this).parent().siblings().eq(1).html();
+
+            $('#tableMateriales').append('' +
+                '<tr>' +
+                '<td>'+ nombre +'</td>' +
+                '<td>'+ cantidad +'</td>' +
+                '<td>'+ descripcion +'</td>' +
+                '<td>' +
+                '<button align="center" class="btn btn-danger" type="button">' +
+                '<i class="icon-remove icon-white"></i>Quitar </button>'+
+                '</td>' +
+                '</tr>');
+
+            $(this).parent().parent().remove();
+
+        });
+
+
+        $('#tableMateriales tr .btn').click(function(){
+            $(this).parent().parent().remove();
+        });
+
+
+
+
+    /*        var startDate = new Date($('#dp1').val());
     var endDate = new Date($('#dp2').val());
     $('#dp1').datepicker()
     .on('changeDate', function(ev){

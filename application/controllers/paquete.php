@@ -11,7 +11,8 @@ class Paquete extends CI_Controller {
         $data['titulo'] = 'Paquetes Disponibles';
         if ($boton == 'agregar'){
             $data['titulo'] = 'Nuevo Paquete';
-            $data['materiales'] = array();
+            $this->load->model('material_model');
+            $data['materiales'] = $this->material_model->read_material();
             $this->load->view('includes/header', $data);
             $this->load->view('paquete/add', $data);
             $this->load->view('includes/footer', $data);
@@ -70,6 +71,8 @@ class Paquete extends CI_Controller {
         $this->form_validation->set_rules('descripcion','Descripcion','required');
 
         if ($this->form_validation->run()==FALSE){
+            $this->load->model('material_model');
+            $data['materiales'] = $this->material_model->read_material();
             $this->load->view('includes/header', $data);
             $this->load->view('paquete/add', $data);
             $this->load->view('includes/footer', $data);

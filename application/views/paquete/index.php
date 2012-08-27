@@ -33,8 +33,8 @@
             <tr>
                 <th><i class="icon-tags"></i> ID</th>
                 <th><i class="icon-user"></i> Nombre</th>
-                <th><i class="icon-flag"></i> Cantidad</th>
-                <th><i class="icon-chevron-right"></i> Descripcion</th>
+                <th><i class="icon-th-list"></i> Cantidad</th>
+                <th><i class="icon-info-sign"></i> Descripcion</th>
                 <th><i class="icon-road"></i> Acciones</th>
             </tr>
             </thead>

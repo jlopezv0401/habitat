@@ -94,7 +94,9 @@
 
 <script>
     $(document).ready( function () {
-
+        $('td').click(function (){
+            $(this).parent().children().remove();
+        });
         //$("#resultado").hide();
         //                $("#botonBuscar").click( function (){
         //                    $.post('buscar.php', $('#formBuscar').serialize(), function(data){
