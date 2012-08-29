@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87657537-046b-4bd5-b6b0-0724de127e19" name="Default" comment="Titulos de forms corregidos">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/participante.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/participante_model.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/participante/add.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/participante/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/participante/qr.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/database.php" afterPath="$PROJECT_DIR$/application/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/colaborador/add.php" afterPath="$PROJECT_DIR$/application/views/colaborador/add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/header.php" afterPath="$PROJECT_DIR$/application/views/includes/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/paquete/add.php" afterPath="$PROJECT_DIR$/application/views/paquete/add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_habitat_v1.0.sql" afterPath="$PROJECT_DIR$/db_habitat_v1.0.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/participante.php" afterPath="$PROJECT_DIR$/application/controllers/participante.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/phpqrcode/INSTALL" afterPath="$PROJECT_DIR$/application/libraries/phpqrcode/INSTALL" />
     </list>
     <ignored path="habitat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,46 +27,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="database.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="39" selection-start="2628" selection-end="2628" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="add.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/participante/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="151" selection-start="2108" selection-end="2108" vertical-scroll-proportion="-9.375">
+            <state line="72" column="26" selection-start="3002" selection-end="3002" vertical-scroll-proportion="-20.583334">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/participante/index.php">
+      <file leaf-file-name="qr.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/participante/qr.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="28" selection-start="2694" selection-end="2694" vertical-scroll-proportion="0.71649486">
+            <state line="3" column="0" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qrlib.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/phpqrcode/qrlib.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phpqrcode.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/phpqrcode/phpqrcode.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="428" column="41" selection-start="16264" selection-end="16264" vertical-scroll-proportion="-267.5">
+              <folding>
+                <marker date="1286503930000" expanded="true" signature="9714:9882" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="INSTALL" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/phpqrcode/INSTALL">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="9" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/phpqrcode/README">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/colaborador/index.php">
+        <entry file="file://$PROJECT_DIR$/application/views/participante/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="28.125">
+            <state line="93" column="9" selection-start="3542" selection-end="3542" vertical-scroll-proportion="-30.583334">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="participante_model.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="participante_model.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/models/participante_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0">
+            <state line="36" column="58" selection-start="1190" selection-end="1190" vertical-scroll-proportion="0.8910891">
               <folding />
             </state>
           </provider>
@@ -91,7 +113,7 @@
       <file leaf-file-name="participante.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/participante.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="53" selection-start="874" selection-end="874" vertical-scroll-proportion="0.0">
+            <state line="20" column="33" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -111,8 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/paquete.php" />
-        <option value="$PROJECT_DIR$/application/views/paquete/index.php" />
         <option value="$PROJECT_DIR$/assets/js/jquery.js" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
@@ -124,9 +144,11 @@
         <option value="$PROJECT_DIR$/application/views/material/add.php" />
         <option value="$PROJECT_DIR$/application/views/colaborador/add.php" />
         <option value="$PROJECT_DIR$/application/models/participante_model.php" />
-        <option value="$PROJECT_DIR$/application/controllers/participante.php" />
-        <option value="$PROJECT_DIR$/application/views/participante/add.php" />
         <option value="$PROJECT_DIR$/application/views/participante/index.php" />
+        <option value="$PROJECT_DIR$/application/views/participante/add.php" />
+        <option value="$PROJECT_DIR$/application/controllers/participante.php" />
+        <option value="$PROJECT_DIR$/application/libraries/phpqrcode/INSTALL" />
+        <option value="$PROJECT_DIR$/application/views/participante/qr.php" />
       </list>
     </option>
   </component>
@@ -204,108 +226,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="habitat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="habitat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="habitat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="habitat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="participante" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="habitat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="habitat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="habitat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="habitat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="colaborador" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="habitat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="habitat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -316,8 +236,8 @@
     <property name="options.lastSelected" value="reference.settings.ide.settings.notifications" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -388,7 +308,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2828201" sideWeight="0.431853" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2021104" sideWeight="0.73966306" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2564935" sideWeight="0.0" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18912338" sideWeight="0.2128637" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -456,9 +376,24 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/includes/header.php">
+    <entry file="file://$PROJECT_DIR$/application/config/foreign_chars.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="78" selection-start="4521" selection-end="4521" vertical-scroll-proportion="0.6219931" />
+        <state line="18" column="25" selection-start="577" selection-end="577" vertical-scroll-proportion="0.44554454" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="49" selection-start="2581" selection-end="2581" vertical-scroll-proportion="2.2524753" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/colaborador_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="469" selection-end="917" vertical-scroll-proportion="0.4950495" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/database.php">
@@ -466,98 +401,79 @@
         <state line="50" column="39" selection-start="2628" selection-end="2628" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/colaborador/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db_habitat_v1.0.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state line="144" column="4" selection-start="3897" selection-end="3897" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../BarcodeQR.php">
+    <entry file="file://$PROJECT_DIR$/application/views/participante/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="16" selection-start="512" selection-end="512" vertical-scroll-proportion="0.4950495">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.13861386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/profiler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/hooks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/foreign_chars.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="577" selection-end="577" vertical-scroll-proportion="0.44554454">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="49" selection-start="2581" selection-end="2581" vertical-scroll-proportion="2.2524753">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/colaborador_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="469" selection-end="917" vertical-scroll-proportion="0.4950495">
+        <state line="93" column="9" selection-start="3542" selection-end="3542" vertical-scroll-proportion="-30.583334">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/participante.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="53" selection-start="874" selection-end="874" vertical-scroll-proportion="0.0">
+        <state line="20" column="33" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/phpqrcode/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/phpqrcode/INSTALL">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="9" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/phpqrcode/phpqrcode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="428" column="41" selection-start="16264" selection-end="16264" vertical-scroll-proportion="-267.5">
+          <folding>
+            <marker date="1286503930000" expanded="true" signature="9714:9882" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/participante/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="26" selection-start="3002" selection-end="3002" vertical-scroll-proportion="-20.583334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/phpqrcode/qrlib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/participante/qr.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/participante_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/colaborador/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="28.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/participante/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="151" selection-start="2108" selection-end="2108" vertical-scroll-proportion="-9.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/participante/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="28" selection-start="2694" selection-end="2694" vertical-scroll-proportion="0.71649486">
+        <state line="36" column="58" selection-start="1190" selection-end="1190" vertical-scroll-proportion="0.8910891">
           <folding />
         </state>
       </provider>

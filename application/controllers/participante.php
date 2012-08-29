@@ -1,5 +1,5 @@
 <?php
-include(APPPATH.'libraries/phpqrcode/qrlib.php');
+include(dirname(__FILE__).'/../libraries/phpqrcode/qrlib.php');
 
 class Participante extends CI_Controller {
 
@@ -15,6 +15,7 @@ class Participante extends CI_Controller {
             $data['titulo'] = 'Nuevo Participante';
             $this->load->view('includes/header', $data);
             $this->load->view('participante/add', $data);
+            $this->load->view('participante/qr', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'ver'){
