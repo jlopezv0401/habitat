@@ -22,6 +22,22 @@
             </thead>
             <tbody>
 
+            <? foreach($materiales as $i => $material): ?>
+            <tr>
+                <td><?=$material['nombre']?></td>
+                <td><?=$material['descripcion']?></td>
+                <td>
+                    <input type="input" id="<?=$i?>" class="input-mini" placeholder="Cantidad" required maxlength="6" autofocus/>
+                </td>
+                <td>
+                    <button class="btn" type="button" id="<?=$i?>">
+                        <i class="icon-plus-sign"></i> Agregar
+                    </button>
+                </td>
+            </tr>
+                <? endforeach;?>
+
+
             </tbody>
         </table>
         </br>
@@ -100,7 +116,6 @@
 
         });
 
-
         $('#tableMateriales tr .btn').click(function(){
             $(this).parent().parent().remove();
         });
@@ -108,7 +123,7 @@
 
 
 
-    /*        var startDate = new Date($('#dp1').val());
+    /*var startDate = new Date($('#dp1').val());
     var endDate = new Date($('#dp2').val());
     $('#dp1').datepicker()
     .on('changeDate', function(ev){

@@ -141,8 +141,8 @@
     nombre varchar(30) NOT NULL,
     apaterno VARCHAR(25) NOT NULL,
     amaterno VARCHAR (25),
-    edad CHAR(2),
     sexo ENUM('H','M') NOT NULL,
+    edad CHAR(2),
     telefono VARCHAR(12),
     correo VARCHAR(50),
     PRIMARY KEY(id)

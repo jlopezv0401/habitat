@@ -22,8 +22,8 @@ echo form_open('colaborador/add') ?>
 
         <h5>Sexo</h5>
         <?php echo form_error('sexo'); ?>
-        <input type="radio" name="sexo" class="inline" value="H" required/>Hombre &nbsp;
-        <input type="radio" name="sexo" class="inline" value="M" required/>Mujer
+        <input type="radio" name="sexo" class="radio inline" value="H" required/> Hombre
+        <input type="radio" name="sexo" class="radio inline" value="M" required/> Mujer
         </br>
         </br>
 
