@@ -1,5 +1,4 @@
 <?php
-include(dirname(__FILE__).'/../libraries/phpqrcode/qrlib.php');
 
 class Participante extends CI_Controller {
 
@@ -15,16 +14,15 @@ class Participante extends CI_Controller {
             $data['titulo'] = 'Nuevo Participante';
             $this->load->view('includes/header', $data);
             $this->load->view('participante/add', $data);
-            $this->load->view('participante/qr', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'ver'){
-            $this->load->model('carpa_model');
-            $data['carpas'] = $this->carpa_model->read_carpa();
-            $data['titulo'] = 'Carpas Disponibles';
+            $this->load->model('participante_model');
+            $data['participantes'] = $this->participante_model->read_participante_esp();
+            $data['titulo'] = 'Imprimir Acceso';
 
             $this->load->view('includes/header', $data);
-            $this->load->view('carpa/index', $data);
+            $this->load->view('participante/qr', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif ($boton == 'editar'){
@@ -42,7 +40,6 @@ class Participante extends CI_Controller {
 
                 $this->participante_model->del_participante();
                 $data['participantes'] = $this->participante_model->read_participante();
-
 
                 $this->load->view('includes/header', $data);
                 $this->load->view('participante/index', $data);
@@ -116,6 +113,5 @@ class Participante extends CI_Controller {
             $this->load->view('participante/index', $data);
             $this->load->view('includes/footer', $data);
         }
-
     }
 }
