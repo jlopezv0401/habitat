@@ -12,15 +12,16 @@ echo form_open('participante/add') ?>
 
             <h2 id='nombre'> Habitat Bla Bla</h2>
             </br>
-            <div class="span2" id="qr">
+            <div class="span3" id="qr">
+                <input name="id_participante" type="hidden" id="id_participante"></input>
             </div>
-            <div class="span6 offset4">
-                <h2>Aqui va el nombre completo</h2>
-                <h3>Este es un dato</h3>
-                <h3>Este es otro dato</h3>
-                <h3>Este es otro dato</h3>
+            <div class="span5 offset3">
+                <h2><?php echo $participante->nombre ?></h2>
+                <h3><?php echo $participante->apaterno . ' ' . $participante->amaterno ?></h3>
+                <h4><?php echo $participante->edad . ' años'?></h4>
+                <h4><?php echo $participante->correo ?></h4>
             </div>
-            <div class="span3 offset10">
+            <div class="span2 offset10">
                 Una foto aqui
             </div>
 
@@ -49,10 +50,11 @@ echo form_open('participante/add') ?>
 
         //$('#formAdd').submit();
         $('#alert').hide();
+        var id_participante= $('#id_participante').val();
         jQuery('#qr').qrcode({
             width: 128,
             height: 128,
-            text	: "Hey oh let's go!!"
+            text: '' + id_participante + ''
         });
 
 

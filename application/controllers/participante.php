@@ -18,7 +18,7 @@ class Participante extends CI_Controller {
         }
         elseif ($boton == 'ver'){
             $this->load->model('participante_model');
-            $data['participantes'] = $this->participante_model->read_participante_esp();
+            $data['participante'] = $this->participante_model->read_participante_esp();
             $data['titulo'] = 'Imprimir Acceso';
 
             $this->load->view('includes/header', $data);
@@ -27,7 +27,7 @@ class Participante extends CI_Controller {
         }
         elseif ($boton == 'editar'){
             $data['titulo'] = 'Editar Participante';
-            $data['participantes'] = $this->participante_model->read_participante_esp();
+            $data['participante'] = $this->participante_model->read_participante_esp();
 
             $this->load->view('includes/header', $data);
             $this->load->view('participante/edit', $data);
