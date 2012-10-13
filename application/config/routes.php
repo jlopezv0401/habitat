@@ -42,7 +42,7 @@
 $route['evento/add'] = 'evento/add';
 $route['evento'] = 'evento/index';
 //$route['evento/(:any)'] = 'evento/index';
-$route['default_controller'] = 'evento/index';
+$route['default_controller'] = 'login/index';
 $route['404_override'] = '';
 
 

@@ -7,16 +7,16 @@
 
     DROP TABLE IF EXISTS Material;
     CREATE TABLE  Material(
-    id INT NOT NULL AUTO_INCREMENT,
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
-    cantidad INT NOT NULL,
+    existencia INT NOT NULL,
     descripcion TEXT COLLATE utf8_bin DEFAULT NULL,
     PRIMARY KEY(id)
     )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
     DROP TABLE IF EXISTS Metrica;
     CREATE TABLE Metrica(
-    id INT NOT NULL AUTO_INCREMENT,
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
     valor_medir VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
     rango_inicio INT NOT NULL,
@@ -25,16 +25,9 @@
     PRIMARY KEY(id)
     )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
-    DROP TABLE IF EXISTS Pregunta;
-    CREATE TABLE Pregunta(
-    id INT NOT NULL AUTO_INCREMENT,
-    pregunta VARCHAR(60) COLLATE utf8_bin DEFAULT NULL,
-    PRIMARY KEY(id)
-    )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
-
     DROP TABLE IF EXISTS Evento;
     CREATE TABLE Evento(
-    id INT NOT NULL AUTO_INCREMENT,
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
     ubicacion TEXT COLLATE utf8_bin DEFAULT NULL,
     fecha_inicio DATE NOT NULL,
@@ -44,8 +37,8 @@
 
     DROP TABLE IF EXISTS Carpa;
     CREATE TABLE Carpa(
-    id INT NOT NULL AUTO_INCREMENT,
-    id_evento INT  NOT NULL,
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
+    id_evento BIGINT(20) NOT NULL,
     nombre VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
     PRIMARY KEY(id),
     CONSTRAINT carpa_evento_fk FOREIGN KEY(id_evento) REFERENCES Evento(id) ON DELETE CASCADE ON UPDATE CASCADE
@@ -53,8 +46,8 @@
 
     DROP TABLE IF EXISTS Programa;
     CREATE TABLE Programa(
-    id INT NOT NULL  AUTO_INCREMENT,
-    id_carpa INT  NOT NULL,
+    id BIGINT(20) NOT NULL  AUTO_INCREMENT,
+    id_carpa BIGINT(20)  NOT NULL,
     nombre VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
     descripcion TEXT COLLATE utf8_bin DEFAULT NULL,
     PRIMARY KEY(id),
@@ -63,8 +56,8 @@
 
     DROP TABLE IF EXISTS Area;
     CREATE TABLE Area(
-    id INT NOT NULL AUTO_INCREMENT,
-    id_programa INT NOT NULL,
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
+    id_programa BIGINT(20) NOT NULL,
     nombre VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
     descripcion TEXT COLLATE utf8_bin DEFAULT NULL,
     PRIMARY KEY(id),
@@ -73,12 +66,12 @@
 
     DROP TABLE IF EXISTS Dinamica;
     CREATE TABLE Dinamica(
-    id INT NOT NULL AUTO_INCREMENT,
-    id_area INT NOT NULL,
-    id_metrica INT NOT NULL,
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
+    id_area BIGINT(20) NOT NULL,
+    id_metrica BIGINT(20) NOT NULL,
     nombre VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
-    hora_inicio TIME NOT NULL,
-    hora_fin TIME NOT NULL,
+    hora_inicio DATETIME NOT NULL,
+    hora_fin DATETIME NOT NULL,
     descripcion TEXT COLLATE utf8_bin DEFAULT NULL,
     PRIMARY KEY(id),
     CONSTRAINT dinamica_area_fk FOREIGN KEY(id_area) REFERENCES Area(id) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -87,20 +80,27 @@
 
     DROP TABLE IF EXISTS Paquete;
     CREATE TABLE Paquete(
-    id INT NOT NULL AUTO_INCREMENT,
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
-    id_dinamica INT NOT NULL,
-    id_material INT NOT NULL,
+    id_material BIGINT(20) NOT NULL,
     cantidad INT NOT NULL,
     PRIMARY KEY(id),
-    CONSTRAINT paquete_dinamica_fk FOREIGN KEY(id_dinamica) REFERENCES Dinamica(id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT paquete_material_fk FOREIGN KEY(id_material) REFERENCES Material(id) ON DELETE CASCADE ON UPDATE CASCADE
+    )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
+
+    DROP TABLE IF EXISTS Dinamica_Paquete;
+    CREATE TABLE Dinamica_Paquete(
+    id_dinamica BIGINT(20) NOT NULL,
+    id_paquete BIGINT(20) NOT NULL,
+    lista INT DEFAULT NULL,
+    CONSTRAINT dinamica_paquete1_fk FOREIGN KEY(id_paquete) REFERENCES Paquete(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT dinamica_paquete2_fk FOREIGN KEY(id_dinamica) REFERENCES Dinamica(id) ON DELETE CASCADE ON UPDATE CASCADE
     )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
     DROP TABLE IF EXISTS Intervalo;
     CREATE TABLE Intervalo(
-    id INT NOT NULL AUTO_INCREMENT,
-    id_metrica INT NOT NULL,
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
+    id_metrica BIGINT(20) NOT NULL,
     intervalo VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
     descripcion TEXT COLLATE utf8_bin DEFAULT NULL,
     PRIMARY KEY(id),
@@ -109,52 +109,45 @@
 
     DROP TABLE IF EXISTS Colaborador;
     CREATE TABLE Colaborador(
-    id INT NOT NULL AUTO_INCREMENT,
-    id_dinamica INT,
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
+    usuario varchar(100) COLLATE utf8_bin UNIQUE DEFAULT NULL,
+    password varchar(100) COLLATE utf8_bin DEFAULT NULL,
+    PRIMARY KEY (id)
+    )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
+
+    DROP TABLE IF EXISTS Colaborador_Personal;
+    CREATE TABLE Colaborador_Personal(
+    id_colaborador BIGINT(20),
     nombre VARCHAR(30) COLLATE utf8_bin DEFAULT NULL,
     apaterno VARCHAR(25) COLLATE utf8_bin DEFAULT NULL,
     amaterno VARCHAR (25) COLLATE utf8_bin DEFAULT NULL,
     sexo ENUM('H','M') COLLATE utf8_bin DEFAULT NULL,
-    edad CHAR(2) COLLATE utf8_bin DEFAULT NULL,
+    edad INT NOT NULL,
     direccion TEXT COLLATE utf8_bin DEFAULT NULL,
     telefono VARCHAR(12) COLLATE utf8_bin DEFAULT NULL,
     correo VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
-    PRIMARY KEY(id),
-    CONSTRAINT colabodor_dinamica_fk FOREIGN KEY(id_dinamica) REFERENCES Dinamica(id) ON DELETE CASCADE ON UPDATE CASCADE
+    PRIMARY KEY(id_colaborador),
+    CONSTRAINT colaborador_personal_colaborador_fk FOREIGN KEY(id_colaborador) REFERENCES Colaborador(id) ON DELETE CASCADE ON UPDATE CASCADE
     )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
-    DROP TABLE IF EXISTS Colaborador_Personales;
-    CREATE TABLE Colaborador(
-    id INT NOT NULL AUTO_INCREMENT,
-    id_dinamica INT,
-    nombre VARCHAR(30) COLLATE utf8_bin DEFAULT NULL,
-    apaterno VARCHAR(25) COLLATE utf8_bin DEFAULT NULL,
-    amaterno VARCHAR (25) COLLATE utf8_bin DEFAULT NULL,
-    sexo ENUM('H','M') COLLATE utf8_bin DEFAULT NULL,
-    edad CHAR(2) COLLATE utf8_bin DEFAULT NULL,
-    direccion TEXT COLLATE utf8_bin DEFAULT NULL,
-    telefono VARCHAR(12) COLLATE utf8_bin DEFAULT NULL,
-    correo VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
-    PRIMARY KEY(id),
-    CONSTRAINT colabodor_dinamica_fk FOREIGN KEY(id_dinamica) REFERENCES Dinamica(id) ON DELETE CASCADE ON UPDATE CASCADE
-    )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
-
-    DROP TABLE IF EXISTS Responsable;
-    CREATE TABLE Responsable(
-    id INT NOT NULL AUTO_INCREMENT,
-    id_colaborador INT NOT NULL,
-    PRIMARY KEY(id),
-    CONSTRAINT responsable_colaborador_fk FOREIGN KEY(id_colaborador) REFERENCES Colaborador(id) ON DELETE CASCADE ON UPDATE CASCADE
+    DROP TABLE IF EXISTS Dinamica_Colaborador;
+    CREATE TABLE Dinamica_Colaborador(
+    id_dinamica BIGINT(20) NOT NULL,
+    id_colaborador BIGINT(20) NOT NULL,
+    responsable BOOLEAN DEFAULT NULL,
+    lista INT DEFAULT NULL,
+    CONSTRAINT dinamica_colaborador1_fk FOREIGN KEY(id_colaborador) REFERENCES Colaborador(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT dinamica_colaborador2_fk FOREIGN KEY(id_dinamica) REFERENCES Dinamica(id) ON DELETE CASCADE ON UPDATE CASCADE
     )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
     DROP TABLE IF EXISTS Participante;
     CREATE TABLE Participante(
-    id INT NOT NULL AUTO_INCREMENT,
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(30) COLLATE utf8_bin DEFAULT NULL,
     apaterno VARCHAR(25) COLLATE utf8_bin DEFAULT NULL,
     amaterno VARCHAR (25) COLLATE utf8_bin DEFAULT NULL,
     sexo ENUM('H','M') COLLATE utf8_bin DEFAULT NULL,
-    edad CHAR(2) COLLATE utf8_bin DEFAULT NULL,
+    edad INT NOT NULL,
     telefono VARCHAR(12) COLLATE utf8_bin DEFAULT NULL,
     correo VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
     PRIMARY KEY(id)
@@ -162,13 +155,13 @@
 
     DROP TABLE IF EXISTS Calificacion;
     CREATE TABLE Calificacion(
-    id INT NOT NULL AUTO_INCREMENT,
-    id_intervalo INT NOT NULL,
-    id_participante INT NOT NULL,
+    id BIGINT(20) NOT NULL AUTO_INCREMENT,
+    id_intervalo BIGINT(20) NOT NULL,
+    id_participante BIGINT(20) NOT NULL,
     calificacion INT NOT NULL,
     PRIMARY KEY(id),
-    FOREIGN KEY(id_intervalo) REFERENCES Intervalo(id),
-    FOREIGN KEY(id_participante) REFERENCES Participante(id)
+    CONSTRAINT calificacion_intervalo_fk FOREIGN KEY(id_intervalo) REFERENCES Intervalo(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT calificacion_participante_fk FOREIGN KEY(id_participante) REFERENCES Participante(id) ON DELETE CASCADE ON UPDATE CASCADE
     )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
     DELIMITER ;

@@ -21,12 +21,12 @@
      <link href="<?= base_url('assets/css/mi-estilo.css')?>" rel="stylesheet" type="text/css" />
     
 	<script src="<?=base_url('assets/js/jquery.js')?>"></script>
-    <script src="<?= base_url('assets/js/bootstrap.js')?>"></script>
+  <script src="<?= base_url('assets/js/bootstrap.js')?>"></script>
    
 	<script src="<?=base_url('assets/js/bootstrap-button.js')?>"></script>
 	<script src="<?=base_url('assets/js/bootstrap-typeahead.js')?>"></script>
 	<script src="<?=base_url('assets/js/bootstrap-combobox.js')?>"></script>
-	<!--<script src="<?=base_url('assets/js/prettify/prettify.js')?>"></script>-->
+	<script src="<?=base_url('assets/js/prettify/prettify.js')?>"></script>
 	<script src="<?=base_url('assets/js/bootstrap-timepicker.js')?>"></script>
   
     
