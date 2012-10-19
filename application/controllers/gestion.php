@@ -21,22 +21,20 @@ class Gestion extends CI_Controller
             $crud->set_table('Evento');
             $crud->columns('nombre','ubicacion','fecha_inicio','fecha_fin');
 
-            $crud->add_action('Carpas','', 'gestion/carpa', array($this,'id_evento'));
+            $crud->add_action('Carpas','','gestion/carpa','',array($this,'funcion_evento'));
 
-            $crud->fields('nombre','ubicacion','fecha_inicio','fecha_fin');            
+            $crud->fields('nombre','ubicacion','fecha_inicio','fecha_fin');  
             
             $output = $crud->render();
             
             $this->load->view('includes/header');
             $this->load->view('evento/index', $output);
             $this->load->view('includes/footer');
-
         // }
     }
 
-    function id_evento($primary_key , $row){
-        $post_array['id'] = $primary_key;
-        return $post_array;
+    function funcion_evento($primary_key , $row){
+        return site_url('gestion/carpa').'?evento='.$primary_key;
     }
 
     public function carpa(){
@@ -50,7 +48,7 @@ class Gestion extends CI_Controller
             $crud->columns('id_evento', 'nombre');
 
             $crud->add_action('Programas','', 'gestion/programa', '');
-            $crud->callback_before_insert(array($this,'id_evento'));   
+            $crud->callback_before_insert(array($this,'fill_evento'));   
 
             $crud->fields('nombre');            
             
@@ -59,7 +57,11 @@ class Gestion extends CI_Controller
             $this->load->view('includes/header');
             $this->load->view('carpa/index', $output);
             $this->load->view('includes/footer');
-
         // }
+    }
+
+    function fill_evento($post_array){
+        $post_array['id_evento'] = $_GET['evento'];
+        return $post_array;
     }
 }	

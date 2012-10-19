@@ -1,6 +1,8 @@
 <h3>Carpas</h3>
 
-<?php       
+<?php
+echo $_GET['evento']; 
+var_dump($_POST);
 foreach($css_files as $file): ?>
     <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 <?php endforeach; ?>
