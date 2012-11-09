@@ -32,10 +32,6 @@
    	    <a class="brand pull-right" href"#"><span style="font-size:14px;">Uniendo Esfuerzos</span></a>
    	  
    	    <ul class="pull-right">
-     	    <script>
-        	 $('#myModal').modal('toggle')
-        	</script>
-  	       <a type="button" class="btn btn-primary btn-large" data-toggle="modal" href="#myModal" >Iniciar Sesión</a>
    	    </ul>
     </div>
   </div>
