@@ -1,117 +1,69 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Participante extends CI_Controller {
+class Participante extends CI_Controller
+{
 
-    public function __construct(){
+    function __construct()
+    {
         parent::__construct();
-        $this->load->model('participante_model');
+        
+        $this->load->database();
+        $this->load->helper('url');
+        $this->load->library('grocery_CRUD');
     }
 
-    public function index(){
-        $boton = $this->input->post('enviar');
-        $data['titulo'] = 'Participantes Disponibles';
-        if ($boton == 'agregar'){
-            $data['titulo'] = 'Nuevo Participante';
-            $this->load->view('includes/header', $data);
-            $this->load->view('participante/add', $data);
-            $this->load->view('includes/footer', $data);
-        }
-        elseif ($boton == 'ver'){
-            $this->load->model('participante_model');
-            $data['participante'] = $this->participante_model->read_participante_esp();
-            $data['titulo'] = 'Imprimir Acceso';
+    public function index()
+    {
+      
+        $crud = new grocery_CRUD();
 
-            $this->load->view('includes/header', $data);
-            $this->load->view('participante/qr', $data);
-            $this->load->view('includes/footer', $data);
-        }
-        elseif ($boton == 'editar'){
-            $data['titulo'] = 'Editar Participante';
-            $data['participante'] = $this->participante_model->read_participante_esp();
+            $crud->set_theme('datatables');
+            $crud->set_subject('Participantes');
 
-            $this->load->view('includes/header', $data);
-            $this->load->view('participante/edit', $data);
-            $this->load->view('includes/footer', $data);
-        }
-        elseif ($boton == 'borrar'){
-            $data['titulo'] = 'Participantes';
+            if ($this->input->get('id_evento')){
+                $this->session->set_userdata('id_evento',$this->input->get('id_evento'));
+            }   
+            $id_area = $this->session->userdata('id_evento');
+            $crud->where('Participante.id_evento',$id_area);
 
-            if ($this->input->post('id_participante')){
+            $crud->set_table('Participante');
+            $crud->unset_export();
+            $crud->unset_print();
 
-                $this->participante_model->del_participante();
-                $data['participantes'] = $this->participante_model->read_participante();
+            $crud->columns('nombre','apaterno','amaterno');
+            $crud->fields('id_evento','nombre','apaterno','amaterno','sexo','edad','telefono','correo');
+   
+            $crud->change_field_type('id_evento','invisible'); 
+            $crud->add_action('Imprimir QR','', '', 'ui-icon-plus', array($this, 'print_qr_code'));          
 
-                $this->load->view('includes/header', $data);
-                $this->load->view('participante/index', $data);
-                $this->load->view('includes/footer', $data);
-            }
-        }
-        else{
-            $data['participantes'] = $this->participante_model->read_participante();
+            $crud->callback_before_insert(array($this,'set_evento_id'));        
+            $crud->callback_after_insert(array($this,'print_qr_code')); 
+            $output = $crud->render();
 
-            $this->load->view('includes/header', $data);
-            $this->load->view('participante/index', $data);
-            $this->load->view('includes/footer', $data);
-
-            //$data['main_content']='participante/index';
-            //$this->load->view('layout/template2',$data);
-        }
+            $this->load->view('includes/header');
+            $this->load->view('participante/index', $output);
+            $this->load->view('includes/footer');
+            
     }
 
-    public function add(){
-        $data['titulo'] = 'Nuevo Participante';
-
-        $this->load->helper('form');
-        $this->load->library('form_validation');
-
-        $this->form_validation->set_rules('nombre','Nombre','required|max_length[30]|alpha_name');
-        $this->form_validation->set_rules('apaterno','Apellido Paterno','required|max_length[25]|alpha_name');
-        $this->form_validation->set_rules('amaterno','Apellido Materno','required|max_length[25]|alpha_name');
-        $this->form_validation->set_rules('sexo','Sexo','required');
-        $this->form_validation->set_rules('edad','Edad','required|max_length[2]|numeric');
-
-        if ($this->form_validation->run()==FALSE){
-            $this->load->view('includes/header', $data);
-            $this->load->view('participante/add', $data);
-            $this->load->view('includes/footer', $data);
-        }
-        else {
-
-            $this->participante_model->create_participante();
-            $data['participantes'] = $this->participante_model->read_participante();
-            $data['titulo'] = 'Participantes Disponibles';
-
-            redirect('participante/index');
-            $this->load->view('includes/header', $data);
-            $this->load->view('participante/index', $data);
-            $this->load->view('includes/footer', $data);
-        }
+    function set_evento_id($post_array){
+        $post_array['id_evento'] = $this->session->userdata('id_evento');
+        return $post_array;
     }
 
-    public function edit(){
-        $data['titulo'] = 'Editar Participante';
-        $this->load->library('form_validation');
+    function print_qr_code($post_array){
+        $this->load->library('ciqrcode');
 
-        $this->form_validation->set_rules('nombre','Nombre','required|max_length[30]|alpha_name');
-        $this->form_validation->set_rules('apaterno','Apellido Paterno','required|max_length[25]|alpha_name');
-        $this->form_validation->set_rules('amaterno','Apellido Materno','required|max_length[25]|alpha_name');
-        $this->form_validation->set_rules('sexo','Sexo','required');
-        $this->form_validation->set_rules('edad','Edad','required|max_length[2]|numeric');
+        $params['data'] = 'This is a text to encode become QR Code';
+        $params['level'] = 'H';
+        $params['size'] = 10;
+        $params['savename'] = FCPATH.'tes.png';
+        $this->ciqrcode->generate($params);
 
-        if ($this->form_validation->run()==FALSE){
-            $this->load->view('includes/header', $data);
-            $this->load->view('participante/edit', $data);
-            $this->load->view('includes/footer', $data);
-        }
-        else {
-            $this->participante_model->update_participante();
-            $data['participantes'] = $this->participante_model->read_participante();
-            $data['titulo'] = 'Editar Participante';
-
-            redirect('participante/index');
-            $this->load->view('includes/header', $data);
-            $this->load->view('participante/index', $data);
-            $this->load->view('includes/footer', $data);
-        }
+        echo '<img src="'.base_url().'tes.png" />';
+        return $post_array;
     }
+
 }
+
+?>

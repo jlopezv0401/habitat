@@ -1,115 +1,29 @@
-<?php echo validation_errors(); ?>
-<?php echo form_open('material/index') ?>
+<h3>Materiales</h3>
 
-<form id="formIndex" method="post">
-    <fieldset>
+<?php
+foreach($css_files as $file): ?>
+    <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+<?php endforeach; ?>
+<?php foreach($js_files as $file): ?>
+    <script src="<?php echo $file; ?>"></script>
+<?php endforeach; ?>
 
-        <div style="z-index: 873; position:relative; top:-30px;">
-            <ul class="breadcrumb">
-                <li class="active">Materiales</li>
-            </ul>
-        </div>
-
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span9">
-                    <!--Sidebar content-->
-                    <h2><?php echo $titulo; ?></h2>
-
-                </div>
-                <div class="span3">
-                    <!--Body content-->
-                    <button class="btn btn-primary" name="enviar" type="submit" value="agregar">
-                        <i class="icon-plus-sign icon-white"></i>
-                        Agregar Material
-                    </button>
-
-                </div>
-            </div>
-        </div>
-
-        <hr/>
-
-        <table class="table table-striped table-bordered tablesorter" id="tableMateriales">
-            <thead>
-            <tr>
-                <th><i class="icon-tags"></i> ID</th>
-                <th><i class="icon-user"></i> Nombre</th>
-                <th><i class="icon-flag"></i> Cantidad</th>
-                <th><i class="icon-chevron-right"></i> Descripcion</th>
-                <th><i class="icon-road"></i> Acciones</th>
-            </tr>
-            </thead>
-            <tbody>
-            <? foreach($materiales as $material): ?>
-            <tr>
-                <td align="center"><?=$material['id']?></td>
-                <td><?=$material['nombre']?></td>
-                <td><?=$material['cantidad']?></td>
-                <td><?=$material['descripcion']?></td>
-                <td>
-                    <div class="btn-group">
-                        <button align="center" class="btn" name="enviar" type="submit" value="ver">
-                            <i class="icon-list icon-black"></i>
-                            Agregar a Paquete
-                        </button>
-                        <button align="center" class="btn" name="enviar" type="submit" value="editar">
-                            <i class="icon-edit icon-black"></i>
-                        </button>
-                        <button align="center" class="btn btn-danger" name="enviar" type="submit" value="borrar">
-                            <i class="icon-remove icon-white"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-                <? endforeach;?>
-            </tbody>
-        </table>
-
-
-        <input name="id_material" type="hidden" id="id_material"/>
-    </fieldset>
-</form>
-
-<script src="<?=base_url('assets/js/jquery.js')?>"></script>
-<script src="<?=base_url('assets/js/bootstrap-button.js')?>"></script>
-<script>
-
-    $(document).ready(function() {
-        $('td').click(function (){
-
-            var valor = $(this).parent().children().html();
-            var col = $(this).parent().children().index($(this));
-            var row = $(this).parent().parent().children().index($(this).parent());
-
-            $('#id_material').val(valor);
-            //alert($(this).parent().index());
-            //alert($(this).parent(row).html());
-            //$('#ver').click(function() {
-            //    alert('que te parece ' + valor);
-            //});
-        });
-    });
-</script>
-
-<script>
-    $(document).ready( function () {
-        $('td').click(function (){
-            $(this).parent().children().remove();
-        });
-        //$("#resultado").hide();
-        //                $("#botonBuscar").click( function (){
-        //                    $.post('buscar.php', $('#formBuscar').serialize(), function(data){
-        //                        $('#resultado').html(data);
-        //
-        //                    });
-        //                });
-
-        $("#formBuscar").submit( function (event){
-            event.preventDefault();
-            $.post('producto.php', $('#formBuscar').serialize(), function(data){
-                $('#resultado').html(data);
-            });
-        });
-    });
-</script>
+<style type='text/css'>
+body
+{
+    font-family: Arial;
+    font-size: 14px;
+}
+a {
+    color: blue;
+    text-decoration: none;
+    font-size: 14px;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+    </style>
+            <div>
+        <?php echo $output; ?>
+    </div>

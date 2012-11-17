@@ -1,7 +1,6 @@
-<h3>Carpas</h3>
+<h3>Datos Personales</h3>
 
 <?php
-//echo $this->session->userdata('id_evento');
 foreach($css_files as $file): ?>
     <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 <?php endforeach; ?>

@@ -1,110 +1,51 @@
-<?php
-class Intervalo extends CI_Controller {
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-    public function __construct(){
+class Intervalo extends CI_Controller
+{
+
+    function __construct()
+    {
         parent::__construct();
-        $this->load->model('intervalo_model');
-    }
-
-    public function index(){
-        $boton = $this->input->post('enviar');
-        $data['titulo'] = 'Intervalos Disponibles';
-
-        if ($boton == 'agregar'){
-            $data['titulo'] = 'Nuevo Intervalo';
-            $this->load->view('includes/header', $data);
-            $this->load->view('intervalo/add', $data);
-            $this->load->view('includes/footer', $data);
-        }
-        elseif ($boton == 'ver'){
-            $this->load->model('carpa_model');
-            $data['carpas'] = $this->carpa_model->read_carpa();
-            $data['titulo'] = 'Carpas Disponibles';
-
-            $this->load->view('includes/header', $data);
-            $this->load->view('carpa/index', $data);
-            $this->load->view('includes/footer', $data);
-        }
-        elseif ($boton == 'editar'){
-            $data['titulo'] = 'Editar Intervalo';
-            $data['intervalos'] = $this->intervalo_model->read_intervalo_esp();
-
-            $this->load->view('includes/header', $data);
-            $this->load->view('intervalo/edit', $data);
-            $this->load->view('includes/footer', $data);
-        }
-
-        elseif ($boton == 'borrar'){
-            $data['titulo'] = 'Intervalos';
-
-            if ($this->input->post('id_intervalo')){
-
-                $this->intervalo_model->del_intervalo();
-                $data['intervalos'] = $this->intervalo_model->read_intervalo();
-
-                $this->load->view('includes/header', $data);
-                $this->load->view('intervalo/index', $data);
-                $this->load->view('includes/footer', $data);
-            }
-        }
-        else{
-            $data['intervalos'] = $this->intervalo_model->read_intervalo();
-
-            $this->load->view('includes/header', $data);
-            $this->load->view('intervalo/index', $data);
-            $this->load->view('includes/footer', $data);
-        }
-    }
-
-    public function add(){
-        $data['titulo'] = 'Nuevo Intervalo';
-
-        $this->load->helper('form');
-        $this->load->library('form_validation');
-
-        $this->form_validation->set_rules('intervalo','Intervalo','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('descripcion','Descripcion','required');
         
-        if ($this->form_validation->run()==FALSE){
-            $this->load->view('includes/header', $data);
-            $this->load->view('intervalo/add', $data);
-            $this->load->view('includes/footer', $data);
-        }
-        else {
-
-            $this->intervalo_model->create_intervalo();
-            $data['intervalos'] = $this->intervalo_model->read_intervalo();
-            $data['titulo'] = 'Intervalos Disponibles';
-
-            redirect('intervalo/index');
-            $this->load->view('includes/header', $data);
-            $this->load->view('intervalo/index', $data);
-            $this->load->view('includes/footer', $data);
-        }
+        $this->load->database();
+        $this->load->helper('url');
+        $this->load->library('grocery_CRUD');
     }
 
-    public function edit(){
-        $data['titulo'] = 'Editar Intervalo';
-        $this->load->library('form_validation');
+    public function index()
+    {
+      
+        $crud = new grocery_CRUD();
 
-        $this->form_validation->set_rules('intervalo','Intervalo','required|max_length[50]|alpha_name');
-        $this->form_validation->set_rules('descripcion','Descripcion','required');
+            $crud->set_theme('datatables');
+            $crud->set_subject('Intervalo');
+            $cadena = $_SERVER['REQUEST_URI'];
+            $lista = explode('/', $cadena);
+            $cuenta = count($lista);
+            $crud->where('Intervalo.id_metrica',$lista[$cuenta-1]);
+            $crud->set_table('Intervalo');
 
-        if ($this->form_validation->run()==FALSE){
-            $this->load->view('includes/header', $data);
-            $this->load->view('intervalo/edit', $data);
-            $this->load->view('includes/footer', $data);
-        }
-        else {
-            $this->intervalo_model->update_intervalo();
-            $data['intervalos'] = $this->intervalo_model->read_intervalo();
-            $data['titulo'] = 'Editar Intervalo';
+            $crud->columns('intervalo','descripcion');
+            $crud->fields('intervalo','descripcion');
 
-            //redirect('intervalo/index');
-            $this->load->view('includes/header', $data);
-            $this->load->view('intervalo/index', $data);
-            $this->load->view('includes/footer', $data);
-        }
+            $crud->unset_delete();
+            $crud->unset_edit_fields('id_metrica');
+            $crud->unset_add();
+            $crud->unset_export();
+            $crud->unset_print();
+            //$crud->unset_back_to_list();
 
+
+            $crud->set_rules('intervalo','Intervalo','max_length[100]');       
+
+            $output = $crud->render();
+
+            $this->load->view('includes/header');
+            $this->load->view('intervalo/index', $output);
+            $this->load->view('includes/footer');
+            
     }
+
 }
+
+?>

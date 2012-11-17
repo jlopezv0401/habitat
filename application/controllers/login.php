@@ -1,7 +1,4 @@
-<?php
-
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
@@ -14,12 +11,12 @@ class Login extends CI_Controller {
         // to the user
 
         if($this->session->userdata('validated')){
-            redirect('welcome');
+            redirect('gestion/evento');
         }
         else{
-    	  $data['msg'] = $msg;
+    	   $data['msg'] = $msg;
             $this->load->view('login/header1');
-            $this->load->view('login/login');
+            $this->load->view('login/index',$data);
             $this->load->view('login/footer');
         }
     }
@@ -31,14 +28,20 @@ class Login extends CI_Controller {
         $result = $this->login_model->validate();
         // Now we verify the result
         if (!$result) {
-            // If user did not validate, then show them login page again        	
+            // If user did not validate, then show them login page again  
+            //redirect('login/index');      	
             $msg = '<font color=red>Usuario invalido o password incorrecto.</font><br />';
             $this->index($msg);
         } else {
             // If user did validate, 
             // Send them to members area            
-            redirect('welcome');
+            redirect('gestion/evento');
         }
+    }
+
+    public function do_logout() {
+        $this->session->sess_destroy();
+        redirect('login');
     }
 
 }
