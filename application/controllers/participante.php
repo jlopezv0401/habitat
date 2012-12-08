@@ -37,7 +37,7 @@ class Participante extends CI_Controller
             $crud->add_action('Imprimir QR','', '', 'ui-icon-plus', array($this, 'print_qr_code'));          
 
             $crud->callback_before_insert(array($this,'set_evento_id'));        
-            $crud->callback_after_insert(array($this,'print_qr_code')); 
+            //$crud->callback_after_insert(array($this,'print_qr_code')); 
             $output = $crud->render();
 
             $this->load->view('includes/header');
@@ -51,17 +51,27 @@ class Participante extends CI_Controller
         return $post_array;
     }
 
-    function print_qr_code($post_array){
-        $this->load->library('ciqrcode');
+    function print_qr_code($primary_key , $row){
+        return site_url('participante/qr') . '?id_participante=' . $primary_key;
+    }
 
-        $params['data'] = 'This is a text to encode become QR Code';
+
+    public function qr()
+    {
+        $this->load->library('ciqrcode');
+        $this->load->model('participante_model');
+        $data['participante'] = $this->participante_model->read_participante_esp();
+        $participante = $this->participante_model->read_participante_esp();
+
+        $params['data'] = $participante->id . ' ' . $participante->correo;
         $params['level'] = 'H';
-        $params['size'] = 10;
+        $params['size'] = 16;
         $params['savename'] = FCPATH.'tes.png';
         $this->ciqrcode->generate($params);
 
-        echo '<img src="'.base_url().'tes.png" />';
-        return $post_array;
+        $this->load->view('includes/header');
+        $this->load->view('participante/qr',$data);
+        $this->load->view('includes/footer');       
     }
 
 }

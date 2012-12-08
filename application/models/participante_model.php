@@ -50,7 +50,7 @@ class Participante_model extends CI_Model {
     }
 
     public function read_participante_esp(){
-        $id=$this->input->post('id_participante');
+        $id=$this->input->get('id_participante');
         $participantes = $this->db->get_where('Participante', array('id' => $id), 1, 0);
         return $participantes->row();
     }
