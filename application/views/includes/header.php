@@ -84,8 +84,8 @@
        <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Participantes <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                  <li><?php echo  "<a href='".base_url("index.php/gestion/participante/index")."'>Consultar</a>";?></li>
-                  <li><?php echo  "<a href='".base_url("index.php/gestion/participante/add")."'>Crear</a>";?></li>
+                  <li><?php echo  "<a href='".base_url("index.php/participante/index")."'>Consultar</a>";?></li>
+                  <li><?php echo  "<a href='".base_url("index.php/participante/add")."'>Crear</a>";?></li>
               </ul>
           </li>
 

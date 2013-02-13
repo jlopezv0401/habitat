@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87657537-046b-4bd5-b6b0-0724de127e19" name="Default" comment="Titulos de forms corregidos">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/layout/bienvenido.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/layout/footer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/layout/header1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/layout/header2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/layout/template1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/layout/template2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/login/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db_habitat12.mwb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db_habitat13.mwb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db_habitat23.mwb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/habitat_data.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/database.php" afterPath="$PROJECT_DIR$/application/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/participante.php" afterPath="$PROJECT_DIR$/application/controllers/participante.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/participante_model.php" afterPath="$PROJECT_DIR$/application/models/participante_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/participante/qr.php" afterPath="$PROJECT_DIR$/application/views/participante/qr.php" />
     </list>
     <ignored path="habitat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,7 +47,7 @@
       <file leaf-file-name="participante_model.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/participante_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="5" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.0">
+            <state line="55" column="5" selection-start="1940" selection-end="1940" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -67,7 +74,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/participante/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="57" selection-start="1817" selection-end="1817" vertical-scroll-proportion="0.0">
+            <state line="28" column="10" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -76,7 +83,7 @@
       <file leaf-file-name="add.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/participante/add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="58" selection-start="0" selection-end="3888" vertical-scroll-proportion="0.024429968">
+            <state line="47" column="58" selection-start="0" selection-end="3888" vertical-scroll-proportion="0.02529511">
               <folding />
             </state>
           </provider>
@@ -147,16 +154,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -281,6 +278,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,8 +296,8 @@
     <property name="options.lastSelected" value="reference.settings.ide.settings.notifications" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -361,7 +368,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2828201" sideWeight="0.431853" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28084415" sideWeight="0.0" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33603895" sideWeight="0.0" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18912338" sideWeight="0.2128637" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -435,11 +442,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/libraries/phpqrcode/qrlib.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="34" selection-start="69" selection-end="69" vertical-scroll-proportion="-0.11386139" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/participante/qr.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" />
@@ -470,35 +472,6 @@
         <state line="51" column="56" selection-start="1735" selection-end="1735" vertical-scroll-proportion="0.6904762" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/jquery.qrcode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="41" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/participante_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="5" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/participante/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="94" selection-start="332" selection-end="353" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_habitat_v1.0.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="0" selection-start="4734" selection-end="5076" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/participante/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="57" selection-start="1817" selection-end="1817" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/area_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="75" selection-start="615" selection-end="615" vertical-scroll-proportion="0.0" />
@@ -511,14 +484,41 @@
     </entry>
     <entry file="file://$USER_HOME$/Downloads/secundaria_db.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="345" column="6" selection-start="11817" selection-end="11817" vertical-scroll-proportion="0.4920635">
+        <state line="345" column="6" selection-start="11817" selection-end="11817" vertical-scroll-proportion="0.4920635" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/jquery.qrcode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="41" selection-start="657" selection-end="657" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/participante_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="5" selection-start="1940" selection-end="1940" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/participante/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="94" selection-start="332" selection-end="353" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_habitat_v1.0.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="173" column="0" selection-start="4734" selection-end="5076" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/participante/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="10" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/participante/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="58" selection-start="0" selection-end="3888" vertical-scroll-proportion="0.024429968">
+        <state line="47" column="58" selection-start="0" selection-end="3888" vertical-scroll-proportion="0.02529511">
           <folding />
         </state>
       </provider>
