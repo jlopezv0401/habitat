@@ -90,7 +90,7 @@ class Gestion extends CI_Controller
         return $post_array;
     }
 
-    function funcion_carpa($primary_key , $row){
+    function funcion_carpa($primary_key, $row){
         return site_url('gestion/programa') . '?id_carpa=' . $primary_key;
     }
 
@@ -114,7 +114,7 @@ class Gestion extends CI_Controller
 
             $crud->columns('id', 'nombre', 'descripcion');
 
-            $crud->add_action('Área','', '', '', array($this, 'funcion_programa'));
+            $crud->add_action('Dinámica','', '', '', array($this, 'funcion_programa'));
             //$crud->set_relation('id_carpa', 'Carpa', 'nombre'); 
 
             $crud->fields('id_carpa','nombre', 'descripcion');
@@ -136,52 +136,52 @@ class Gestion extends CI_Controller
     }
 
     function funcion_programa($primary_key , $row){
-        return site_url('gestion/area') . '?id_programa=' . $primary_key;
+        return site_url('gestion/dinamica') . '?id_programa=' . $primary_key;
     }
 
-    public function area(){
-        // if (!$this->session->userdata('validated') || $this->session->userdata('tipoUsuarioId') != 2) {
-        //     redirect('login');
-        // } else {
-            $crud = new grocery_CRUD();
-            $crud->set_theme('datatables');
-            $crud->set_subject('Área');
+    // public function area(){
+    //     // if (!$this->session->userdata('validated') || $this->session->userdata('tipoUsuarioId') != 2) {
+    //     //     redirect('login');
+    //     // } else {
+    //         $crud = new grocery_CRUD();
+    //         $crud->set_theme('datatables');
+    //         $crud->set_subject('Área');
 
-            if ($this->input->get('id_programa')){
-                $this->session->set_userdata('id_programa',$this->input->get('id_programa'));
-            }   
-            $id_programa = $this->session->userdata('id_programa');
-            $crud->where('Area.id_programa',$id_programa);
+    //         if ($this->input->get('id_programa')){
+    //             $this->session->set_userdata('id_programa',$this->input->get('id_programa'));
+    //         }   
+    //         $id_programa = $this->session->userdata('id_programa');
+    //         $crud->where('Area.id_programa',$id_programa);
 
-            $crud->set_table('Area');
-            $crud->unset_print();
-            $crud->unset_export();
+    //         $crud->set_table('Area');
+    //         $crud->unset_print();
+    //         $crud->unset_export();
 
-            $crud->columns('id', 'nombre', 'descripcion');
+    //         $crud->columns('id', 'nombre', 'descripcion');
 
-            $crud->add_action('Dinámica','', '', '', array($this, 'funcion_area'));
-            //$crud->set_relation('id_programa', 'Programa', 'nombre');
-            $crud->fields('id_programa','nombre', 'descripcion');   
-            $crud->change_field_type('id_programa','invisible'); 
+    //         $crud->add_action('Dinámica','', '', '', array($this, 'funcion_area'));
+    //         //$crud->set_relation('id_programa', 'Programa', 'nombre');
+    //         $crud->fields('id_programa','nombre', 'descripcion');   
+    //         $crud->change_field_type('id_programa','invisible'); 
 
-            $crud->callback_before_insert(array($this,'set_programa_id'));   
+    //         $crud->callback_before_insert(array($this,'set_programa_id'));   
             
-            $output = $crud->render();
+    //         $output = $crud->render();
             
-            $this->load->view('includes/header');
-            $this->load->view('area/index', $output);
-            $this->load->view('includes/footer');
-        // }
-    }
+    //         $this->load->view('includes/header');
+    //         $this->load->view('area/index', $output);
+    //         $this->load->view('includes/footer');
+    //     // }
+    // }
 
-    function set_programa_id($post_array){
-        $post_array['id_programa'] = $this->session->userdata('id_programa');
-        return $post_array;
-    }
+    // function set_programa_id($post_array){
+    //     $post_array['id_programa'] = $this->session->userdata('id_programa');
+    //     return $post_array;
+    // }
 
-    function funcion_area($primary_key , $row){
-        return site_url('gestion/dinamica') . '?id_area=' . $primary_key;
-    }
+    // function funcion_area($primary_key , $row){
+    //     return site_url('gestion/dinamica') . '?id_area=' . $primary_key;
+    // }
 
     public function dinamica(){
         // if (!$this->session->userdata('validated') || $this->session->userdata('tipoUsuarioId') != 2) {
@@ -191,11 +191,11 @@ class Gestion extends CI_Controller
             $crud->set_theme('datatables');
             $crud->set_subject('Dinámica');
 
-            if ($this->input->get('id_area')){
-                $this->session->set_userdata('id_area',$this->input->get('id_area'));
+            if ($this->input->get('id_programa')){
+                $this->session->set_userdata('id_programa',$this->input->get('id_programa'));
             }   
-            $id_area = $this->session->userdata('id_area');
-            $crud->where('Dinamica.id_area',$id_area);
+            $id_programa = $this->session->userdata('id_programa');
+            $crud->where('Dinamica.id_programa',$id_programa);
 
             $crud->set_table('Dinamica');
             $crud->unset_print();
@@ -203,13 +203,13 @@ class Gestion extends CI_Controller
 
             $crud->columns('id', 'nombre', 'descripcion');
 
-            $crud->set_relation('id_area', 'Area', 'nombre');
+            $crud->set_relation('id_programa', 'Programa', 'nombre');
             $crud->set_relation('id_metrica', 'Metrica', 'nombre');
             $crud->set_relation_n_n('colaboradores', 'Dinamica_Colaborador', 'Colaborador', 'id_dinamica', 'id_colaborador', 'usuario', 'lista');
             $crud->set_relation_n_n('paquetes', 'Dinamica_Paquete', 'Paquete', 'id_dinamica', 'id_paquete', 'Nombre', 'lista');
 
-            $crud->fields('id_area', 'nombre', 'hora_inicio', 'hora_fin', 'id_metrica', 'colaboradores', 'paquetes', 'descripcion'); 
-            $crud->change_field_type('id_area','invisible'); 
+            $crud->fields('id_programa', 'nombre', 'hora_inicio', 'hora_fin', 'id_metrica', 'colaboradores', 'paquetes', 'descripcion'); 
+            $crud->change_field_type('id_programa','invisible'); 
             $crud->callback_before_insert(array($this,'set_area_id'));           
             
             $output = $crud->render();
@@ -221,7 +221,7 @@ class Gestion extends CI_Controller
     }
 
     function set_area_id($post_array){
-        $post_array['id_area'] = $this->session->userdata('id_area');
+        $post_array['id_programa'] = $this->session->userdata('id_programa');
         return $post_array;
     }
 
@@ -347,8 +347,8 @@ public function colaborador()
 
     function encrypt_password_callback($post_array){
 
-        var_dump($post_array['password']);
-        die();
+        // var_dump($post_array['password']);
+        // die();
         $this->load->library('encrypt');
  
         $key = 'k1PAjW3tuHCjewV7p7gFEiHps501b68d';

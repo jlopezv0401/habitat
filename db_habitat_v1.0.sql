@@ -54,27 +54,27 @@
         CONSTRAINT programa_carpa_fk FOREIGN KEY(id_carpa) REFERENCES Carpa(id) ON DELETE CASCADE ON UPDATE CASCADE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
-    DROP TABLE IF EXISTS Area;
-    CREATE TABLE Area(
-        id BIGINT(20) NOT NULL AUTO_INCREMENT,
-        id_programa BIGINT(20) NOT NULL,
-        nombre VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
-        descripcion TEXT COLLATE utf8_bin DEFAULT NULL,
-        PRIMARY KEY(id),
-        CONSTRAINT area_programa_fk FOREIGN KEY(id_programa) REFERENCES Programa(id) ON DELETE CASCADE ON UPDATE CASCADE
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
+    -- DROP TABLE IF EXISTS Area;
+    -- CREATE TABLE Area(
+    --     id BIGINT(20) NOT NULL AUTO_INCREMENT,
+    --     id_programa BIGINT(20) NOT NULL,
+    --     nombre VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
+    --     descripcion TEXT COLLATE utf8_bin DEFAULT NULL,
+    --     PRIMARY KEY(id),
+    --     CONSTRAINT area_programa_fk FOREIGN KEY(id_programa) REFERENCES Programa(id) ON DELETE CASCADE ON UPDATE CASCADE
+    -- ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
     DROP TABLE IF EXISTS Dinamica;
     CREATE TABLE Dinamica(
         id BIGINT(20) NOT NULL AUTO_INCREMENT,
-        id_area BIGINT(20) NOT NULL,
+        id_programa BIGINT(20) NOT NULL,
         id_metrica BIGINT(20) NOT NULL,
         nombre VARCHAR(50) COLLATE utf8_bin DEFAULT NULL,
         hora_inicio DATETIME NOT NULL,
         hora_fin DATETIME NOT NULL,
         descripcion TEXT COLLATE utf8_bin DEFAULT NULL,
         PRIMARY KEY(id),
-        CONSTRAINT dinamica_area_fk FOREIGN KEY(id_area) REFERENCES Area(id) ON DELETE CASCADE ON UPDATE CASCADE,
+        CONSTRAINT dinamica_area_fk FOREIGN KEY(id_programa) REFERENCES Programa(id) ON DELETE CASCADE ON UPDATE CASCADE,
         CONSTRAINT dinamica_metrica_fk FOREIGN KEY(id_metrica) REFERENCES  Metrica(id) ON UPDATE CASCADE
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ;
 
