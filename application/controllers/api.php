@@ -19,7 +19,7 @@ require APPPATH.'/libraries/sphinxapi.php';
 
 class Api extends REST_Controller {
 
-	function colaborador_post() {
+	function login_post() {
 		if(!$this->post('usuario')) {
 			if(!$this->post('password')) {
 				$this->response(array('error' => 'Usuario no encontrado'), 404);
@@ -44,11 +44,13 @@ class Api extends REST_Controller {
             // If there is a user, then create session data
             $row = $query->row();
             if($this->encrypt->decode($row->password) == $decoded){
+               	$sql = 'SELECT id_dinamica FROM Dinamica_Colaborador WHERE id_colaborador=' . $row->id;
+            	$query = $this->db->query($sql);
                 $resultado = array(
                     'id' => $row->id,
                     'tipo_usuario' => $row->tipo_usuario,                    
                     'usuario' => $row->usuario,
-                    'id_dinamica' => '',
+                    'id_dinamica' => $query->result(),
                     'validated' => true
                     );
                 // $this->session->set_userdata($data);
@@ -60,25 +62,12 @@ class Api extends REST_Controller {
       	}
 
 		//$resultado = $decoded;
-	if($resultado) {
-		$this->response($resultado, 200);
-		}
-		else {
-			$this->response(array('error' => 'Usuario no encontrado'), 404);
+		if($resultado) {
+			$this->response($resultado, 200);
+			}
+			else {
+				$this->response(array('error' => 'Usuario no encontrado'), 404);
 		}
 	}
-
-	function colaborador_post(){
-		if(!$this->post('dinamica')) {
-			$this->response(array('error' => 'Operacion no valida'), 404);
-
-		}
-		else {
-			$dinamica = $this->post('dinamica');
-		}
-
-	}
-	$sql = "Insert"
-	$query = $this->db->query($sql, array($docenteId, $materiaId));
 
 }
